@@ -23,6 +23,11 @@ namespace TicTacToe
             places = Symbol[hori,vert]();
         }
 
+        /// <summary>
+        /// Checks for 3 of the same symbols in a row
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns>bool true if 3 are in a row</returns>
         public bool ThreeInARow(int player)
         {
             return NInARow(player, 3);
