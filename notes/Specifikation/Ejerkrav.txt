@@ -1,0 +1,13 @@
+--------KRAV--------
+Spiller mod spiller
+Spiller mod AI
+AI mod AI (spiller observation)
+2 Forskellige AI (AI mod AI maa ikke bruge samme kode)
+Gamemodes
+	3 brikker (brikker skal kunne rykkes)
+	Uendelige brikker (ingen vinder hvis braettet bliver fyldt uden nogle har 3-ens)
+	3 brikker raekkefoelge (brikker skal rykkes i raekkefoelge(de 3 brikker har hver i saer et nummer, brikkerne skal rykkes fra 1-3))
+Spillet skal vaere paent & hurtigt (ejer definere 'paent')
+
+--------DEADLINE--------
+1½ uge fra d. 22-08-2019

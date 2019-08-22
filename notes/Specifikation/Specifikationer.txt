@@ -1,0 +1,9 @@
+--------Specifikationer--------
+Kryds & Bolle
+	2-ens foer 3-ens (programmet skal registrere at der foerst og fremmest er 2-ens foer den registrere at der er 3-ens)
+	Vundet (spiller skal visuelt se hvilket symbol har vundet (X eller O))
+
+Braettet
+	Hvor brikkerne er henne (braettet skal holder styr paa hvor paa braettet der er brikker)
+	Placer & Ryk brik (det skal vaere muligt at placere samt at rykke brikker)
+		Er noget i vejen? (programmet skal registrere om det allerede er en brik paa feltet)
