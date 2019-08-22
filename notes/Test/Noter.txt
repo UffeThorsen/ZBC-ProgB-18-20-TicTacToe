@@ -1,0 +1,10 @@
+De test som skal køres:
+- At brættet virker og vises.
+- Placering af brikker:
+	- samme position.
+	- udenfor brættet.
+	- noget der ikke giver mening.
+	- placere i sekventielt 
+- Stress-test:
+	- hvis samme vinder mange gang i streg.
+- To ting der ikke normalt køre sammen.
