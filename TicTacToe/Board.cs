@@ -15,12 +15,12 @@ namespace TicTacToe
 
         Board()
         {
-            places = Symbol[3, 3]();
+            places = new Symbol[3, 3];
         }
 
         Board(int hori, int vert)
         {
-            places = Symbol[hori,vert]();
+            places = new Symbol[hori,vert];
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace TicTacToe
 
         public bool NInARow(int player, int length)
         {
-            
+            throw new System.NotImplementedException();
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace TicTacToe
 
         public override string ToString()
         {
-
+            throw new System.NotImplementedException();
         }
 
     }
