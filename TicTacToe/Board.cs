@@ -13,7 +13,7 @@ namespace TicTacToe
 
         Symbol[,] places;
 
-        Board() : this(3,3) { }
+        public Board() : this(3,3) { }
 
         Board(int hori, int vert)
         {
