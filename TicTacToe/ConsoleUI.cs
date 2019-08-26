@@ -59,10 +59,12 @@ namespace TicTacToe
             
             Console.ReadKey();
         }
+        /*
         static void Main(string[] args)
         {
             runGame();
         }
+        */
     }
     
     
