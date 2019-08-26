@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace TicTacToe
 {
     class Board
