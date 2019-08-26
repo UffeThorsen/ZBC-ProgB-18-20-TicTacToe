@@ -3,41 +3,39 @@ namespace TicTacToe
 {
     class Game
     {
-        //int der hjælper med tur-bestemmelse. Denne int vil enten være 1 eller 2. Dette indikerer spiller 1's tur og spiller 2's tur.
         int currentPlayer = 1;
 
-        //Bool der skal blive True hvis kryds vinder. Kryds har turen 1
-        bool harKrydsVundet = false;
-        //Bool der skal blive true hvis bolle vinder. Bolle har tur 2
-        bool harBolleVundet = false;
+        bool hasXWon = false;
+        bool hasOWon = false;
 
-        Board spillebraet = new Board();
+        Board gameBoard = new Board();
+
+        public Game()
+        {
+
+        }
 
         /// <summary>
         /// Udfører en tur (En tur består af at placere en brik, tjekke om spilleren har vundet og skifte spiller)
         /// </summary>
-        /// <param name="hor"> Hvor playeren vil placere på den horizontale akse </param>
-        /// <param name="ver"> Hvor playeren vil placere på den vertikale akse </param>
-        public void Tur(int hor, int ver)
+        /// <param name="hor"> Where to place on the horizontal axis </param>
+        /// <param name="ver"> Where to place on the vertical axis </param>
+        public bool Turn(int hor, int ver)
         {
-            spillebraet.Place(hor,ver,currentPlayer);
+            gameBoard.Place(hor,ver, (Symbol)currentPlayer);
             
             if (HasPlayerWon(currentPlayer))
             {
-                if (currentPlayer == 1)
-                {
-                    harKrydsVundet = true;
-                }
-                else if (currentPlayer == 2)
-                {
-                    harBolleVundet = true;
-                }
+                return true;
             }
-            Turskift();
+            ChangeTurn();
+            return false;
         }
 
-        //Skifter tur
-        void Turskift()
+        /// <summary>
+        /// Changes the turn of the current player
+        /// </summary>
+        void ChangeTurn()
         {
             if (currentPlayer == 1)
             {
@@ -50,17 +48,28 @@ namespace TicTacToe
         }
         bool HasPlayerWon(int player)
         {
-            if (spillebraet.ThreeInARow(player))
+            if (gameBoard.ThreeInARow((Symbol)currentPlayer))
             {
                 return true;
             }
             return false;
         }
 
-        string 
-        public Game()
+        public Symbol WhoWon()
         {
-
+            if(hasOWon)
+            {
+                return Symbol.O;
+            }
+            else if(hasXWon)
+            {
+                return Symbol.X;
+            }
+            else
+            {
+                return Symbol.N;
+            }
         }
+        
     }
 }
