@@ -10,6 +10,7 @@ namespace TicTacToe
         public Board() : this(3,3) { }
 
         //Makes a new board with hori as amount of columns, and vert as the amount of rows
+        //Hori means horizontal, Vert means vertical.
         Board(int hori, int vert)
         {
             places = new Symbol[hori,vert];
@@ -29,7 +30,7 @@ namespace TicTacToe
         {
             throw new System.NotImplementedException();
             /*
-            // Goes throug the symobol 2darry, and cheks if the symbol of the place is the same at the player chekking for.
+            // Goes through the symbol 2darray, and checks if the symbol of the place is the same at the player checking for.
             int inARow = 0;
             for (int i = 0; i < places.GetLength(0); i++)
             {
@@ -89,9 +90,9 @@ namespace TicTacToe
             {
                 for (int j = 0; j < places.GetLength(1); j++)
                 {
-                    tempString = places[i, j] + "\t";
+                    tempString += places[i, j] + "\t";
                 }
-                tempString = "\n";
+                tempString += "\n";
             }
             return tempString;
         }
