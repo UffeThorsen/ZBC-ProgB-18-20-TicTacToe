@@ -40,7 +40,8 @@ namespace TicTacToe
 
         void Move(int behor, int bever, int hor, int ver)
         {
-
+            gameBoard.RemoveSymbolFromPlace(behor, bever);
+            Turn(hor, ver);
         }
 
 
