@@ -31,9 +31,9 @@ namespace TicTacToe
             /*
             // Goes throug the symobol 2darry, and cheks if the symbol of the place is the same at the player chekking for.
             int inARow = 0;
-            for (int i = 0; i < places.length; i++)
+            for (int i = 0; i < places.GetLength(0); i++)
             {
-                for(int j = 0; j < places.length; j++)
+                for(int j = 0; j < places.GetLength(1); j++)
                 {
                     if (places[i, j] == player)
                     {
@@ -81,7 +81,7 @@ namespace TicTacToe
             places[hor, ver] = Symbol.N;
         }
 
-        //Returns a string with a new line for each row, and a tab between each column, with the symbol name as the string text for the value
+        //Returns a string with a new line for each row, and a tab between each column, with the symbol name as the string text for the value of the symbol
         public override string ToString()
         {
             string tempString = "";
@@ -93,6 +93,7 @@ namespace TicTacToe
                 }
                 tempString = "\n";
             }
+            return tempString;
         }
 
     }

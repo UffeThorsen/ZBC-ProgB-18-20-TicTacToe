@@ -13,6 +13,5 @@ namespace TicTacToe
             Console.WriteLine("Press any button to exit...");
             Console.ReadKey();
         }
-           
     }
 }
