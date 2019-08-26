@@ -39,7 +39,7 @@ namespace TicTacToe
         /// <returns>A Bool that if placing was succesful = true</returns>
         public bool Place(int hor,int ver, Symbol player)
         {
-            if (places[hor, ver] != Symbol.N)
+            if (places[hor, ver] == Symbol.N)
             {
                 places[hor, ver] = player;
                 return true;
