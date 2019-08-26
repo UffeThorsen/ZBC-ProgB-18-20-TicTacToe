@@ -5,6 +5,9 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
+            ConsoleUI.runGame();
+
+            
         }
     }
 }
