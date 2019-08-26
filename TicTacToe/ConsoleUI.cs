@@ -20,13 +20,13 @@ namespace TicTacToe
                 case "1":
                     Console.WriteLine("Press any key to start the game");
                     Console.ReadKey();
-                    //Start singleplayer spil. 
+                    //Start singleplayer game. 
                     break;
 
                 case "2":
                     Console.WriteLine("Press any key to start the game");
                     Console.ReadKey();
-                    //start 1v1/multiplayer spil. 
+                    //start 1v1/multiplayer game. 
                     break;
 
                 case "3":

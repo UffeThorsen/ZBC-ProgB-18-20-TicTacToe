@@ -28,6 +28,31 @@ namespace TicTacToe
         public bool NInARow(Symbol player, int length)
         {
             throw new System.NotImplementedException();
+            /*
+            // Goes throug the symobol 2darry, and cheks if the symbol of the place is the same at the player chekking for.
+            int inARow = 0;
+            for (int i = 0; i < places.length; i++)
+            {
+                for(int j = 0; j < places.length; j++)
+                {
+                    if (places[i, j] == player)
+                    {
+                        inARow++;
+                        if (inARow == length)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                inARow = 0;
+            }
+
+            return false;
+            */
         }
 
         /// <summary>
@@ -39,7 +64,7 @@ namespace TicTacToe
         /// <returns>A Bool that if placing was succesful = true</returns>
         public bool Place(int hor,int ver, Symbol player)
         {
-            if (places[hor, ver] != Symbol.N)
+            if (places[hor, ver] == Symbol.N)
             {
                 places[hor, ver] = player;
                 return true;

@@ -1,9 +1,14 @@
 --------Produktions Orden--------
+0. Undervejs Test af funktioner
+	
 1. Braet
 	Test (Print brik)
+
 2. Game
 	Test (test af selve spillet)
+
 3. Brugerflade
 	Test (usability test af UI)
+
 4. AI
 	Test (test af AI)
