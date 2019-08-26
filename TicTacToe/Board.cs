@@ -28,6 +28,29 @@ namespace TicTacToe
         public bool NInARow(Symbol player, int length)
         {
             throw new System.NotImplementedException();
+
+            int inARow = 0;
+            for (int i = 0; i < places.length; i++)
+            {
+                for(int j = 0; j < places.length; j++)
+                {
+                    if (places[i, j] == player)
+                    {
+                        inARow++;
+                        if (inARow == length)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                inARow = 0;
+            }
+
+            return false;
         }
 
         /// <summary>
