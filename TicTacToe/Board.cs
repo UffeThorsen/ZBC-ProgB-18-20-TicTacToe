@@ -29,6 +29,7 @@ namespace TicTacToe
         {
             throw new System.NotImplementedException();
 
+            // Goes throug the symobol 2darry, and cheks if the symbol of the place is the same at the player chekking for.
             int inARow = 0;
             for (int i = 0; i < places.length; i++)
             {
