@@ -5,9 +5,6 @@ namespace TicTacToe
     {
         int currentPlayer = 1;
 
-        bool hasXWon = false;
-        bool hasOWon = false;
-
         Board gameBoard = new Board();
 
         public Game()
@@ -16,14 +13,13 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Udfører en tur (En tur består af at placere en brik, tjekke om spilleren har vundet og skifte spiller)
+        /// Executes a turn returns if someone has won
         /// </summary>
         /// <param name="hor"> Where to place on the horizontal axis </param>
         /// <param name="ver"> Where to place on the vertical axis </param>
         public bool Turn(int hor, int ver)
         {
-            gameBoard.Place(hor,ver, (Symbol)currentPlayer);
-            
+            gameBoard.Place(hor, ver, (Symbol)currentPlayer);
             if (HasPlayerWon(currentPlayer))
             {
                 return true;
@@ -31,6 +27,22 @@ namespace TicTacToe
             ChangeTurn();
             return false;
         }
+        public bool Turn(int behor, int bever, int hor, int ver)
+        {
+            gameBoard.Place(hor, ver, (Symbol)currentPlayer);
+            if (HasPlayerWon(currentPlayer))
+            {
+                return true;
+            }
+            ChangeTurn();
+            return false;
+        }
+
+        void Move(int behor, int bever, int hor, int ver)
+        {
+
+        }
+
 
         /// <summary>
         /// Changes the turn of the current player
@@ -46,6 +58,12 @@ namespace TicTacToe
                 currentPlayer--;
             }
         }
+
+        /// <summary>
+        /// Checks if someone has won
+        /// </summary>
+        /// <param name="player"> The player to check </param>
+        /// <returns></returns>
         bool HasPlayerWon(int player)
         {
             if (gameBoard.ThreeInARow((Symbol)currentPlayer))
@@ -57,18 +75,7 @@ namespace TicTacToe
 
         public Symbol WhoWon()
         {
-            if(hasOWon)
-            {
-                return Symbol.O;
-            }
-            else if(hasXWon)
-            {
-                return Symbol.X;
-            }
-            else
-            {
-                return Symbol.N;
-            }
+            return (Symbol)currentPlayer;
         }
         
     }
