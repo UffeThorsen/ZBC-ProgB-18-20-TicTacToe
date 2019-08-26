@@ -29,7 +29,7 @@ namespace TicTacToe
         }
         public bool Turn(int behor, int bever, int hor, int ver)
         {
-            gameBoard.Place(hor, ver, (Symbol)currentPlayer);
+            Move(behor,bever,hor,ver);
             if (HasPlayerWon(currentPlayer))
             {
                 return true;
@@ -40,7 +40,8 @@ namespace TicTacToe
 
         void Move(int behor, int bever, int hor, int ver)
         {
-
+            gameBoard.RemoveSymbolFromPlace(behor,bever);
+            gameBoard.Place(hor,ver,(Symbol)currentPlayer);
         }
 
 
