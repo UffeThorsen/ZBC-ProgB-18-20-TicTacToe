@@ -6,8 +6,10 @@ namespace TicTacToe
     {
         Symbol[,] places;
 
+        //Calls the other constructor with 3 as hori and 3 as vert
         public Board() : this(3,3) { }
 
+        //Makes a new board with hori as amount of columns, and vert as the amount of rows
         Board(int hori, int vert)
         {
             places = new Symbol[hori,vert];
