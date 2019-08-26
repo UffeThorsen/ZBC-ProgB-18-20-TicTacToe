@@ -80,9 +80,18 @@ namespace TicTacToe
             places[hor, ver] = Symbol.N;
         }
 
+        //Returns a string with a new line for each row, and a tab between each column, with the symbol name as the string text for the value
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            string tempString = "";
+            for (int i = 0; i < places.GetLength(0); i++)
+            {
+                for (int j = 0; j < places.GetLength(1); j++)
+                {
+                    tempString = places[i, j] + "\t";
+                }
+                tempString = "\n";
+            }
         }
 
     }
