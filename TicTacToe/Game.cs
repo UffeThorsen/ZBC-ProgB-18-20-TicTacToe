@@ -58,5 +58,9 @@ namespace TicTacToe
         }
 
         string 
+        public Game()
+        {
+
+        }
     }
 }

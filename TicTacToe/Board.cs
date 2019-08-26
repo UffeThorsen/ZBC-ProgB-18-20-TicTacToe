@@ -4,18 +4,12 @@ namespace TicTacToe
 {
     class Board
     {
-
-        public enum Symbol
-        {
-            N,
-            O,
-            X
-        }
-
         Symbol[,] places;
 
+        //Calls the other constructor with 3 as hori and 3 as vert
         public Board() : this(3,3) { }
 
+        //Makes a new board with hori as amount of columns, and vert as the amount of rows
         Board(int hori, int vert)
         {
             places = new Symbol[hori,vert];
@@ -26,37 +20,40 @@ namespace TicTacToe
         /// </summary>
         /// <param name="player"></param>
         /// <returns>bool true if 3 are in a row</returns>
-        public bool ThreeInARow(int player)
+        public bool ThreeInARow(Symbol player)
         {
             return NInARow(player, 3);
         }
 
-        public bool NInARow(int player, int length)
+        public bool NInARow(Symbol player, int length)
         {
             throw new System.NotImplementedException();
         }
 
         /// <summary>
-        /// Place a symbol at a place. Hor is the position for the horizontal (starts at 0), the same goes for ver. The player is an int either 1 or 2.
+        /// Place a symbol at a place. Hor is the position for the horizontal (starts at 0), the same goes for ver. The player is a Symbol.
         /// </summary>
         /// <param name="hor"></param>
         /// <param name="ver"></param>
         /// <param name="player"></param>
         /// <returns>A Bool that if placing was succesful = true</returns>
-        public bool Place(int hor,int ver, int player)
+        public bool Place(int hor,int ver, Symbol player)
         {
-            if (places[hor, ver] != Symbol.N)
+            if (places[hor, ver] == Symbol.N)
             {
-                if (player == 1)
-                {
-                    places[hor, ver] = Symbol.O;
-                }
-                else{
-                    places[hor, ver] = Symbol.X;
-                }
+                places[hor, ver] = player;
                 return true;
             }
             return false;
+        }
+        /// <summary>
+        /// Removes the symbol in the given place.
+        /// </summary>
+        /// <param name="hor"></param>
+        /// <param name="ver"></param>
+        public void RemoveSymbolFromPlace(int hor, int ver)
+        {
+            places[hor, ver] = Symbol.N;
         }
 
         public override string ToString()
