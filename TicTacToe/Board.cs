@@ -20,12 +20,12 @@ namespace TicTacToe
         /// </summary>
         /// <param name="player"></param>
         /// <returns>bool true if 3 are in a row</returns>
-        public bool ThreeInARow(int player)
+        public bool ThreeInARow(Symbol player)
         {
             return NInARow(player, 3);
         }
 
-        public bool NInARow(int player, int length)
+        public bool NInARow(Symbol player, int length)
         {
             throw new System.NotImplementedException();
         }
