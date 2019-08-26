@@ -5,9 +5,9 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
-            ConsoleUI.runGame();
+            //No code in main in repository!!
 
-            
+            //at least not yet!
         }
     }
 }
