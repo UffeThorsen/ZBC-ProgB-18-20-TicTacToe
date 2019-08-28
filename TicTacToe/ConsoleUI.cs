@@ -40,6 +40,41 @@ namespace TicTacToe
             Console.Clear();
             Console.WriteLine("1v1\n\n");
             Game currentGame = new Game();
+            bool running = true;
+            while (running)
+            {
+                // Write board
+                // Write the payers who has the turn
+                if (/* Is all the symbols used?*/ false)
+                {
+                    Console.WriteLine("What symbol du you want to move (write position!)");
+                    string input1 = Console.ReadLine().Trim().ToLower();
+                    string input2 = Console.ReadLine().Trim().ToLower();
+                    int num1 = int.Parse(input1);
+                    int num2 = int.Parse(input2);
+                    Console.WriteLine("At what position do you want to place your symbol at?");
+                    string input3 = Console.ReadLine().Trim().ToLower();
+                    string input4 = Console.ReadLine().Trim().ToLower();
+                    int num3 = int.Parse(input3);
+                    int num4 = int.Parse(input4);
+                    if (currentGame.Turn(num1, num2, num3, num4))
+                    {
+                        running = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("At what position do you want to place your symbol at?");
+                    string input1 = Console.ReadLine().Trim().ToLower();
+                    string input2 = Console.ReadLine().Trim().ToLower();
+                    int num1 = int.Parse(input1);
+                    int num2 = int.Parse(input2);
+                    if (currentGame.Turn(num1, num2))
+                    {
+                        running = false;
+                    }
+                }
+            }
         }
 
         /// <summary>
