@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace TicTacToe
 {
@@ -14,12 +14,20 @@ namespace TicTacToe
         Board(int hori, int vert)
         {
             places = new Symbol[hori,vert];
-            for(int i = 0; i < places.GetLength(0); i++)
+            /*for(int i = 0; i < places.GetLength(0); i++)
             {
                 for (int j = 0; j < places.GetLength(1); j++)
                 {
                     places[i, j] = Symbol.N;
                 }
+            }*/
+        }
+
+        public Symbol this[int i, int j]
+        {
+            get
+            {
+                return places[i, j];
             }
         }
 
@@ -132,6 +140,11 @@ namespace TicTacToe
                 tempString += "\n";
             }
             return tempString;
+        }
+
+        public bool BoardFull()
+        {
+            return !this.ToString().Contains("N");
         }
 
     }
