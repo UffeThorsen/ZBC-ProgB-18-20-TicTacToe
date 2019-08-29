@@ -12,10 +12,6 @@ namespace TicTacToe
                 return (Symbol)currentPlayer;
             }
         }
-        public Game()
-        {
-
-        }
 
         /// <summary>
         /// Executes a turn returns if the spot was taken or not
