@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace TicTacToe
 {
@@ -139,6 +139,11 @@ namespace TicTacToe
                 tempString += "\n";
             }
             return tempString;
+        }
+
+        public bool BoardFull()
+        {
+            return !this.ToString().Contains("N");
         }
 
     }
