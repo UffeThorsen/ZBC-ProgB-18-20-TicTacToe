@@ -39,27 +39,53 @@ namespace TicTacToe
         {
             Console.Clear();
             Console.WriteLine("1v1\n\n");
+
+            Console.WriteLine("What gametype do you wan to play?");
+            Console.WriteLine("1. Classic");
+            Console.WriteLine("2. Morden");
+            bool morden = false;
+            bool asking = true;
+            while (asking)
+            {
+                string input = Console.ReadLine().Trim().ToLower();
+                asking = false;
+                switch (input)
+                {
+                    case "1":
+                        break;
+
+                    case "2":
+                        morden = true;
+                        break;
+
+                    default:
+                        Console.WriteLine("Sorry, we didnt understand your input");
+                        asking = true;
+                        break;
+                }
+            }
+
             Game currentGame = new Game();
             bool running = true;
             while (running)
             {
-                // Write board
-                // Write the payers who has the turn
-                if (/* Is all the symbols used?*/ false)
+                Console.WriteLine(currentGame);
+                Console.WriteLine("PLayer " + (int)currentGame.CurrentPlayer + "´s turn (" + currentGame.CurrentPlayer + ")");  
+                if (/* Is all the symbols used? And are we running the morden vertion?*/ false)
                 {
                     Console.WriteLine("What symbol du you want to move (write position!)");
                     string input1 = Console.ReadLine().Trim().ToLower();
                     string input2 = Console.ReadLine().Trim().ToLower();
-                    int num1 = int.Parse(input1);
-                    int num2 = int.Parse(input2);
+                    int num1 = int.Parse(input1)-1;
+                    int num2 = int.Parse(input2)-1;
                     Console.WriteLine("At what position do you want to place your symbol at?");
                     string input3 = Console.ReadLine().Trim().ToLower();
                     string input4 = Console.ReadLine().Trim().ToLower();
-                    int num3 = int.Parse(input3);
-                    int num4 = int.Parse(input4);
+                    int num3 = int.Parse(input3)-1;
+                    int num4 = int.Parse(input4)-1;
                     if (currentGame.Turn(num1, num2, num3, num4))
                     {
-                        running = false;
+                        Console.WriteLine("illegal action!");
                     }
                 }
                 else
@@ -67,12 +93,24 @@ namespace TicTacToe
                     Console.WriteLine("At what position do you want to place your symbol at?");
                     string input1 = Console.ReadLine().Trim().ToLower();
                     string input2 = Console.ReadLine().Trim().ToLower();
-                    int num1 = int.Parse(input1);
-                    int num2 = int.Parse(input2);
-                    if (currentGame.Turn(num1, num2))
+                    int num1 = int.Parse(input1)-1;
+                    int num2 = int.Parse(input2)-1;
+                    Console.Clear();
+                    if (!currentGame.Turn(num1, num2))
                     {
-                        running = false;
+                        Console.WriteLine("The spot was taken!");
                     }
+                }
+                if (currentGame.WhoWon() != 0)
+                {
+                    running = false;
+                    Console.Clear();
+                    Console.WriteLine("Player " + (int)currentGame.WhoWon() + " WON!");
+                }else if (/*Is the board full!? and are we running the classic vertion?*/ false)
+                {
+                    running = false;
+                    Console.Clear();
+                    Console.WriteLine("Alle the places on the board have been used! Everyone LOST!");
                 }
             }
         }
@@ -103,13 +141,11 @@ namespace TicTacToe
                 switch (input)
                 {
                     case "1":
-                        //Start singleplayer game. 
                         SinglePLayer();
                         break;
 
                     case "2":
                         OneVOne();
-                        //start 1v1/multiplayer game. 
                         break;
 
                     case "3":
