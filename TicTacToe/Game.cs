@@ -6,7 +6,12 @@ namespace TicTacToe
         int currentPlayer = 1;
         int winningPlayer = 0;
         Board gameBoard = new Board();
-
+        public Symbol CurrentPlayer {
+            get
+            {
+                return (Symbol)currentPlayer;
+            }
+        }
         public Game()
         {
 
