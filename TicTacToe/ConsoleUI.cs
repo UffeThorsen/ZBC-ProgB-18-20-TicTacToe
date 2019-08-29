@@ -67,11 +67,12 @@ namespace TicTacToe
 
             Game currentGame = new Game();
             bool running = true;
+            Console.Clear();
             while (running)
             {
                 Console.WriteLine(currentGame);
                 Console.WriteLine("PLayer " + (int)currentGame.CurrentPlayer + "´s turn (" + currentGame.CurrentPlayer + ")");  
-                if (/* Is all the symbols used? And are we running the morden vertion?*/ false)
+                if (/* Is all the symbols used?*/ false && morden)
                 {
                     Console.WriteLine("What symbol du you want to move (write position!)");
                     string input1 = Console.ReadLine().Trim().ToLower();
@@ -106,7 +107,7 @@ namespace TicTacToe
                     running = false;
                     Console.Clear();
                     Console.WriteLine("Player " + (int)currentGame.WhoWon() + " WON!");
-                }else if (/*Is the board full!? and are we running the classic vertion?*/ false)
+                }else if (/*Is the board full!?*/ false && !morden)
                 {
                     running = false;
                     Console.Clear();
