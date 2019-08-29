@@ -19,7 +19,6 @@ namespace TicTacToe
         /// <param name="ver"> Where to place on the vertical axis </param>
         public bool Turn(int hor, int ver)
         {
-            
             if(gameBoard.Place(hor, ver, (Symbol)currentPlayer))
             {
                 if (HasPlayerWon(currentPlayer))
