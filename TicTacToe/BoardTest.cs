@@ -54,6 +54,25 @@ namespace TicTacToe
             return test;
         }
 
+        public void TurnTest()
+        {
+            Game game = new Game();
+            Random random = new Random();
+            int x = 0;
+            while (x < 25)
+            {
+                int r1 = random.Next(3);
+                int r2 = random.Next(3);
+                Console.WriteLine(r1 + " " + r2);
+                game.Turn(r1, r2);
+                x++;
+
+                Console.WriteLine(game.ToString());
+                Console.ReadKey();
+            }
+        }
+
+
         public void GameTest()
         {
 
