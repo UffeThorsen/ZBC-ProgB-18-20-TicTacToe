@@ -4,7 +4,7 @@ namespace TicTacToe
     class Game
     {
         int currentPlayer = 1;
-
+        int winningPlayer = 0;
         Board gameBoard = new Board();
 
         public Game()
@@ -13,35 +13,51 @@ namespace TicTacToe
         }
 
         /// <summary>
-        /// Executes a turn returns if someone has won
+        /// Executes a turn returns if the spot was taken or not
         /// </summary>
         /// <param name="hor"> Where to place on the horizontal axis </param>
         /// <param name="ver"> Where to place on the vertical axis </param>
         public bool Turn(int hor, int ver)
         {
-            gameBoard.Place(hor, ver, (Symbol)currentPlayer);
-            if (HasPlayerWon(currentPlayer))
+            
+            if(gameBoard.Place(hor, ver, (Symbol)currentPlayer))
             {
+                if (HasPlayerWon(currentPlayer))
+                {
+                    winningPlayer = currentPlayer;
+                }
+                ChangeTurn();
                 return true;
             }
-            ChangeTurn();
             return false;
         }
         public bool Turn(int behor, int bever, int hor, int ver)
         {
-            Move(behor,bever,hor,ver);
-            if (HasPlayerWon(currentPlayer))
+            
+            if (Move(behor, bever, hor, ver))
             {
+                if (HasPlayerWon(currentPlayer))
+                {
+                    winningPlayer = currentPlayer;
+                }
+                ChangeTurn();
                 return true;
             }
-            ChangeTurn();
             return false;
         }
 
-        void Move(int behor, int bever, int hor, int ver)
+        bool Move(int behor, int bever, int hor, int ver)
         {
-            gameBoard.RemoveSymbolFromPlace(behor,bever);
-            gameBoard.Place(hor,ver,(Symbol)currentPlayer);
+            gameBoard.RemoveSymbolFromPlace(behor, bever);
+            if (!gameBoard.Place(hor, ver, (Symbol)currentPlayer))
+            {
+                gameBoard.Place(bever, behor, (Symbol)currentPlayer);
+                return false;
+            }
+            else
+            {
+                return true;
+            }   
         }
 
 
@@ -76,7 +92,7 @@ namespace TicTacToe
 
         public Symbol WhoWon()
         {
-            return (Symbol)currentPlayer;
+            return (Symbol)winningPlayer;
         }
         
     }
