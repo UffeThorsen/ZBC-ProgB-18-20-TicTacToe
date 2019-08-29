@@ -94,5 +94,11 @@ namespace TicTacToe
             return (Symbol)winningPlayer;
         }
         
+        public override string ToString()
+        {
+            return gameBoard.ToString();
+        }
+
+
     }
 }
