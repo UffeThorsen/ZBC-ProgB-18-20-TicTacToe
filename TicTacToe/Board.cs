@@ -25,7 +25,8 @@ namespace TicTacToe
 
         public Symbol this[int i, int j]
         {
-            get {
+            get
+            {
                 return places[i, j];
             }
         }
