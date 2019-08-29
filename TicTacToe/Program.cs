@@ -8,10 +8,14 @@ namespace TicTacToe
 {
     class Program
     {
+        
+
         static void Main(string[] args)
         {
             //No code in main in repository!!
-
+            BoardTest test = new BoardTest();
+            test.TestBoardPlaceObjectOnObject();
+            Console.ReadKey();
             //at least not yet!
         }
     }
