@@ -79,5 +79,11 @@ namespace TicTacToe
             return (Symbol)currentPlayer;
         }
         
+        public override string ToString()
+        {
+            return gameBoard.ToString();
+        }
+
+
     }
 }
