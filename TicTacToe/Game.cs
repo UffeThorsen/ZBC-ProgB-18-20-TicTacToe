@@ -6,7 +6,12 @@ namespace TicTacToe
         int currentPlayer = 1;
         int winningPlayer = 0;
         Board gameBoard = new Board();
-
+        public Symbol CurrentPlayer {
+            get
+            {
+                return (Symbol)currentPlayer;
+            }
+        }
         public Game()
         {
 
@@ -19,7 +24,6 @@ namespace TicTacToe
         /// <param name="ver"> Where to place on the vertical axis </param>
         public bool Turn(int hor, int ver)
         {
-            
             if(gameBoard.Place(hor, ver, (Symbol)currentPlayer))
             {
                 if (HasPlayerWon(currentPlayer))
@@ -31,6 +35,14 @@ namespace TicTacToe
             }
             return false;
         }
+        /// <summary>
+        /// Same as other turn but for moving
+        /// </summary>
+        /// <param name="behor"></param>
+        /// <param name="bever"></param>
+        /// <param name="hor"></param>
+        /// <param name="ver"></param>
+        /// <returns> If the turn was successful </returns>
         public bool Turn(int behor, int bever, int hor, int ver)
         {
             
@@ -45,7 +57,14 @@ namespace TicTacToe
             }
             return false;
         }
-
+        /// <summary>
+        /// Moves a spot from (behor,bever) to (hor,ver)
+        /// </summary>
+        /// <param name="behor"></param>
+        /// <param name="bever"></param>
+        /// <param name="hor"></param>
+        /// <param name="ver"></param>
+        /// <returns> If it was able to be placed </returns>
         bool Move(int behor, int bever, int hor, int ver)
         {
             gameBoard.RemoveSymbolFromPlace(behor, bever);
@@ -90,10 +109,21 @@ namespace TicTacToe
             return false;
         }
 
+        /// <summary>
+        /// Will return the Winning player, if noone has won i returns a blank symbol
+        /// </summary>
+        /// <returns> The player who has won </returns>
         public Symbol WhoWon()
         {
             return (Symbol)winningPlayer;
         }
         
+      
+        public override string ToString()
+        {
+            return gameBoard.ToString();
+        }
+
+
     }
 }
