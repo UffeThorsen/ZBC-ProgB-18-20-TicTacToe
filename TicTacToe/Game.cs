@@ -120,6 +120,13 @@ namespace TicTacToe
             return gameBoard.ToString();
         }
 
-
+        ´/// <summary>
+        /// Checks if the current board is full
+        /// </summary>
+        /// <returns></returns>
+        public bool IsBoardFull()
+        {
+            return gameBoard.BoardFull();
+        }
     }
 }
