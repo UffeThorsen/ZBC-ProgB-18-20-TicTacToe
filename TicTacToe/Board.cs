@@ -8,11 +8,19 @@ namespace TicTacToe
 
         //Calls the other constructor with 3 as hori and 3 as vert
         public Board() : this(3,3) { }
-
+         
         //Makes a new board with hori as amount of columns, and vert as the amount of rows
+        //Hori means horizontal, Vert means vertical.
         Board(int hori, int vert)
         {
             places = new Symbol[hori,vert];
+            for(int i = 0; i < places.GetLength(0); i++)
+            {
+                for (int j = 0; j < places.GetLength(1); j++)
+                {
+                    places[i, j] = Symbol.N;
+                }
+            }
         }
 
         /// <summary>
@@ -25,34 +33,64 @@ namespace TicTacToe
             return NInARow(player, 3);
         }
 
-        public bool NInARow(Symbol player, int length)
+        /// <summary>
+        /// Checks if n positions in a row (direction determined by di and dj) all are symbol s.
+        /// </summary>
+        /// <param name="s">Symbol to look for.</param>
+        /// <param name="n">Length of straight.</param>
+        /// <param name="i">Starting row index.</param>
+        /// <param name="j">Starting column index.</param>
+        /// <param name="di">Change in row index for each step.</param>
+        /// <param name="dj">Change in column index for each step.</param>
+        private bool NInARow(Symbol s, int n, int i, int j, int di, int dj)
         {
-            throw new System.NotImplementedException();
-            /*
-            // Goes throug the symobol 2darry, and cheks if the symbol of the place is the same at the player chekking for.
-            int inARow = 0;
-            for (int i = 0; i < places.GetLength(0); i++)
+            int extremeI = i + (n - 1) * di;
+            int extremeJ = j + (n - 1) * dj;
+            //i too large/small for n
+            if(extremeI < 0 || extremeI > places.GetLength(0))
             {
-                for(int j = 0; j < places.GetLength(1); j++)
-                {
-                    if (places[i, j] == player)
-                    {
-                        inARow++;
-                        if (inARow == length)
-                        {
-                            return true;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                inARow = 0;
+                return false;
             }
+            //j too large/small for n
+            if(extremeJ < 0 || extremeJ > places.GetLength(1))
+            {
+                return false;
+            }
+            //not all symbol s
+            for(int k=0; k<n; k++)
+            {
+                if(places[i + k*di, j + k*dj] != s)
+                {
+                    return false;
+                }
+            }
+            //Passed all tests
+            return true;
+        }
 
+        /// <summary>
+        /// Checks if a straight of symbol exists.
+        /// Horisontally, vertically or diagonally.
+        /// </summary>
+        /// <param name="symbol">Symbol to look for.</param>
+        /// <param name="length">Length of straight.</param>
+        public bool NInARow(Symbol symbol, int length)
+        {
+            for(int i=0; i<places.GetLength(0); i++)
+            {
+                for(int j=0; j<places.GetLength(1); j++)
+                {
+                    //horisontal +j
+                    if (NInARow(symbol, length, i, j, 0, 1)) { return true; }
+                    //vertical +i
+                    if (NInARow(symbol, length, i, j, 1, 0)) { return true; }
+                    //diagonal +i +j
+                    if (NInARow(symbol, length, i, j, 1, 1)) { return true; }
+                    //diagonal -i +j
+                    if (NInARow(symbol, length, i, j, -1, 1)) { return true; }
+                }
+            }
             return false;
-            */
         }
 
         /// <summary>
@@ -89,9 +127,9 @@ namespace TicTacToe
             {
                 for (int j = 0; j < places.GetLength(1); j++)
                 {
-                    tempString = places[i, j] + "\t";
+                    tempString += places[i, j] + "\t";
                 }
-                tempString = "\n";
+                tempString += "\n";
             }
             return tempString;
         }
