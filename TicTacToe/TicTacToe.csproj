@@ -47,6 +47,7 @@
     <Compile Include="BoardTest.cs" />
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Interface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Symbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

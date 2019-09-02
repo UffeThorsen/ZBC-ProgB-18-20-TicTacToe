@@ -2,7 +2,7 @@ using System;
 
 namespace TicTacToe
 {
-    class Board
+    class Board : IBoard
     {
         Symbol[,] places;
 
