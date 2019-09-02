@@ -107,7 +107,7 @@ namespace TicTacToe
                     running = false;
                     Console.Clear();
                     Console.WriteLine("Player " + (int)currentGame.WhoWon() + " WON!");
-                }else if (/*Is the board full!?*/ false && !morden)
+                } else if (currentGame.IsBoardFull() && !morden)
                 {
                     running = false;
                     Console.Clear();
