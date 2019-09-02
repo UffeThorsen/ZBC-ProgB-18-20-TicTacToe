@@ -55,12 +55,12 @@ namespace TicTacToe
             int extremeI = i + (n - 1) * di;
             int extremeJ = j + (n - 1) * dj;
             //i too large/small for n
-            if(extremeI < 0 || extremeI > places.GetLength(0))
+            if(extremeI < 0 || extremeI >= places.GetLength(0))
             {
                 return false;
             }
             //j too large/small for n
-            if(extremeJ < 0 || extremeJ > places.GetLength(1))
+            if(extremeJ < 0 || extremeJ >= places.GetLength(1))
             {
                 return false;
             }
