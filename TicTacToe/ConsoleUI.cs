@@ -165,6 +165,36 @@ namespace TicTacToe
             
             Console.ReadKey();
         }       
+
+
+        public static Game SelectGameType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static IPlayer SelectPlayerType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Game SetupGame()
+        {
+            //Select the game type, create a game.
+            //Select player types and add players to game.
+            //return game
+
+            throw new NotImplementedException();
+        }
+
+        public static void RunGame(Game game)
+        {
+            //while
+                //Display game state
+                //let game take next move
+                //thus game keeps track of it's players AND can enforce the right type of player
+
+            throw new NotImplementedException();
+        }
     }
     
     
