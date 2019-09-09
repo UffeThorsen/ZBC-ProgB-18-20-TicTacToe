@@ -1,11 +1,28 @@
-﻿
+﻿using System.Collections.Generic;
 namespace TicTacToe
 {
     class Game
     {
+        List<IPlayer> players;
+        IPlayer currentPlay;
         int currentPlayer = 1;
         int winningPlayer = 0;
         Board gameBoard = new Board();
+
+        public bool IsGameDone {
+            get
+            {
+                return gameBoard.BoardFull();
+            }
+        }
+
+        private Game() {}
+
+        public Game(List<IPlayer> players)
+        {
+            this.players = players;
+        }
+
         public Symbol CurrentPlayer {
             get
             {
@@ -13,81 +30,39 @@ namespace TicTacToe
             }
         }
 
-        /// <summary>
-        /// Executes a turn returns if the spot was taken or not
-        /// </summary>
-        /// <param name="hor"> Where to place on the horizontal axis </param>
-        /// <param name="ver"> Where to place on the vertical axis </param>
-        public bool Turn(int hor, int ver)
+
+        public bool IsLegalMove(Placement p)
         {
-            if(gameBoard.Place(hor, ver, (Symbol)currentPlayer))
+            if(gameBoard[p.X, p.Y] == Symbol.N)
             {
-                if (HasPlayerWon(currentPlayer))
-                {
-                    winningPlayer = currentPlayer;
-                }
-                ChangeTurn();
                 return true;
-            }
-            return false;
-        }
-        /// <summary>
-        /// Same as other turn but for moving
-        /// </summary>
-        /// <param name="behor"></param>
-        /// <param name="bever"></param>
-        /// <param name="hor"></param>
-        /// <param name="ver"></param>
-        /// <returns> If the turn was successful </returns>
-        public bool Turn(int behor, int bever, int hor, int ver)
-        {
-            
-            if (Move(behor, bever, hor, ver))
-            {
-                if (HasPlayerWon(currentPlayer))
-                {
-                    winningPlayer = currentPlayer;
-                }
-                ChangeTurn();
-                return true;
-            }
-            return false;
-        }
-        /// <summary>
-        /// Moves a spot from (behor,bever) to (hor,ver)
-        /// </summary>
-        /// <param name="behor"></param>
-        /// <param name="bever"></param>
-        /// <param name="hor"></param>
-        /// <param name="ver"></param>
-        /// <returns> If it was able to be placed </returns>
-        bool Move(int behor, int bever, int hor, int ver)
-        {
-            gameBoard.RemoveSymbolFromPlace(behor, bever);
-            if (!gameBoard.Place(hor, ver, (Symbol)currentPlayer))
-            {
-                gameBoard.Place(bever, behor, (Symbol)currentPlayer);
-                return false;
             }
             else
             {
-                return true;
-            }   
+                return false;
+            }
         }
 
-
-        /// <summary>
-        /// Changes the turn of the current player
-        /// </summary>
+        public void NextMove()
+        {
+            Placement p = players[currentPlayer - 1].NextMove(this);
+            gameBoard.Place(p.X, p.Y, (Symbol)currentPlayer);
+            if (HasPlayerWon(currentPlayer))
+            {
+                winningPlayer = currentPlayer;
+            }
+            ChangeTurn();
+        }
+        
         void ChangeTurn()
         {
-            if (currentPlayer == 1)
+            if(currentPlayer <= players.Count)
             {
                 currentPlayer++;
             }
-            else if (currentPlayer == 2)
+            else
             {
-                currentPlayer--;
+                currentPlayer = 1;
             }
         }
 
@@ -118,15 +93,6 @@ namespace TicTacToe
         public override string ToString()
         {
             return gameBoard.ToString();
-        }
-
-        /// <summary>
-        /// Checks if the current board is full
-        /// </summary>
-        /// <returns></returns>
-        public bool IsBoardFull()
-        {
-            return gameBoard.BoardFull();
         }
     }
 }
