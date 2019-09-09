@@ -17,7 +17,7 @@ namespace TicTacToe
                 Console.Write("Column number: ");
                 string colStr = Console.ReadLine();
                 parsed = int.TryParse(rowStr, out int i);
-                parsed &= int.TryParse(rowStr, out int j);
+                parsed &= int.TryParse(colStr, out int j);
                 if (parsed)
                 {
                     Placement move = new Placement(i, j);
