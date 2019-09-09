@@ -178,7 +178,7 @@ namespace TicTacToe
             return new ConsoleHumanPlayer();
         }
 
-        public Game SetupGame()
+        public static Game SetupGame()
         {
             //Select the game type, create a game.
             //Select player types and add players to game.
