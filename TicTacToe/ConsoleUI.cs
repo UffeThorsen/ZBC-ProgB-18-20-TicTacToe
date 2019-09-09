@@ -8,7 +8,7 @@ namespace TicTacToe
         /// <summary>
         /// Player VS AI
         /// </summary>
-        static void SinglePLayer()
+        /*static void SinglePLayer()
         {
             Console.Clear();
             Console.WriteLine("Singleplayer\n\n");
@@ -31,12 +31,12 @@ namespace TicTacToe
                         break;
                 }
             }
-        }
+        }*/
 
         /// <summary>
         /// Player VS Player
         /// </summary>
-        static void OneVOne()
+        /*static void OneVOne()
         {
             Console.Clear();
             Console.WriteLine("1v1\n\n");
@@ -73,7 +73,7 @@ namespace TicTacToe
             {
                 Console.WriteLine(currentGame);
                 Console.WriteLine("PLayer " + (int)currentGame.CurrentPlayer + "´s turn (" + currentGame.CurrentPlayer + ")");  
-                if (/* Is all the symbols used?*/ false && morden)
+                if ( false && morden)// Is all the symbols used?
                 {
                     Console.WriteLine("What symbol du you want to move (write position!)");
                     string input1 = Console.ReadLine().Trim().ToLower();
@@ -115,20 +115,20 @@ namespace TicTacToe
                     Console.WriteLine("Alle the places on the board have been used! Everyone LOST!");
                 }
             }
-        }
+        }*/
 
         /// <summary>
         /// Shows the player 2 AI´s paying
         /// </summary>
-        static void AiVAi()
+        /*static void AiVAi()
         {
             throw new System.NotImplementedException();
-        }
+        }*/
 
         /// <summary>
         /// Initial run of the game
         /// </summary>
-       public static void RunGame()
+       /*public static void RunGame()
         {
             Console.WriteLine("TicTacToe the game\n\n");
             Console.WriteLine("1. Singleplayer");
@@ -165,7 +165,7 @@ namespace TicTacToe
             }
             
             Console.ReadKey();
-        }       
+        }*/       
 
 
         public static Game SelectGameType()
@@ -204,7 +204,7 @@ namespace TicTacToe
                 Console.WriteLine(game);
                 game.NextMove();
                 Console.Clear();
-                if (game.IsGameOver)
+                if (game.IsGameDone)
                 {
                     running = false;
                 }
