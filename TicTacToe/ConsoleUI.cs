@@ -158,8 +158,8 @@ namespace TicTacToe
                         Console.WriteLine("Exiting game");
                         break;
                     default:
-                        Console.WriteLine("Sorry, we didnt understand your input");
-                        asking = true;
+                        Game game = new Game();
+                        DanielsConsoleUI.PrintUI(game);
                         break;
                 }
             }
