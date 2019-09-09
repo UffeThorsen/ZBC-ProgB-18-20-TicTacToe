@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
-    class ConsoleUI
+    static class ConsoleUI
     {
         /// <summary>
         /// Player VS AI
@@ -159,7 +159,7 @@ namespace TicTacToe
                         break;
                     default:
                         Game game = new Game();
-                        DanielsConsoleUI.PrintUI(game);
+                       // DanielsConsoleUI.PrintUI(game);
                         break;
                 }
             }
