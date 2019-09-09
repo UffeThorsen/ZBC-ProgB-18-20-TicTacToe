@@ -51,7 +51,6 @@
     <Compile Include="IBoard.cs" />
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="IBoard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Symbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
