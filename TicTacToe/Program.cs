@@ -7,7 +7,8 @@
         static void Main(string[] args)
         {
             //Running of the game! #FINALLY!
-           // ConsoleUI.RunGame();
+            ConsoleUI.RunGame(ConsoleUI.SetupGame());
+            
         }
     }
 }
