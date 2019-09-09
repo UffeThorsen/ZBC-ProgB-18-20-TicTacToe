@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TicTacToe
 {
@@ -157,8 +158,8 @@ namespace TicTacToe
                         Console.WriteLine("Exiting game");
                         break;
                     default:
-                        Console.WriteLine("Sorry, we didnt understand your input");
-                        asking = true;
+                        Game game = new Game();
+                        DanielsConsoleUI.PrintUI(game);
                         break;
                 }
             }
@@ -172,9 +173,9 @@ namespace TicTacToe
             throw new NotImplementedException();
         }
 
-        public static IPlayer SelectPlayerType()
+        public static IPlayer SelectPlayerType(int playerNumber)
         {
-            throw new NotImplementedException();
+            return new ConsoleHumanPlayer();
         }
 
         public Game SetupGame()
@@ -182,17 +183,32 @@ namespace TicTacToe
             //Select the game type, create a game.
             //Select player types and add players to game.
             //return game
-
-            throw new NotImplementedException();
+            List<IPlayer> players = new List<IPlayer>();
+            players.Add(SelectPlayerType(1));
+            players.Add(SelectPlayerType(2));
+            Game game = new Game(players);
+            return game;
+          //  throw new NotImplementedException();
         }
 
         public static void RunGame(Game game)
         {
             //while
-                //Display game state
-                //let game take next move
-                //thus game keeps track of it's players AND can enforce the right type of player
-
+            //Display game state
+            //let game take next move
+            //thus game keeps track of it's players AND can enforce the right type of player
+            Console.Clear();
+            bool running = true;
+            while (running)
+            {
+                Console.WriteLine(game);
+                game.NextMove();
+                Console.Clear();
+                if (game.IsGameOver)
+                {
+                    running = false;
+                }
+            }
             throw new NotImplementedException();
         }
     }
