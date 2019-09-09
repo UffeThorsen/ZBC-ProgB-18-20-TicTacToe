@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    public class DanielsEpicAI :IPlayer
+    class DanielsEpicAI :IPlayer
     {
-        Placement NextMove(Game gameState)
+        public Placement NextMove(Game gameState)
         {
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (gameState.IsLegalMove(i,j))
+                    if (gameState.IsLegalMove(new Placement(i,j)))
                     {
                         return new Placement(i,j);
                     }
