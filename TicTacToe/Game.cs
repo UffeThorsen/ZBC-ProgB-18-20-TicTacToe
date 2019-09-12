@@ -11,7 +11,7 @@ namespace TicTacToe
         public bool IsGameDone {
             get
             {
-                return gameBoard.BoardFull();
+                return gameBoard.BoardFull() || HasPlayerWon(currentPlayerIndex);
             }
         }
 
@@ -68,7 +68,7 @@ namespace TicTacToe
         /// <returns></returns>
         bool HasPlayerWon(int player)
         {
-            if (gameBoard.ThreeInARow((Symbol)currentPlayerIndex))
+            if (gameBoard.ThreeInARow((Symbol)currentPlayerIndex + 1))
             {
                 return true;
             }
