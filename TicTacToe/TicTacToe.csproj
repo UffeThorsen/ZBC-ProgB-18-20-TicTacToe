@@ -44,13 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleHumanPlayer.cs" />
-    <Compile Include="DanielsEpicAI.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="BoardTest.cs" />
-    <Compile Include="IBoard.cs" />
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="Game.cs" />
+<<<<<<< HEAD
+    <Compile Include="IBoard.cs" />
+    <Compile Include="JacobIAI.cs" />
+=======
+>>>>>>> 96d75ed9e6c0c6af88f8f66592e0316b3f5a9b40
     <Compile Include="Program.cs" />
     <Compile Include="Symbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

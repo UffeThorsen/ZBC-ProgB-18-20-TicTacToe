@@ -11,7 +11,6 @@ namespace TicTacToe
             while (!parsed)
             {
                 Console.WriteLine(gameState);
-                Console.WriteLine("\nYour symbol is: " + gameState.CurrentPlayer);
                 Console.WriteLine("\nWhere do you want to place your symbol?");
                 Console.Write("Row number: ");
                 string rowStr = Console.ReadLine();
@@ -31,7 +30,7 @@ namespace TicTacToe
                     {
                         Console.WriteLine("That is not a legal move, the rules are:");
                         //Console.WriteLine(gameState.Rules);
-                        Console.WriteLine("\nLet's try a new move...\n");
+                        Console.WriteLine("Let's try a new move...");
                         parsed = false;
                     }
                     
@@ -39,7 +38,7 @@ namespace TicTacToe
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("Something didn't work, let's try again...\n");
+                    Console.WriteLine("Something didn't work, let's try again...");
                 }
             }
             return new Placement();//For compilers sake only

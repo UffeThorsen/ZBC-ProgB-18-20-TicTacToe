@@ -54,7 +54,7 @@ namespace TicTacToe
             return test;
         }
 
-        /*public void TurnTest()
+        public void TurnTest()
         {
             Game game = new Game();
             Random random = new Random();
@@ -70,7 +70,7 @@ namespace TicTacToe
                 Console.WriteLine(game.ToString());
                 Console.ReadKey();
             }
-        }*/
+        }
 
 
         public void GameTest()
