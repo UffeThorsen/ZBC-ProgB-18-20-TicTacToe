@@ -25,7 +25,7 @@ namespace TicTacToe
         public Symbol CurrentPlayer {
             get
             {
-                return (Symbol)currentPlayerIndex;
+                return (Symbol)(currentPlayerIndex + 1);
             }
         }
 
