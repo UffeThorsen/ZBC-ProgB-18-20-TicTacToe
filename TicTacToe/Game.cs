@@ -5,7 +5,7 @@ namespace TicTacToe
     {
         List<IPlayer> players;
         int currentPlayerIndex = 0;
-        int winningPlayer = 0;
+        int winningPlayer = -1;
         Board gameBoard = new Board();
 
         public bool IsGameDone {
