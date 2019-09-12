@@ -8,7 +8,6 @@
         {
             //Running of the game! #FINALLY!
             ConsoleUI.RunGame(ConsoleUI.SetupGame());
-            
         }
     }
 }
