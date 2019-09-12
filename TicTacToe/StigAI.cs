@@ -26,7 +26,8 @@ namespace TicTacToe
 
         private bool AlmostWon(Game gameState)
         {
-            return gameState.GameBoard.NInARow((Symbol)gameState.CurrentPlayer, 2);
+            //return gameState.GameBoard.NInARow((Symbol)gameState.CurrentPlayer, 2);
+            throw new NotImplementedException();
         }
 
         public Placement NextMove(Game gameState)
