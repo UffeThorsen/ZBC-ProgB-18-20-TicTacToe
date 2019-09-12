@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BirksVeryBadAI.cs" />
     <Compile Include="ConsoleHumanPlayer.cs" />
+    <Compile Include="DanielsEpicAI.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="BoardTest.cs" />
@@ -53,6 +55,7 @@
     <Compile Include="JacobIAI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RasmusAI.cs" />
+    <Compile Include="StigAI.cs" />
     <Compile Include="Symbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UffeAIPlayer.cs" />

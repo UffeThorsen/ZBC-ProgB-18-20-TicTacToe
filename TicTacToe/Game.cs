@@ -4,8 +4,7 @@ namespace TicTacToe
     class Game
     {
         List<IPlayer> players;
-        IPlayer currentPlay;
-        int currentPlayer = 1;
+        int currentPlayerIndex = 0;
         int winningPlayer = 0;
         Board gameBoard = new Board();
 
@@ -26,7 +25,7 @@ namespace TicTacToe
         public Symbol CurrentPlayer {
             get
             {
-                return (Symbol)currentPlayer;
+                return (Symbol)(currentPlayerIndex + 1);
             }
         }
 
@@ -45,25 +44,21 @@ namespace TicTacToe
 
         public void NextMove()
         {
-            Placement p = players[currentPlayer - 1].NextMove(this);
-            gameBoard.Place(p.X, p.Y, (Symbol)currentPlayer);
-            if (HasPlayerWon(currentPlayer))
+            Placement p = players[currentPlayerIndex].NextMove(this);
+            gameBoard.Place(p.X, p.Y, (Symbol)currentPlayerIndex + 1);
+            if (HasPlayerWon(currentPlayerIndex))
             {
-                winningPlayer = currentPlayer;
+                winningPlayer = currentPlayerIndex + 1;
             }
             ChangeTurn();
         }
         
+        /// <summary>
+        /// Cycles trough the players in order.
+        /// </summary>
         void ChangeTurn()
         {
-            if(currentPlayer <= players.Count)
-            {
-                currentPlayer++;
-            }
-            else
-            {
-                currentPlayer = 1;
-            }
+            currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
         }
 
         /// <summary>
@@ -73,7 +68,7 @@ namespace TicTacToe
         /// <returns></returns>
         bool HasPlayerWon(int player)
         {
-            if (gameBoard.ThreeInARow((Symbol)currentPlayer))
+            if (gameBoard.ThreeInARow((Symbol)currentPlayerIndex))
             {
                 return true;
             }
