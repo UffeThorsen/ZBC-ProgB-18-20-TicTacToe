@@ -43,22 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BirksVeryBadAI.cs" />
+    <Compile Include="AI\BirksVeryBadAI.cs" />
     <Compile Include="ConsoleHumanPlayer.cs" />
-    <Compile Include="DanielsEpicAI.cs" />
+    <Compile Include="AI\DanielsEpicAI.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="BoardTest.cs" />
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IBoard.cs" />
-    <Compile Include="JacobIAI.cs" />
+    <Compile Include="AI\JacobIAI.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="RasmusAI.cs" />
-    <Compile Include="StigAI.cs" />
+    <Compile Include="AI\RasmusAI.cs" />
+    <Compile Include="AI\StigAI.cs" />
     <Compile Include="Symbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UffeAIPlayer.cs" />
+    <Compile Include="AI\UffeAIPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
