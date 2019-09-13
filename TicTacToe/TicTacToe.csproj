@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\AITournament.cs" />
     <Compile Include="AI\BirksVeryBadAI.cs" />
     <Compile Include="ConsoleHumanPlayer.cs" />
     <Compile Include="AI\DanielsEpicAI.cs" />

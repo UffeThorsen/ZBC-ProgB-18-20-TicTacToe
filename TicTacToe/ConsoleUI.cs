@@ -5,15 +5,16 @@ namespace TicTacToe
 {
     static class ConsoleUI
     {
-        private static Type[] NoMove3by3AIs = {
+        public static Type[] NoMove3by3AIs = {
             typeof(ConsoleHumanPlayer),
-            typeof(UffeAIPlayer)
+            typeof(UffeAIPlayer),
+            //typeof(BirksVeryBadAI),
+            typeof(DanielsEpicAI),
+            typeof(DanielsEpicerAI),
+            //typeof(JacobIAI),
+            //typeof(RasmusAI),
+            typeof(StigAI)
         };
-
-        /*public static Game SelectGameType()
-        {
-            throw new NotImplementedException();
-        }*/
 
         public static IPlayer SelectPlayerType()
         {
@@ -35,9 +36,6 @@ namespace TicTacToe
 
         public static Game SetupGame()
         {
-            //Select the game type, create a game.
-            //Select player types and add players to game.
-            //return game
             List<IPlayer> players = new List<IPlayer>();
             players.Add(SelectPlayerType());
             players.Add(SelectPlayerType());
@@ -47,22 +45,17 @@ namespace TicTacToe
 
         public static void RunGame(Game game)
         {
-            //while
-            //Display game state
-            //let game take next move
-            //thus game keeps track of it's players AND can enforce the right type of player
             Console.Clear();
-            bool running = true;
-            while (running)
+            while (!game.IsGameDone)
             {
+                Console.WriteLine("The current state is:\n");
                 Console.WriteLine(game);
+                Console.WriteLine("\nPress any key to continue...");
+                Console.ReadKey();
                 game.NextMove();
                 Console.Clear();
-                if (game.IsGameDone)
-                {
-                    running = false;
-                }
             }
+            Console.WriteLine("Here should be some stuff about who won...");
         }
     }
     

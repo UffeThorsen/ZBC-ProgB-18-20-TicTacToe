@@ -10,8 +10,7 @@ namespace TicTacToe
     {
         private Random r = new Random();
 
-        //Randomly selects a legal position
-        public Placement NextMove(Game gameState)
+        protected Placement RandomMove(Game gameState)
         {
             int i = r.Next(3);
             int j = r.Next(3);
@@ -22,6 +21,12 @@ namespace TicTacToe
                 p.Y = r.Next(3);
             }
             return p;
+        }
+
+        //Randomly selects a legal position
+        public virtual Placement NextMove(Game gameState)
+        {
+            return RandomMove(gameState);
         }
     }
 }

@@ -22,8 +22,7 @@ namespace TicTacToe
                 if (parsed)
                 {
                     Placement move = new Placement(i, j);
-                    //if (gameState.IsLegalMove(move))
-                    if(true)
+                    if (gameState.IsLegalMove(move))
                     {
                         return move;
                     }
