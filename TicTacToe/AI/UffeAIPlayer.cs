@@ -47,20 +47,25 @@ namespace TicTacToe
 
         int iLength = 3; int jLength = 3;
 
+        private bool InsideBound(int i, int length)
+        {
+            return i >= 0 && i < length;
+        }
+        private bool IsGood(Game g, Symbol s, int iNew, int jNew)
+        {
+            return InsideBound(iNew, iLength) && InsideBound(jNew, jLength) && g[iNew, jNew] == s;
+        }
+
+        //2 out of 3 should be s, the remaining should be N
         private bool IsWinningPlacement(Game g, Symbol s, int i, int j, int di, int dj)
         {
             if(g[i,j] != Symbol.N) { return false; }//Not empty
-            if(i + 2*di >= iLength){ return false; }//i too high
-            if(j+ 2*dj >= jLength) { return false; }//j too high
-            if(i + 2*di < 0) { return false; }//i too low
-            if(j + 2*dj < 0) { return false; }//j too low
-
-            if(g[i+di, j+dj] == s && g[i+2*di, j+2*dj] == s)
-            {
-                return true;
+            int count = 0;
+            foreach(int d in new int[]{ -2, -1, 1, 2}){
+                if(IsGood(g, s, i + d*di, j+d*dj)) { count++; }
             }
-
-            return false;
+            //If two either before or after (i,j) is good, then all is good
+            return count == 2;
         }
         private bool IsWinningPlacement(Game g, Symbol s, Placement p)
         {
@@ -84,7 +89,7 @@ namespace TicTacToe
                     }
                 }
             }
-            p = new Placement();
+            p = new Placement(-1, -1);
             return false;
         }
         private bool WinningMove(Game gameState, out Placement p)
@@ -105,18 +110,24 @@ namespace TicTacToe
             return WinningMove(gameState, otherSymbol, out p);
         }
 
-        public new Placement NextMove(Game gameState)
+        public override Placement NextMove(Game gameState)
         {
             //Can I win?
             Placement p;
             if (WinningMove(gameState, out p))
             {
-                return p;
+                if (gameState.IsLegalMove(p))
+                {
+                    return p;
+                }
             }
             //Can  I prevent you from winning?
             if (PreventiveMove(gameState, out p))
             {
-                return p;
+                if (gameState.IsLegalMove(p))
+                {
+                    return p;
+                }
             }
             //Otherwise random
             return RandomMove(gameState);
