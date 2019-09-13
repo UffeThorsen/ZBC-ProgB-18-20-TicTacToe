@@ -92,7 +92,7 @@ namespace TicTacToe
       
         public override string ToString()
         {
-            return gameBoard.ToString() + "\nNext to place is " + playerIndexToSymbol[currentPlayerIndex];
+            return gameBoard.ToString();
         }
     }
 }

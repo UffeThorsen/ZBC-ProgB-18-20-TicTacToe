@@ -50,12 +50,25 @@ namespace TicTacToe
             {
                 Console.WriteLine("The current state is:\n");
                 Console.WriteLine(game);
+                Console.WriteLine("\nNext to place is " + game.CurrentPlayer);
                 Console.WriteLine("\nPress any key to continue...");
                 Console.ReadKey();
                 game.NextMove();
                 Console.Clear();
             }
-            Console.WriteLine("Here should be some stuff about who won...");
+            Console.WriteLine(game);
+            Console.WriteLine("The game is over.\n");
+            if(game.WhoWon() == null)
+            {
+                Console.WriteLine("The game ended in a tie.");
+            }
+            else
+            {
+                Console.WriteLine(game.WhoWon() + " won the game.");
+            }
+
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
         }
     }
     
