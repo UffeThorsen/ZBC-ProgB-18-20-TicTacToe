@@ -5,11 +5,18 @@ namespace TicTacToe
 {
     class ConsoleHumanPlayer :IPlayer
     {
+        public string Description {
+            get {
+                return "Human player";
+            }
+        }
+
         public Placement NextMove(Game gameState)
         {
             bool parsed = false;
             while (!parsed)
             {
+                Console.Clear();
                 Console.WriteLine(gameState);
                 Console.WriteLine("\nYour symbol is: " + gameState.CurrentPlayer);
                 Console.WriteLine("\nWhere do you want to place your symbol?");
@@ -42,6 +49,11 @@ namespace TicTacToe
                 }
             }
             return new Placement();//For compilers sake only
+        }
+
+        public override string ToString()
+        {
+            return Description;
         }
     }
 }

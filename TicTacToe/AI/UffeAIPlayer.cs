@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicTacToe
 {
     class UffeAIPlayer : IPlayer
     {
+        public string Description {
+            get {
+                return "Uffes random AI";
+            }
+        }
+
         private Random r = new Random();
 
         protected Placement RandomMove(Game gameState)
@@ -27,6 +29,11 @@ namespace TicTacToe
         public virtual Placement NextMove(Game gameState)
         {
             return RandomMove(gameState);
+        }
+
+        public override string ToString()
+        {
+            return Description;
         }
     }
 }
