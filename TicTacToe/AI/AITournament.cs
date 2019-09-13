@@ -5,12 +5,11 @@ namespace TicTacToe
 {
     class AITournament
     {
-        public static void RunLeague()
+        public static int[] RunLeague()
         {
-            RunLeague(3, 0, 1);
+            return RunLeague(3, 0, 1);
         }
-
-        public static void RunLeague(int win, int loss, int tie)
+        public static int[] RunLeague(int win, int loss, int tie, bool verbose=true)
         {
             Type[] AIs = ConsoleUI.NoMove3by3AIs;
             int[] scores = new int[AIs.Length];
@@ -19,7 +18,7 @@ namespace TicTacToe
                 for(int j=0; j<AIs.Length; j++)
                 {
                     if (i != j && i != 0 && j != 0) {
-                        Console.WriteLine("Now playing: " + AIs[i] + " vs. " + AIs[j]);
+                        if (verbose) { Console.WriteLine("Now playing: " + AIs[i] + " vs. " + AIs[j]); }
                         var players = new List<IPlayer>();
                         players.Add( (IPlayer)Activator.CreateInstance(AIs[i]) );
                         players.Add( (IPlayer)Activator.CreateInstance(AIs[j]) );
@@ -51,12 +50,50 @@ namespace TicTacToe
                     }
                 }
             }
-
-            Console.WriteLine("The final scores are: \n");
-            for(int i=1; i<AIs.Length; i++)
+            if (verbose)
             {
-                Console.WriteLine(scores[i] + "\t-\t" + AIs[i]);
+                Console.WriteLine("The final scores are: \n");
+                for (int i = 1; i < AIs.Length; i++)
+                {
+                    Console.WriteLine(scores[i] + "\t-\t" + AIs[i]);
+                }
+
+                Console.WriteLine("\nMaximum possible score is " + ((AIs.Length - 2) * win * 2));
+                Console.WriteLine("\nPress any key to exit...");
+                Console.ReadKey();
             }
+            return scores;
+        }
+
+        public static int[] RunNLeagues(int n)
+        {
+            return RunNLeagues(n, 3, 0, 1);
+        }
+        public static int[] RunNLeagues(int n, int win, int loss, int tie, bool verbose=true)
+        {
+            int[] scoresSummed = new int[ConsoleUI.NoMove3by3AIs.Length];
+            for(int i=0; i<n; i++)
+            {
+                int[] scores = RunLeague(win, loss, tie, false);
+                for(int j=0; j<scores.Length; j++)
+                {
+                    scoresSummed[j] += scores[j];
+                }
+            }
+            if (verbose)
+            {
+                Console.WriteLine("The final scores are: \n");
+                for (int i = 1; i < scoresSummed.Length; i++)
+                {
+                    Console.WriteLine(scoresSummed[i] + "\t-\t" + ConsoleUI.NoMove3by3AIs[i]);
+                }
+
+                Console.WriteLine("\nMaximum possible score is " + ((scoresSummed.Length - 2) * win * 2 * n));
+                Console.WriteLine("\nPress any key to exit...");
+                Console.ReadKey();
+            }
+
+            return scoresSummed;
         }
     }
 }
