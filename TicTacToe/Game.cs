@@ -10,6 +10,17 @@ namespace TicTacToe
         int? winningPlayer = null;
         Board gameBoard = new Board();
 
+        public Symbol this[int i, int j] {
+            get {
+                return gameBoard[i, j];
+            }
+        }
+        public Symbol this[Placement p] {
+            get {
+                return gameBoard[p.X, p.Y];
+            }
+        }
+
         public bool IsGameDone {
             get
             {
@@ -30,7 +41,6 @@ namespace TicTacToe
                 return playerIndexToSymbol[currentPlayerIndex];
             }
         }
-
 
         public bool IsLegalMove(Placement p)
         {
@@ -58,7 +68,7 @@ namespace TicTacToe
         /// <summary>
         /// Cycles trough the players in order.
         /// </summary>
-        void ChangeTurn()
+        private void ChangeTurn()
         {
             currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
         }
@@ -89,7 +99,6 @@ namespace TicTacToe
             }
         }
         
-      
         public override string ToString()
         {
             return gameBoard.ToString();
