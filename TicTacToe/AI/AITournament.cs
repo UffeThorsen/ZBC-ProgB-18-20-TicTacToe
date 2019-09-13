@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicTacToe
 {
@@ -32,14 +29,31 @@ namespace TicTacToe
                             game.NextMove();
                         }
                         //if first player won, add win to scores[i] and loss to scores[j]
+                        if(game.WhoWon() == players[0])
+                        {
+                            scores[i] += win;
+                            scores[j] += loss;
+                        }
                         //if second player won, add win to scores[j] and loss to scores[i]
+                        else if (game.WhoWon() == players[1])
+                        {
+                            scores[j] += win;
+                            scores[i] += loss;
+                        }
                         //if tied, add tie to scores[i] and scores[j]
+                        else
+                        {
+                            scores[i] += tie;
+                            scores[i] += tie;
+                        }
+                        
+                        
                     }
                 }
             }
 
             Console.WriteLine("The final scores are: \n");
-            for(int i=0; i<AIs.Length; i++)
+            for(int i=1; i<AIs.Length; i++)
             {
                 Console.WriteLine(scores[i] + "\t-\t" + AIs[i]);
             }

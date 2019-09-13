@@ -6,9 +6,10 @@
 
         static void Main(string[] args)
         {
+            AITournament.RunLeague();
             //Running of the game! #FINALLY!
-            Game game = ConsoleUI.SetupGame();
-            ConsoleUI.RunGame(game);
+            //Game game = ConsoleUI.SetupGame();
+            //ConsoleUI.RunGame(game);
         }
     }
 }

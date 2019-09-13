@@ -3,15 +3,17 @@ namespace TicTacToe
 {
     class Game
     {
+        private static readonly Symbol[] playerIndexToSymbol = { Symbol.X, Symbol.O };
+
         List<IPlayer> players;
         int currentPlayerIndex = 0;
-        int winningPlayer = -1;
+        int? winningPlayer = null;
         Board gameBoard = new Board();
 
         public bool IsGameDone {
             get
             {
-                return gameBoard.BoardFull() || HasPlayerWon(currentPlayerIndex);
+                return gameBoard.BoardFull() || winningPlayer!=null;
             }
         }
 
@@ -25,7 +27,7 @@ namespace TicTacToe
         public Symbol CurrentPlayer {
             get
             {
-                return (Symbol)(currentPlayerIndex + 1);
+                return playerIndexToSymbol[currentPlayerIndex];
             }
         }
 
@@ -44,11 +46,11 @@ namespace TicTacToe
 
         public void NextMove()
         {
-            Placement p = players[currentPlayerIndex].NextMove(this);
-            gameBoard.Place(p.X, p.Y, (Symbol)currentPlayerIndex + 1);
+            Placement p = players[currentPlayerIndex].NextMove(this);//TODO: "this" should be a copy
+            gameBoard.Place(p.X, p.Y, playerIndexToSymbol[currentPlayerIndex]);
             if (HasPlayerWon(currentPlayerIndex))
             {
-                winningPlayer = currentPlayerIndex + 1;
+                winningPlayer = currentPlayerIndex;
             }
             ChangeTurn();
         }
@@ -64,30 +66,33 @@ namespace TicTacToe
         /// <summary>
         /// Checks if someone has won
         /// </summary>
-        /// <param name="player"> The player to check </param>
+        /// <param name="playerIndex"> The player to check </param>
         /// <returns></returns>
-        bool HasPlayerWon(int player)
+        bool HasPlayerWon(int playerIndex)
         {
-            if (gameBoard.ThreeInARow((Symbol)currentPlayerIndex + 1))
-            {
-                return true;
-            }
-            return false;
+            return gameBoard.ThreeInARow(playerIndexToSymbol[playerIndex]);
         }
 
         /// <summary>
         /// Will return the Winning player, if noone has won i returns a blank symbol
         /// </summary>
         /// <returns> The player who has won </returns>
-        public Symbol WhoWon()
+        public IPlayer WhoWon()
         {
-            return (Symbol)winningPlayer;
+            if(winningPlayer == null)
+            {
+                return null;
+            }
+            else
+            {
+                return players[(int)winningPlayer];
+            }
         }
         
       
         public override string ToString()
         {
-            return gameBoard.ToString();
+            return gameBoard.ToString() + "\nNext to place is " + playerIndexToSymbol[currentPlayerIndex];
         }
     }
 }
