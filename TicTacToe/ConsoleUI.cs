@@ -8,6 +8,7 @@ namespace TicTacToe
         public static Type[] NoMove3by3AIs = {
             typeof(ConsoleHumanPlayer),
             typeof(UffeAIPlayer),
+            typeof(UffeSmarterAIPlayer),
             //typeof(BirksVeryBadAI),
             typeof(DanielsEpicAI),
             typeof(DanielsEpicerAI),
