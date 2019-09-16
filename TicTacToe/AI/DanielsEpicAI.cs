@@ -44,15 +44,8 @@ namespace TicTacToe
     {
         public Placement NextMove(Game gameState)
         {
-            if(gameState.IsLegalMove(new Placement(0,2)))
-            {
-                return new Placement(0, 2);
-            }
-            else if (gameState.IsLegalMove(new Placement(2, 0)))
-            {
-                return new Placement(2, 0);
-            }
-            return FirstAvaiableMovement(gameState);
+            UffeSmarterAIPlayer uffeSmarterAI = new UffeSmarterAIPlayer();
+            return uffeSmarterAI.NextMove(gameState);
         }
    }
 
