@@ -13,7 +13,7 @@ namespace TicTacToe
             typeof(DanielsEpicAI),
             typeof(DanielsEpicerAI),
             //typeof(JacobIAI),
-            //typeof(ThomasAIPlayer),
+            typeof(ThomasAIPlayer),
             typeof(RasmusAI),
             typeof(StigAI),
             typeof(KasperAI)
