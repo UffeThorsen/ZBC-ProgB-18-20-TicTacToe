@@ -12,35 +12,35 @@ namespace TicTacToe
 
         public Placement NextMove(Game gameState)
         {
-            if (TwoInARow(gameState, 1, 0, 2, 0) || TwoInARow(gameState, 0, 1, 0, 2) || TwoInARow(gameState, 1, 1, 2, 2))
+            if (TwoInARow(gameState, 1, 0, 2, 0) && gameState[0, 0] == Symbol.N || TwoInARow(gameState, 0, 1, 0, 2) && gameState[0, 0] == Symbol.N || TwoInARow(gameState, 1, 1, 2, 2) && gameState[0, 0] == Symbol.N)
             {
                 return new Placement(0, 0);
             }
-            else if (TwoInARow(gameState, 1, 1, 1, 2))
+            else if (TwoInARow(gameState, 1, 1, 1, 2) && gameState[0, 1] == Symbol.N)
             {
                 return new Placement(0, 1);
             }
-            else if (TwoInARow(gameState, 0, 0, 1, 0) || TwoInARow(gameState, 2, 1, 2, 2) || TwoInARow(gameState, 0, 2, 1, 1))
+            else if (TwoInARow(gameState, 0, 0, 1, 0) && gameState[2, 0] == Symbol.N || TwoInARow(gameState, 2, 1, 2, 2) && gameState[2, 0] == Symbol.N || TwoInARow(gameState, 0, 2, 1, 1) && gameState[2, 0] == Symbol.N)
             {
                 return new Placement(2, 0);
             }
-            else if (TwoInARow(gameState, 1, 1, 1, 2))
+            else if (TwoInARow(gameState, 1, 1, 1, 2) && gameState[1, 0] == Symbol.N)
             {
                 return new Placement(1, 0);
             }
-            else if (TwoInARow(gameState, 0, 1, 1, 1))
+            else if (TwoInARow(gameState, 0, 1, 1, 1) && gameState[2, 1] == Symbol.N)
             {
                 return new Placement(2, 1);
             }
-            else if (TwoInARow(gameState, 1, 2, 2, 2) || TwoInARow(gameState, 0, 0, 0, 1) || TwoInARow(gameState, 1, 1, 2, 0))
+            else if (TwoInARow(gameState, 1, 2, 2, 2) && gameState[0, 2] == Symbol.N || TwoInARow(gameState, 0, 0, 0, 1) && gameState[0, 2] == Symbol.N || TwoInARow(gameState, 1, 1, 2, 0) && gameState[0, 2] == Symbol.N)
             {
                 return new Placement(0, 2);
             }
-            else if (TwoInARow(gameState, 1, 0, 1, 1))
+            else if (TwoInARow(gameState, 1, 0, 1, 1) && gameState[1, 2] == Symbol.N)
             {
                 return new Placement(1, 2);
             }
-            else if (TwoInARow(gameState, 0, 2, 1, 2) || TwoInARow(gameState, 0, 0, 1, 1) || TwoInARow(gameState, 2, 0, 2, 1))
+            else if (TwoInARow(gameState, 0, 2, 1, 2) && gameState[2, 2] == Symbol.N || TwoInARow(gameState, 0, 0, 1, 1) && gameState[2, 2] == Symbol.N || TwoInARow(gameState, 2, 0, 2, 1) && gameState[2, 2] == Symbol.N)
             {
                 return new Placement(2, 2);
             }
