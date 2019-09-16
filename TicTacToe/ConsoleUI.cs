@@ -19,6 +19,7 @@ namespace TicTacToe
             typeof(KasperAI),
             typeof(JacobAAI),
             //typeof(KarlGustavAI),
+            //typeof(JannieAIPlayer),
         };
 
         public static IPlayer SelectPlayerType()
