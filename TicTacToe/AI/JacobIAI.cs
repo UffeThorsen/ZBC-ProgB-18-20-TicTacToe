@@ -41,13 +41,23 @@ namespace TicTacToe
             {
                 new Placement(2,1),
                 new Placement(1,2),
-                new Placement(2,2),
+                new Placement(1,1),
                 new Placement(2,0),
                 new Placement(0,2)
             };
 
+            Placement[] stradTree =
+{
+                new Placement(2,0),
+                new Placement(0,2),
+                new Placement(1,1),
+                new Placement(2,2),
+                new Placement(1,2),
+                new Placement(2,1),
+                new Placement(0,0)
+            };
             Random r = new Random();
-            int j = r.Next(2);
+            int j = r.Next(3);
 
             bool parsed = false;
             while (!parsed)
@@ -69,7 +79,7 @@ namespace TicTacToe
                         i++;
                     }
                 }
-                else
+                else if (j == 2)
                 {
                     int i = 0;
                     Placement move = stradTwo[i];
@@ -78,6 +88,23 @@ namespace TicTacToe
                         return move;
                     }
                     else if (i == stradTwo.Length)
+                    {
+                        parsed = true;
+                    }
+                    else
+                    {
+                        i++;
+                    }
+                }
+                else if (j == 3)
+                {
+                    int i = 0;
+                    Placement move = stradTree[i];
+                    if (gameState.IsLegalMove(move))
+                    {
+                        return move;
+                    }
+                    else if (i == stradTree.Length)
                     {
                         parsed = true;
                     }
