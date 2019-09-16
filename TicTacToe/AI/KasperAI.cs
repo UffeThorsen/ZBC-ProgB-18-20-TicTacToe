@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe.AI
+namespace TicTacToe
 {
-    class KasperAI
+    class KasperAI : IPlayer
     {
         public virtual string Description
         {
             get
             {
-                return "Uffes random AI";
+                return "Kaspers AI";
             }
         }
 
