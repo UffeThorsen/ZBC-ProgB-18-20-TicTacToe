@@ -9,7 +9,7 @@ namespace TicTacToe
             typeof(ConsoleHumanPlayer),
             typeof(UffeAIPlayer),
             typeof(UffeSmarterAIPlayer),
-            //typeof(BirksVeryBadAI),
+            typeof(BirksVeryBadAI),
             typeof(DanielsEpicAI),
             typeof(DanielsEpicerAI),
             typeof(JacobIAI),
