@@ -6,9 +6,9 @@ namespace TicTacToe
     {
         public Placement NextMove(Game gameState)
         {
-            for (int i = 2; i <= 0; i--)
+            for (int i = 2; i >= 0; i--)
             {
-                for (int j = 2; j <= 0; j--)
+                for (int j = 2; j >= 0; j--)
                 {
                     Placement p = new Placement(i, j);
                     if (gameState.IsLegalMove(p))
