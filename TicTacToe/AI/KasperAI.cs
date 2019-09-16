@@ -12,7 +12,7 @@ namespace TicTacToe
         {
             get
             {
-                return "Uffes random AI";
+                return "Kaspers AI";
             }
         }
 
