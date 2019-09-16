@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AI\AITournament.cs" />
     <Compile Include="AI\BirksVeryBadAI.cs" />
+    <Compile Include="AI\PoppeAi.cs" />
     <Compile Include="AI\ThomasAIPlayer.cs" />
     <Compile Include="ConsoleHumanPlayer.cs" />
     <Compile Include="AI\DanielsEpicAI.cs" />
