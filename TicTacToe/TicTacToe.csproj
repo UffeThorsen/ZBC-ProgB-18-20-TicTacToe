@@ -49,6 +49,7 @@
     <Compile Include="AI\JannieAIPlayer.cs" />
     <Compile Include="AI\KarlGustavAI.cs" />
     <Compile Include="AI\KasperAI.cs" />
+    <Compile Include="AI\MFBadAI.cs" />
     <Compile Include="AI\ThomasAIPlayer.cs" />
     <Compile Include="ConsoleHumanPlayer.cs" />
     <Compile Include="AI\DanielsEpicAI.cs" />
