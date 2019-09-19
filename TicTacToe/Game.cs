@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 namespace TicTacToe
 {
-    class Game
+    public class Game
     {
         private static readonly Symbol[] playerIndexToSymbol = { Symbol.X, Symbol.O };
 
@@ -44,14 +44,7 @@ namespace TicTacToe
 
         public bool IsLegalMove(Placement p)
         {
-            if(gameBoard[p.X, p.Y] == Symbol.N)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return gameBoard[p.X, p.Y] == Symbol.N;
         }
 
         public void NextMove()

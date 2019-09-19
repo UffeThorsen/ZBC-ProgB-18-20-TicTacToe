@@ -3,7 +3,7 @@
 
 namespace TicTacToe
 {
-    class ConsoleHumanPlayer :IPlayer
+    public class ConsoleHumanPlayer :IPlayer
     {
         public string Description {
             get {

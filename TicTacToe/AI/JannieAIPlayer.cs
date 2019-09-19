@@ -13,8 +13,8 @@ namespace TicTacToe
 
         public Placement NextMove(Game gameState)
         {
-
-            Placement p = new Placement(i, j);
+            throw new NotImplementedException();
+            /*Placement p = new Placement(i, j);
             while (!gameState.IsLegalMove(p))
             {
                 for(int i = 0; i< 3; i++)
@@ -30,6 +30,7 @@ namespace TicTacToe
                 //for-loop checks every row in the board for a placement
                 //for-loop checks every column in the row
                 //placement p = new Placement(i,j);
+            */
         }
     }
 }

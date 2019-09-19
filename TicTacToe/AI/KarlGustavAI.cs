@@ -10,9 +10,10 @@ namespace TicTacToe
     {
         public Placement NextMove(Game gameState)
         {
-            int x;
-            int y;
+            int x = 0;
+            int y = 0;
             Placement place = new Placement (0, 0);
+            //Infinite loop.
             while (!gameState.IsLegalMove(place))
             {
                 for (int i = 0; i > 3; i++)

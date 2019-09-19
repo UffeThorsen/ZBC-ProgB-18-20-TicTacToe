@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
-    static class ConsoleUI
+    public static class ConsoleUI
     {
         public static Type[] NoMove3by3AIs = {
             typeof(ConsoleHumanPlayer),
             typeof(UffeAIPlayer),
             typeof(UffeSmarterAIPlayer),
-            //typeof(BirksVeryBadAI),
+            typeof(BirksVeryBadAI),
             typeof(DanielsEpicAI),
             typeof(DanielsEpicerAI),
             typeof(JacobIAI),
@@ -17,7 +17,10 @@ namespace TicTacToe
             typeof(RasmusAI),
             typeof(StigAI),
             typeof(KasperAI),
-            typeof(JacobAAI)
+            typeof(JacobAAI),
+            //typeof(KarlGustavAI),
+            //typeof(JannieAIPlayer),
+            typeof(MFBadAI),
         };
 
         public static IPlayer SelectPlayerType()
