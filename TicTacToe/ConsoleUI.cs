@@ -12,11 +12,12 @@ namespace TicTacToe
             //typeof(BirksVeryBadAI),
             typeof(DanielsEpicAI),
             typeof(DanielsEpicerAI),
-            //typeof(JacobIAI),
+            typeof(JacobIAI),
             typeof(ThomasAIPlayer),
             typeof(RasmusAI),
             typeof(StigAI),
-            typeof(KasperAI)
+            typeof(KasperAI),
+            typeof(JacobAAI)
         };
 
         public static IPlayer SelectPlayerType()

@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicTacToe
 {
     class StigAI : IPlayer
     {
         private Random r = new Random();
+        private Placement[] allwaysTryMoves = {
+            new Placement(1, 1),
+            new Placement(2, 2),
+            new Placement(0, 0),
+            new Placement(0, 2),
+            new Placement(2, 0) 
+            };
 
         private Placement RandomMove(Game gameState)
         {
@@ -32,6 +36,18 @@ namespace TicTacToe
 
         public Placement NextMove(Game gameState)
         {
+            return BestMove(gameState);
+        }
+
+        private Placement BestMove(Game gameState)
+        {
+            foreach (Placement p in allwaysTryMoves)
+            {
+                if (gameState.IsLegalMove(p))
+                {
+                    return p;
+                }
+            }
             return RandomMove(gameState);
         }
     }
