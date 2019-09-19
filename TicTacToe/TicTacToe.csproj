@@ -61,6 +61,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="IBoard.cs" />
     <Compile Include="AI\JacobIAI.cs" />
+    <Compile Include="Placement.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="AI\RasmusAI.cs" />
     <Compile Include="AI\StigAI.cs" />
