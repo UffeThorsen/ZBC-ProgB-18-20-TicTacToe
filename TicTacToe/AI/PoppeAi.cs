@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe.AI
+namespace TicTacToe
 {
     class PoppeAi : IPlayer
     {
