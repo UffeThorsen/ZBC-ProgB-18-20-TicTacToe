@@ -1,7 +1,7 @@
 
 namespace TicTacToe
 {
-    class Board : IBoard
+    public class Board : IBoard
     {
         Symbol[,] places;
 

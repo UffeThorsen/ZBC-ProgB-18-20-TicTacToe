@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
-    static class ConsoleUI
+    public static class ConsoleUI
     {
         public static Type[] NoMove3by3AIs = {
             typeof(ConsoleHumanPlayer),

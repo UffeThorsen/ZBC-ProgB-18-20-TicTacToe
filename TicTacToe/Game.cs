@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 namespace TicTacToe
 {
-    class Game
+    public class Game
     {
         private static readonly Symbol[] playerIndexToSymbol = { Symbol.X, Symbol.O };
 

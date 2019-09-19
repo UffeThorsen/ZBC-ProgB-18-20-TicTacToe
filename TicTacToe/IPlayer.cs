@@ -1,7 +1,7 @@
 ﻿
 namespace TicTacToe
 {
-    struct Placement {
+    public struct Placement {
         public int X { set; get; }
         public int Y { set; get; }
 
@@ -17,7 +17,7 @@ namespace TicTacToe
         }
     }
 
-    interface IPlayer
+    public interface IPlayer
     {
         Placement NextMove(Game gameState);
     }
