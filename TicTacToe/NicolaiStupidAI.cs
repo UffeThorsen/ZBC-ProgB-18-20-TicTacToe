@@ -13,7 +13,7 @@ namespace TicTacToe
             int i = 0;
             int j = 0;
             Placement p = new Placement(i, j);
-            string s = Console.WriteLine("No Aviable moves");
+            string s = "No Aviable moves";
 
             if (gameState.IsLegalMove(p))
             {
