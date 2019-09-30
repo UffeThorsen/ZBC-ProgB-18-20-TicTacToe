@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToe.AI
+namespace TicTacToe
 {
-    class AntonAI
+    class AntonAI : IPlayer
     {
         private Random r = new Random();
 
-        Placement NextMove(Game gameState)
+        public Placement NextMove(Game gameState)
         {
             int i = r.Next(3);
             int j = r.Next(3);
