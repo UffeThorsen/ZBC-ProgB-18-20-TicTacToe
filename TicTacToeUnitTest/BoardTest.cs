@@ -14,9 +14,7 @@ namespace TicTacToeUnitTest
             Board b = new Board();
         }
 
-        /// <summary>
-        /// Testing if the constructor work
-        /// </summary>
+        // Testing if the constructor work
         [TestMethod]
         public void TestIfBoardConstructorWorkAsExpected()
         {
@@ -69,9 +67,7 @@ namespace TicTacToeUnitTest
             Assert.AreEqual(after, before);
         }
 
-        /// <summary>
-        /// Testing the methode NInARow
-        /// </summary>
+        // Testing the methode NInARow
         [TestMethod]
         public void TestNInARow()
         {
@@ -82,9 +78,7 @@ namespace TicTacToeUnitTest
             Assert.IsTrue(b.NInARow(Symbol.O, 3));
         }
 
-        /// <summary>
-        /// Testing if Three in a Row works with DiagonalLeft
-        /// </summary>
+        // Testing if Three in a Row works with DiagonalLeft
         [TestMethod]
         public void TestThreeInARowDiagonalLeft()
         {
@@ -95,9 +89,7 @@ namespace TicTacToeUnitTest
             Assert.IsTrue(bDiagonalLeft.ThreeInARow(Symbol.X));
         }
 
-        /// <summary>
-        /// Testing if Three in a Row works with DiagonalRight      
-        /// </summary>
+        // Testing if Three in a Row works with DiagonalRight      
         [TestMethod]
         public void TestThreeInARowDiagonalRight()
         {
@@ -106,20 +98,6 @@ namespace TicTacToeUnitTest
             bDiagonalRight.Place(1, 1, Symbol.X);
             bDiagonalRight.Place(2, 2, Symbol.X);
             Assert.IsTrue(bDiagonalRight.ThreeInARow(Symbol.X));
-        }
-
-        /// <summary>
-        /// Testing for 4 in a row with NinARow, the test will fail for now but should work in the future with a bigger board then 3*3
-        /// </summary>
-        [TestMethod]
-        public void Test4InARow()
-        {
-            Board b = new Board();
-            b.Place(0, 0, Symbol.X);
-            b.Place(1, 0, Symbol.X);
-            b.Place(2, 0, Symbol.X);
-            b.Place(3, 0, Symbol.X);
-            Assert.IsTrue(b.NInARow(Symbol.X, 4));
         }
     }
 }

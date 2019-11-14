@@ -55,7 +55,7 @@ namespace TicTacToeUnitTest
         /// Testing if game is able to change player correctly
         /// </summary>
         [TestMethod]
-        public void TestChangePlayer()
+        public void TestGameIfChangePlayerChangesPlayer()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
@@ -69,7 +69,7 @@ namespace TicTacToeUnitTest
         /// Testing if the board state is being changed after doing a move
         /// </summary>
         [TestMethod]
-        public void TestBoardStateInGame()
+        public void TestGameNextMoveChangesGameState()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
@@ -83,7 +83,7 @@ namespace TicTacToeUnitTest
         /// Testing if anyone won on a blank board
         /// </summary>
         [TestMethod]
-        public void TestWhoWonBlankBoard()
+        public void TestWhoWonOnBlankBoard()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
@@ -109,7 +109,7 @@ namespace TicTacToeUnitTest
         /// Since the AI will always start at (0,0) the next placement has been put there
         /// </summary>
         [TestMethod]
-        public void TestLegalMoveOnOccupied()
+        public void TestLegalMoveOnOccupiedSpot()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
@@ -119,9 +119,10 @@ namespace TicTacToeUnitTest
             Assert.IsFalse(g.IsLegalMove(placement));
         }
 
+
         [ExpectedException(typeof(IndexOutOfRangeException))]
         [TestMethod]
-        public void LegalMoveOutsideOfArraySize()
+        public void LegalMoveOutsideOfGameSize()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
