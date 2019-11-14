@@ -57,7 +57,6 @@
     <Compile Include="AI\DanielsEpicAI.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Board.cs" />
-    <Compile Include="BoardTest.cs" />
     <Compile Include="ConsoleUI.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IBoard.cs" />
