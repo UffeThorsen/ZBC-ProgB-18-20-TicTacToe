@@ -106,17 +106,26 @@ namespace TicTacToeUnitTest
 
         /// <summary>
         /// Testing non legal move on board with 1 occupied space
-        /// Since the AI will always start at (2,2) the next placement has been put there
+        /// Since the AI will always start at (0,0) the next placement has been put there
         /// </summary>
         [TestMethod]
-        public void TestLegalMoveNotLegal()
+        public void TestLegalMoveOnOccupied()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
             Game g = new Game(p1, p2);
             g.NextMove();
-            Placement placement = new Placement(2, 2);
-            Assert.AreNotEqual(true, g.IsLegalMove(placement));
+            Placement placement = new Placement(0, 0);
+            Assert.IsFalse(g.IsLegalMove(placement));
+        }
+
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [TestMethod]
+        public void LegalMoveOutsideOfArraySize()
+        {
+            List<IPlayer> players = new List<IPlayer>();
+            Game game = new Game(players);
+            game.IsLegalMove(new Placement(4, 4));
         }
     }
 }
