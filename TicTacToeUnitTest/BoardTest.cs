@@ -96,6 +96,19 @@ namespace TicTacToeUnitTest
         }
 
         /// <summary>
+        /// Testing if Three in a Row works with DiagonalRight      
+        /// </summary>
+        [TestMethod]
+        public void TestThreeInARowDiagonalRight()
+        {
+            Board bDiagonalRight = new Board();
+            bDiagonalRight.Place(0, 0, Symbol.X);
+            bDiagonalRight.Place(1, 1, Symbol.X);
+            bDiagonalRight.Place(2, 2, Symbol.X);
+            Assert.IsTrue(bDiagonalRight.ThreeInARow(Symbol.X));
+        }
+
+        /// <summary>
         /// Testing for 4 in a row with NinARow, the test will fail for now but should work in the future with a bigger board then 3*3
         /// </summary>
         [TestMethod]
