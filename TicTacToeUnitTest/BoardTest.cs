@@ -16,7 +16,7 @@ namespace TicTacToeUnitTest
 
         // Testing if the constructor work
         [TestMethod]
-        public void TestIfBoardConstructorWorkAsExpected()
+        public void TestDefaultBoardConstructorWith3By3Board()
         {
             Board b = new Board();
 
@@ -67,15 +67,37 @@ namespace TicTacToeUnitTest
             Assert.AreEqual(after, before);
         }
 
-        // Testing the methode NInARow
+        // Testing the methode NInARow vertical
         [TestMethod]
-        public void TestNInARow()
+        public void TestNInARowVertical()
         {
             Board b = new Board();
             b.Place(0, 0, Symbol.O);
             b.Place(1, 0, Symbol.O);
             b.Place(2, 0, Symbol.O);
             Assert.IsTrue(b.NInARow(Symbol.O, 3));
+        }
+        
+        // Testing the methode NInARow horizontal
+        [TestMethod]
+        public void TestNInARowHorizontal()
+        {
+            Board b = new Board();
+            b.Place(0, 0, Symbol.O);
+            b.Place(0, 1, Symbol.O);
+            b.Place(0, 2, Symbol.O);
+            Assert.IsTrue(b.NInARow(Symbol.O, 3));
+        }
+
+        // Testing the methode NInARow given not 3 in a row
+        [TestMethod]
+        public void TestNInARowFalseExcpeted()
+        {
+            Board b = new Board();
+            b.Place(0, 0, Symbol.O);
+            b.Place(2, 0, Symbol.O);
+            b.Place(2, 2, Symbol.O);
+            Assert.IsFalse(b.NInARow(Symbol.O, 3));
         }
 
         // Testing if Three in a Row works with DiagonalLeft
