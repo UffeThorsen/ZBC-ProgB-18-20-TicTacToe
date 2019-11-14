@@ -121,5 +121,105 @@ namespace TicTacToeUnitTest
             bDiagonalRight.Place(2, 2, Symbol.X);
             Assert.IsTrue(bDiagonalRight.ThreeInARow(Symbol.X));
         }
+
+        [TestMethod]
+        //Ensures that Boards symbols are the symbols it was meant to place
+        public void BoardSymbolTest()
+        {
+            Board board = new Board();
+            Symbol symbToBoard = Symbol.X;
+            Symbol symbFromBoard;
+            int boardTestVertical = 0;
+            int boardTestHorizontal = 0;
+            while (boardTestHorizontal < 3)
+            {
+                while (boardTestVertical < 3)
+                {
+                    board.Place(boardTestHorizontal, boardTestVertical, symbToBoard);
+                    symbFromBoard = board[boardTestHorizontal, boardTestVertical];
+                    Assert.AreEqual(symbToBoard, symbFromBoard);
+                    boardTestVertical++;
+                }
+                boardTestVertical = 0;
+                boardTestHorizontal++;
+            }
+        }
+
+        [TestMethod]
+        //Asserts if you can place on every tile of the board
+        public void BoardPlaceTest()
+        {
+            Board board = new Board();
+            int boardTestVertical = 0;
+            int boardTestHorizontal = 0;
+            int worksEveryLoopCounter = 0;
+            Symbol symbol = Symbol.X;
+            for (int i = 1; i < 3; i++)
+            {
+                while (boardTestHorizontal < 3)
+                {
+                    while (boardTestVertical < 3)
+                    {
+                        board.Place(boardTestHorizontal, boardTestVertical, symbol);
+                        if (board[boardTestHorizontal, boardTestVertical] == Symbol.X)
+                        {
+                            worksEveryLoopCounter++;
+                        }
+                        boardTestVertical++;
+                    }
+                    boardTestVertical = 0;
+                    boardTestHorizontal++;
+                }
+            }
+            Assert.AreEqual(worksEveryLoopCounter, 9);
+        }
+
+        //Determines if the program throws an IndexOutOfRangeException if player places out of board
+        [ExpectedException(typeof(IndexOutOfRangeException))]
+        [TestMethod]
+        public void BoardPlaceOutOfBoardTest()
+        {
+            Board board = new Board();
+            board.Place(5, 5, Symbol.X);
+        }
+
+        [TestMethod]
+        //Asserts if N will still be N even if you try to remove it
+        public void BoardRemoveSymbolNTest()
+        {
+            Board board = new Board();
+            board.RemoveSymbolFromPlace(1, 1);
+            Assert.AreEqual(board[1, 1], Symbol.N);
+        }
+
+        [TestMethod]
+        //Checks if the board is full if nothing is placed.
+        public void BoardBoardFullIfEmptyTest()
+        {
+            Board board = new Board();
+            Assert.IsFalse(board.BoardFull());
+        }
+        [TestMethod]
+        //Determines if the board is full once a player has placed on all tiles
+        public void BoardBoardFullTest()
+        {
+            Board board = new Board();
+            int boardTestHorizontal = 0;
+            int boardTestVertical = 0;
+            for (int i = 1; i < 3; i++)
+            {
+                while (boardTestHorizontal < 3)
+                {
+                    while (boardTestVertical < 3)
+                    {
+                        board.Place(boardTestHorizontal, boardTestVertical, Symbol.X);
+                        boardTestVertical++;
+                    }
+                    boardTestVertical = 0;
+                    boardTestHorizontal++;
+                }
+                Assert.IsTrue(board.BoardFull());
+            }
+        }
     }
 }
