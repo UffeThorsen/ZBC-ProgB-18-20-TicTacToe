@@ -146,7 +146,7 @@ namespace TicTacToeUnitTest
             {
                 game.NextMove();
             }
-            Assert.IsTrue(game.WhoWon() == players[0]);
+            Assert.IsTrue(game.WhoWon() == p1);
         }
 
         [DataTestMethod]
