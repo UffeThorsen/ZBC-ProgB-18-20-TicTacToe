@@ -4,7 +4,7 @@ using TicTacToe;
 
 namespace TicTacToeUnitTest
 {
-    class TestAI : IPlayer
+    public class TestAI : IPlayer
     {
         public virtual Placement NextMove(Game gameState)
         {
@@ -41,6 +41,14 @@ namespace TicTacToeUnitTest
             IPlayer p1 = null;
             IPlayer p2 = null;
             Game g = new Game(p1, p2);
+        }
+
+        [ExpectedException(typeof(ArgumentException), AllowDerivedTypes = true)]
+        [TestMethod]
+        public void TestGameConstructorWithSamePlayerTwice()
+        {
+            IPlayer p1 = new TestAI();
+            Game g = new Game(p1, p1);
         }
     }
 }
