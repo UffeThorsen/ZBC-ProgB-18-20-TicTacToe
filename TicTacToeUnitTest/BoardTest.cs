@@ -69,9 +69,7 @@ namespace TicTacToeUnitTest
             Assert.AreEqual(after, before);
         }
 
-        /// <summary>
-        /// Testing the methode NInARow
-        /// </summary>
+        // Testing the methode NInARow
         [TestMethod]
         public void TestNInARow()
         {
@@ -82,9 +80,7 @@ namespace TicTacToeUnitTest
             Assert.IsTrue(b.NInARow(Symbol.O, 3));
         }
 
-        /// <summary>
-        /// Testing if Three in a Row works with DiagonalLeft
-        /// </summary>
+        // Testing if Three in a Row works with DiagonalLeft
         [TestMethod]
         public void TestThreeInARowDiagonalLeft()
         {
@@ -95,9 +91,7 @@ namespace TicTacToeUnitTest
             Assert.IsTrue(bDiagonalLeft.ThreeInARow(Symbol.X));
         }
 
-        /// <summary>
-        /// Testing if Three in a Row works with DiagonalRight      
-        /// </summary>
+        // Testing if Three in a Row works with DiagonalRight      
         [TestMethod]
         public void TestThreeInARowDiagonalRight()
         {
@@ -108,9 +102,7 @@ namespace TicTacToeUnitTest
             Assert.IsTrue(bDiagonalRight.ThreeInARow(Symbol.X));
         }
 
-        /// <summary>
-        /// Testing for 4 in a row with NinARow, the test will fail for now but should work in the future with a bigger board then 3*3
-        /// </summary>
+        // Testing for 4 in a row with NinARow, the test will fail for now but should work in the future with a bigger board then 3*3
         [TestMethod]
         public void Test4InARow()
         {
