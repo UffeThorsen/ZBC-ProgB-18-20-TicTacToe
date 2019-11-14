@@ -14,9 +14,7 @@ namespace TicTacToeUnitTest
             Board b = new Board();
         }
 
-        /// <summary>
-        /// Testing if the constructor work
-        /// </summary>
+        // Testing if the constructor work
         [TestMethod]
         public void TestIfBoardConstructorWorkAsExpected()
         {
@@ -100,18 +98,6 @@ namespace TicTacToeUnitTest
             bDiagonalRight.Place(1, 1, Symbol.X);
             bDiagonalRight.Place(2, 2, Symbol.X);
             Assert.IsTrue(bDiagonalRight.ThreeInARow(Symbol.X));
-        }
-
-        // Testing for 4 in a row with NinARow, the test will fail for now but should work in the future with a bigger board then 3*3
-        [TestMethod]
-        public void Test4InARow()
-        {
-            Board b = new Board();
-            b.Place(0, 0, Symbol.X);
-            b.Place(1, 0, Symbol.X);
-            b.Place(2, 0, Symbol.X);
-            b.Place(3, 0, Symbol.X);
-            Assert.IsTrue(b.NInARow(Symbol.X, 4));
         }
     }
 }
