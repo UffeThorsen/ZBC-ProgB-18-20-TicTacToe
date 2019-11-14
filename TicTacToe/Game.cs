@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+
 namespace TicTacToe
 {
     public class Game
@@ -33,6 +35,15 @@ namespace TicTacToe
         public Game(List<IPlayer> players)
         {
             this.players = players;
+        }
+
+        public Game(IPlayer p1, IPlayer p2)
+        {
+            if(p1 == null || p2 == null)
+            {
+                throw new ArgumentException("Players must be non-null.");
+            }
+            this.players = new List<IPlayer> { p1, p2 };
         }
 
         public Symbol CurrentPlayer {

@@ -2,7 +2,7 @@
 
 namespace TicTacToe
 {
-    class UffeAIPlayer : IPlayer
+    public class UffeAIPlayer : IPlayer
     {
         public virtual string Description {
             get {
@@ -37,7 +37,7 @@ namespace TicTacToe
         }
     }
 
-    class UffeSmarterAIPlayer : UffeAIPlayer
+    public class UffeSmarterAIPlayer : UffeAIPlayer
     {
         public override string Description {
             get {
