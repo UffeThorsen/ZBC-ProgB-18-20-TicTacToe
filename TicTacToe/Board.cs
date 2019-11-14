@@ -5,23 +5,25 @@ namespace TicTacToe
     {
         Symbol[,] places;
 
-        //Calls the other constructor with 3 as hori and 3 as vert
+        /// <summary>
+        /// Creates new 3x3 board.
+        /// </summary>
         public Board() : this(3,3) { }
          
-        //Makes a new board with hori as amount of columns, and vert as the amount of rows
-        //Hori means horizontal, Vert means vertical.
+        /// <summary>
+        /// Creates new board of dimensions hori x vert.
+        /// </summary>
         Board(int hori, int vert)
         {
             places = new Symbol[hori,vert];
-            /*for(int i = 0; i < places.GetLength(0); i++)
-            {
-                for (int j = 0; j < places.GetLength(1); j++)
-                {
-                    places[i, j] = Symbol.N;
-                }
-            }*/
         }
 
+        /// <summary>
+        /// Returns symbol at position (i, j).
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <returns></returns>
         public Symbol this[int i, int j]
         {
             get
@@ -103,9 +105,6 @@ namespace TicTacToe
         /// <summary>
         /// Place a symbol at a place. Hor is the position for the horizontal (starts at 0), the same goes for ver. The player is a Symbol.
         /// </summary>
-        /// <param name="hor"></param>
-        /// <param name="ver"></param>
-        /// <param name="player"></param>
         /// <returns>A Bool that if placing was succesful = true</returns>
         public bool Place(int hor,int ver, Symbol player)
         {
@@ -116,11 +115,10 @@ namespace TicTacToe
             }
             return false;
         }
+
         /// <summary>
         /// Removes the symbol in the given place.
         /// </summary>
-        /// <param name="hor"></param>
-        /// <param name="ver"></param>
         public void RemoveSymbolFromPlace(int hor, int ver)
         {
             places[hor, ver] = Symbol.N;
@@ -141,6 +139,9 @@ namespace TicTacToe
             return tempString;
         }
 
+        /// <summary>
+        /// Returns true iff all positions on board is not N.
+        /// </summary>
         public bool BoardFull()
         {
             return !this.ToString().Contains("N");
