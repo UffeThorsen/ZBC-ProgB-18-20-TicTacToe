@@ -123,9 +123,10 @@ namespace TicTacToeUnitTest
         [TestMethod]
         public void LegalMoveOutsideOfArraySize()
         {
-            List<IPlayer> players = new List<IPlayer>();
-            Game game = new Game(players);
-            game.IsLegalMove(new Placement(4, 4));
+            IPlayer p1 = new TestAI();
+            IPlayer p2 = new TestAI();
+            Game g = new Game(p1, p2);
+            g.IsLegalMove(new Placement(4, 4));
         }
     }
 }
