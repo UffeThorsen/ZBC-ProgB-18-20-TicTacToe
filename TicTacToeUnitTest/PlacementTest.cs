@@ -18,8 +18,6 @@ namespace TicTacToeUnitTest
         public void TestPlacementConstructor(int x, int y)
         {
             Placement p = new Placement(x, y);
-            Assert.AreEqual(x, p.X);
-            Assert.AreEqual(y, p.Y);
         }
 
         [TestMethod]
