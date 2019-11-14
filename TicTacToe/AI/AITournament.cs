@@ -19,22 +19,21 @@ namespace TicTacToe
                 {
                     if (i != j && i != 0 && j != 0) {
                         if (verbose) { Console.WriteLine("Now playing: " + AIs[i] + " vs. " + AIs[j]); }
-                        var players = new List<IPlayer>();
-                        players.Add( (IPlayer)Activator.CreateInstance(AIs[i]) );
-                        players.Add( (IPlayer)Activator.CreateInstance(AIs[j]) );
-                        Game game = new Game(players);
+                        IPlayer p1 = (IPlayer)Activator.CreateInstance(AIs[i]);
+                        IPlayer p2 = (IPlayer)Activator.CreateInstance(AIs[j]);
+                        Game game = new Game(p1, p2);
                         while (!game.IsGameDone)
                         {
                             game.NextMove();
                         }
                         //if first player won, add win to scores[i] and loss to scores[j]
-                        if(game.WhoWon() == players[0])
+                        if(game.WhoWon() == p1)
                         {
                             scores[i] += win;
                             scores[j] += loss;
                         }
                         //if second player won, add win to scores[j] and loss to scores[i]
-                        else if (game.WhoWon() == players[1])
+                        else if (game.WhoWon() == p2)
                         {
                             scores[j] += win;
                             scores[i] += loss;

@@ -32,11 +32,6 @@ namespace TicTacToe
 
         private Game() {}
 
-        public Game(List<IPlayer> players)
-        {
-            this.players = players;
-        }
-
         public Game(IPlayer p1, IPlayer p2)
         {
             if(p1 == null || p2 == null)

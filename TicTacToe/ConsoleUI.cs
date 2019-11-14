@@ -45,10 +45,9 @@ namespace TicTacToe
 
         public static Game SetupGame()
         {
-            List<IPlayer> players = new List<IPlayer>();
-            players.Add(SelectPlayerType());
-            players.Add(SelectPlayerType());
-            Game game = new Game(players);
+            IPlayer p1 = SelectPlayerType();
+            IPlayer p2 = SelectPlayerType();
+            Game game = new Game(p1, p2);
             return game;
         }
 
