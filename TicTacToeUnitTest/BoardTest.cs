@@ -14,6 +14,23 @@ namespace TicTacToeUnitTest
             Board b = new Board();
         }
 
+        /// <summary>
+        /// Testing if the constructor work
+        /// </summary>
+        [TestMethod]
+        public void TestIfBoardConstructorWorkAsExpected()
+        {
+            Board b = new Board();
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Assert.IsTrue(b[i, j] == Symbol.N);
+                }
+            }
+        }
+
         // Test if you can place a symbol
         [TestMethod]
         public void TestPlaceSymbol()
@@ -52,5 +69,44 @@ namespace TicTacToeUnitTest
             Assert.AreEqual(after, before);
         }
 
+        /// <summary>
+        /// Testing the methode NInARow
+        /// </summary>
+        [TestMethod]
+        public void TestNInARow()
+        {
+            Board b = new Board();
+            b.Place(0, 0, Symbol.O);
+            b.Place(1, 0, Symbol.O);
+            b.Place(2, 0, Symbol.O);
+            Assert.IsTrue(b.NInARow(Symbol.O, 3));
+        }
+
+        /// <summary>
+        /// Testing if Three in a Row works with DiagonalLeft
+        /// </summary>
+        [TestMethod]
+        public void TestThreeInARowDiagonalLeft()
+        {
+            Board bDiagonalLeft = new Board();
+            bDiagonalLeft.Place(0, 2, Symbol.X);
+            bDiagonalLeft.Place(1, 1, Symbol.X);
+            bDiagonalLeft.Place(2, 0, Symbol.X);
+            Assert.IsTrue(bDiagonalLeft.ThreeInARow(Symbol.X));
+        }
+
+        /// <summary>
+        /// Testing for 4 in a row with NinARow, the test will fail for now but should work in the future with a bigger board then 3*3
+        /// </summary>
+        [TestMethod]
+        public void Test4InARow()
+        {
+            Board b = new Board();
+            b.Place(0, 0, Symbol.X);
+            b.Place(1, 0, Symbol.X);
+            b.Place(2, 0, Symbol.X);
+            b.Place(3, 0, Symbol.X);
+            Assert.IsTrue(b.NInARow(Symbol.X, 4));
+        }
     }
 }
