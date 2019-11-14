@@ -43,16 +43,19 @@ namespace TicTacToeUnitTest
             Game g = new Game(p1, p2);
         }
 
+        /// <summary>
+        /// Tests the game constructer by giving it the same IPlayer variable.
+        /// </summary>
         [ExpectedException(typeof(ArgumentException), AllowDerivedTypes = true)]
         [TestMethod]
-        public void TestGameConstructorWithSamePlayerTwice()
+        public void TestGameConstructorWithSamePlayerTwice() 
         {
             IPlayer p1 = new TestAI();
             Game g = new Game(p1, p1);
         }
 
         /// <summary>
-        /// Testing if game is able to change player correctly
+        /// Tests if the games current player changes after NextMove is called.
         /// </summary>
         [TestMethod]
         public void TestGameIfChangePlayerChangesPlayer()
@@ -66,7 +69,7 @@ namespace TicTacToeUnitTest
         }
 
         /// <summary>
-        /// Testing if the board state is being changed after doing a move
+        /// Tests if the game state has changed after NextMove is called.
         /// </summary>
         [TestMethod]
         public void TestGameNextMoveChangesGameState()
@@ -80,7 +83,7 @@ namespace TicTacToeUnitTest
         }
 
         /// <summary>
-        /// Testing if anyone won on a blank board
+        /// Test if WhoWon is null on a blank game state.
         /// </summary>
         [TestMethod]
         public void TestWhoWonOnBlankBoard()
@@ -92,7 +95,7 @@ namespace TicTacToeUnitTest
         }
 
         /// <summary>
-        /// Testing a legal move on a blank board
+        /// Tests a legal move on a blank game state.
         /// </summary>
         [TestMethod]
         public void TestLegalMoveSunshine()
@@ -105,11 +108,11 @@ namespace TicTacToeUnitTest
         }
 
         /// <summary>
-        /// Testing non legal move on board with 1 occupied space
+        /// Tests non legal move on board with 1 occupied space
         /// Since the AI will always start at (0,0) the next placement has been put there
         /// </summary>
         [TestMethod]
-        public void TestLegalMoveOnOccupiedSpot()
+        public void TestLegalMoveOnOccupiedPlace()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
@@ -122,12 +125,53 @@ namespace TicTacToeUnitTest
 
         [ExpectedException(typeof(IndexOutOfRangeException))]
         [TestMethod]
-        public void LegalMoveOutsideOfGameSize()
+        public void TestLegalMoveWithPositionOutsideOfGameSize()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
             Game g = new Game(p1, p2);
             g.IsLegalMove(new Placement(4, 4));
+        }
+
+        [DataTestMethod]
+        [DataRow(7)]
+        [DataRow(8)]
+        [DataRow(9)]
+        public void TestWhoWonWhenPlayerOneShouldHave(int turns)
+        {
+            IPlayer p1 = new TestAI();
+            IPlayer p2 = new TestAI();
+            Game game = new Game(p1, p2);
+            for (int i = 0; i < turns; i++)
+            {
+                game.NextMove();
+            }
+            Assert.IsTrue(game.WhoWon() == players[0]);
+        }
+
+        [DataTestMethod]
+        [DataRow(7)]
+        [DataRow(8)]
+        [DataRow(9)]
+        public void TestIsGameDoneWhenShouldBeDone(int turns)
+        {
+            IPlayer p1 = new TestAI();
+            IPlayer p2 = new TestAI();
+            Game game = new Game(p1, p2);
+            for (int i = 0; i < turns; i++)
+            {
+                game.NextMove();
+            }
+            Assert.IsTrue(game.IsGameDone);
+        }
+
+        [TestMethod]
+        public void TestIsGameDoneWhenShouldNotBeDone(int turns)
+        {
+            IPlayer p1 = new TestAI();
+            IPlayer p2 = new TestAI();
+            Game game = new Game(p1, p2);
+            Assert.IsFalse(game.IsGameDone);
         }
     }
 }
