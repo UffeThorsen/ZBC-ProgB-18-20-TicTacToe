@@ -4,6 +4,25 @@ using TicTacToe;
 
 namespace TicTacToeUnitTest
 {
+    class TestAI : IPlayer
+    {
+        public virtual Placement NextMove(Game gameState)
+        {
+            for(int i=0; i<3; i++)
+            {
+                for(int j=0; j<3; j++)
+                {
+                    Placement p = new Placement(i, j);
+                    if (gameState.IsLegalMove(p))
+                    {
+                        return p;
+                    }
+                }
+            }
+            return new Placement();
+        }
+    }
+
     [TestClass]
     public class GameTest
     {
