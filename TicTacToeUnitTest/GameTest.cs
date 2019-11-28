@@ -166,7 +166,7 @@ namespace TicTacToeUnitTest
         }
         //TODO Add Comment
         [TestMethod]
-        public void TestIsGameDoneWhenShouldNotBeDone(int turns)
+        public void TestIsGameDoneWhenShouldNotBeDone()
         {
             IPlayer p1 = new TestAI();
             IPlayer p2 = new TestAI();
