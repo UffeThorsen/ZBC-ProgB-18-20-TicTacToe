@@ -16,7 +16,7 @@ namespace TicTacToeWithGUI
         public PVP()
         {
             InitializeComponent();
-            
+            Console.WriteLine("skeep");
         }
 
         public void Button1_Click(object sender, EventArgs e)
