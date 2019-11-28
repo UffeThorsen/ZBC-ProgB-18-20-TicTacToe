@@ -27,6 +27,7 @@
     static IPlayer a = new UffeAIPlayer();
     static IPlayer b = new UffeAIPlayer();
     static Game game = new Game(a, b);
+    bool timerStarted = false;
 
     string SymbolToImage(Symbol s)
     {
@@ -37,8 +38,23 @@
 
     void ClickOnButton(int i, int j)
     {
-        game.NextMove();
+        if (!timerStarted)
+        {
+            timerStarted = true;
+            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(Timer));
+            thread.Start();
+        }
     }
+
+    void Timer()
+    {
+        while(!game.IsGameDone)
+        {
+            System.Threading.Thread.Sleep(500);
+            game.NextMove();
+        }
+    }
+
 }
 
 
