@@ -8,6 +8,20 @@ a, .btn-link {
     color: #0366d6;
 }
 
+.detvedjegikke {
+    position:relative;
+}
+
+.detvedjeggodt {
+    position:absolute;
+    right: 38%;
+    margin-top: 12%;
+}
+
+.collo {
+    position: relative;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

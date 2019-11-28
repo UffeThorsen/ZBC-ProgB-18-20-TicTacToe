@@ -1,5 +1,45 @@
 ﻿@page "/"
+@inject IJSRuntime JSRuntime
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
+<div class="detvedjegikke">
+    <div class="detvedjeggodt">
+        <div class="row">
+            <img src="@SymbolToImage(game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />
+            <img src="@SymbolToImage(game[1, 0])" class="collo" @onclick="(() => ClickOnButton(1, 0))" />
+            <img src="@SymbolToImage(game[2, 0])" class="collo" @onclick="(() => ClickOnButton(2, 0))" />
+        </div>
+        <div class="row">
+            <img src="@SymbolToImage(game[0, 1])" class="collo" @onclick="(() => ClickOnButton(0, 1))" />
+            <img src="@SymbolToImage(game[1, 1])" class="collo" @onclick="(() => ClickOnButton(1, 1))" />
+            <img src="@SymbolToImage(game[2, 1])" class="collo" @onclick="(() => ClickOnButton(2, 1))" />
+        </div>
+        <div class="row">
+            <img src="@SymbolToImage(game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
+            <img src="@SymbolToImage(game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
+            <img src="@SymbolToImage(game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
+        </div>
+    </div>
+
+</div>
+
+@code {
+    static IPlayer a = new UffeAIPlayer();
+    static IPlayer b = new UffeAIPlayer();
+    static Game game = new Game(a, b);
+
+    string SymbolToImage(Symbol s)
+    {
+        if (s == Symbol.X) return "/beaver.png";
+        if (s == Symbol.O) return "/baevreasp.png";
+        return "/aa.png";
+    }
+
+    void ClickOnButton(int i, int j)
+    {
+        game.NextMove();
+    }
+}
+
+
+
