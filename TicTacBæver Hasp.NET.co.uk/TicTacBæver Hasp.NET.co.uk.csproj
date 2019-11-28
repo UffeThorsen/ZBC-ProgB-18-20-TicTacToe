@@ -5,4 +5,8 @@
     <RootNamespace>TicTacBæver_Hasp.NET.co.uk</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TicTacToe\TicTacToe.csproj" />
+  </ItemGroup>
+
 </Project>
