@@ -21,5 +21,20 @@ namespace TicTacToe
         {
 
         }
+
+        private void aBoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A1_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
