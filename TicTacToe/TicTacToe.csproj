@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +55,12 @@
     <Compile Include="AI\KasperAI.cs" />
     <Compile Include="AI\MFBadAI.cs" />
     <Compile Include="AI\ThomasAIPlayer.cs" />
+    <Compile Include="AJJP_TicTacToe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AJJP_TicTacToe.Designer.cs">
+      <DependentUpon>AJJP_TicTacToe.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsoleHumanPlayer.cs" />
     <Compile Include="AI\DanielsEpicAI.cs" />
     <Compile Include="IPlayer.cs" />
@@ -72,6 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AJJP_TicTacToe.resx">
+      <DependentUpon>AJJP_TicTacToe.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
