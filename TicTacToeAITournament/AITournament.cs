@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using TicTacToe;
 
-namespace TicTacToe
+namespace TicTacToeTournament
 {
     class AITournament
     {
