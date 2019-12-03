@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75DEF6F8-9709-4F5A-95BF-A35FDB8E8F9C}</ProjectGuid>
+    <ProjectGuid>{BC7C24CE-DD0F-4D6E-8C00-B910BB2CD7A5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TicTacToe</RootNamespace>
-    <AssemblyName>TicTacToe</AssemblyName>
+    <RootNamespace>TicTacToeAITournament</RootNamespace>
+    <AssemblyName>TicTacToeAITournament</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,19 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleHumanPlayer.cs" />
-    <Compile Include="ConsoleUI.cs" />
+    <Compile Include="AITournament.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibTicTacToe\LibTicTacToe.csproj">
       <Project>{2cf52905-bfac-4087-a58b-f34b850a376e}</Project>
       <Name>LibTicTacToe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TicTacToe\TicTacToe.csproj">
+      <Project>{75def6f8-9709-4f5a-95bf-a35fdb8e8f9c}</Project>
+      <Name>TicTacToe</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

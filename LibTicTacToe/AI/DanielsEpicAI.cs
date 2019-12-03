@@ -15,7 +15,7 @@ namespace TicTacToe
         }
     }
 
-    class DanielsEpicAI : IPlayer
+    public class DanielsEpicAI : IPlayer
     {
 
         protected Placement FirstAvaiableMovement(Game gameState)
@@ -40,7 +40,7 @@ namespace TicTacToe
         }
     }
 
-    class DanielsEpicerAI : DanielsEpicAI
+    public class DanielsEpicerAI : DanielsEpicAI
     {
         public Placement NextMove(Game gameState)
         {

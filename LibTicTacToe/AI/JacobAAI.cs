@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class BirksVeryBadAI : IPlayer
+    public class JacobAAI : IPlayer
     {
         public Placement NextMove(Game gameState)
         {
-            for (int i = 0; i < 3; i++)
+            for(int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
@@ -19,8 +19,8 @@ namespace TicTacToe
                         return new Placement(i, j);
                     }
                 }
-
             }
+
             throw new NoAvailableMoveException();
         }
     }

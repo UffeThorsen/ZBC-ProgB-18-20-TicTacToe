@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75DEF6F8-9709-4F5A-95BF-A35FDB8E8F9C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>TicTacToe</RootNamespace>
-    <AssemblyName>TicTacToe</AssemblyName>
+    <ProjectGuid>{2CF52905-BFAC-4087-A58B-F34B850A376E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LibTicTacToe</RootNamespace>
+    <AssemblyName>LibTicTacToe</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,20 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleHumanPlayer.cs" />
-    <Compile Include="ConsoleUI.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="AI\AntonAI.cs" />
+    <Compile Include="AI\BirksVeryBadAI.cs" />
+    <Compile Include="AI\DanielsEpicAI.cs" />
+    <Compile Include="AI\JacobAAI.cs" />
+    <Compile Include="AI\JacobIAI.cs" />
+    <Compile Include="AI\JannieAIPlayer.cs" />
+    <Compile Include="AI\KarlGustavAI.cs" />
+    <Compile Include="AI\KasperAI.cs" />
+    <Compile Include="AI\MFBadAI.cs" />
+    <Compile Include="AI\PoppeAi.cs" />
+    <Compile Include="AI\RasmusAI.cs" />
+    <Compile Include="AI\StigAI.cs" />
+    <Compile Include="AI\ThomasAIPlayer.cs" />
+    <Compile Include="AI\UffeAIPlayer.cs" />
+    <Compile Include="Board.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="IBoard.cs" />
+    <Compile Include="IPlayer.cs" />
+    <Compile Include="Placement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LibTicTacToe\LibTicTacToe.csproj">
-      <Project>{2cf52905-bfac-4087-a58b-f34b850a376e}</Project>
-      <Name>LibTicTacToe</Name>
-    </ProjectReference>
+    <Compile Include="Symbol.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TicTacToe\TicTacToe.csproj">
-      <Project>{75def6f8-9709-4f5a-95bf-a35fdb8e8f9c}</Project>
-      <Name>TicTacToe</Name>
+    <ProjectReference Include="..\LibTicTacToe\LibTicTacToe.csproj">
+      <Project>{2cf52905-bfac-4087-a58b-f34b850a376e}</Project>
+      <Name>LibTicTacToe</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

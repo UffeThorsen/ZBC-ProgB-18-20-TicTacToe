@@ -2,7 +2,7 @@
 
 namespace TicTacToe
 {
-    class RasmusAI : IPlayer
+    public class RasmusAI : IPlayer
     {
         public Placement NextMove(Game gameState)
         {
