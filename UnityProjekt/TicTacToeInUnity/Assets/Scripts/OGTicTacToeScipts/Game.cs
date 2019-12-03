@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 namespace TicTacToe
 {
-    public class Game
+    public class Game : MonoBehaviour
     {
         private static readonly Symbol[] playerIndexToSymbol = { Symbol.X, Symbol.O };
 
