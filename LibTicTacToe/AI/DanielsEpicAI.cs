@@ -40,7 +40,7 @@ namespace TicTacToe
         }
     }
 
-    public class DanielsEpicerAI : DanielsEpicAI
+    public class DanielsEpicerAI : IPlayer
     {
         public Placement NextMove(Game gameState)
         {
