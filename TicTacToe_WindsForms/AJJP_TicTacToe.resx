@@ -130,10 +130,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="C3_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 155</value>
+    <value>233, 155</value>
   </data>
   <data name="C3_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 72</value>
+    <value>111, 72</value>
   </data>
   <data name="C3_btn.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -154,10 +154,10 @@
     <value>Fill</value>
   </data>
   <data name="C2_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 155</value>
+    <value>118, 155</value>
   </data>
   <data name="C2_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 72</value>
+    <value>109, 72</value>
   </data>
   <data name="C2_btn.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -181,7 +181,7 @@
     <value>3, 155</value>
   </data>
   <data name="C1_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 72</value>
+    <value>109, 72</value>
   </data>
   <data name="C1_btn.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -202,10 +202,10 @@
     <value>Fill</value>
   </data>
   <data name="B3_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 79</value>
+    <value>233, 79</value>
   </data>
   <data name="B3_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
+    <value>111, 70</value>
   </data>
   <data name="B3_btn.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -226,10 +226,10 @@
     <value>Fill</value>
   </data>
   <data name="B2_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 79</value>
+    <value>118, 79</value>
   </data>
   <data name="B2_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
+    <value>109, 70</value>
   </data>
   <data name="B2_btn.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -253,7 +253,7 @@
     <value>3, 79</value>
   </data>
   <data name="B1_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
+    <value>109, 70</value>
   </data>
   <data name="B1_btn.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -274,10 +274,10 @@
     <value>Fill</value>
   </data>
   <data name="A3_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 3</value>
+    <value>233, 3</value>
   </data>
   <data name="A3_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
+    <value>111, 70</value>
   </data>
   <data name="A3_btn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -298,10 +298,10 @@
     <value>Fill</value>
   </data>
   <data name="A2_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 3</value>
+    <value>118, 3</value>
   </data>
   <data name="A2_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
+    <value>109, 70</value>
   </data>
   <data name="A2_btn.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -325,7 +325,7 @@
     <value>3, 3</value>
   </data>
   <data name="A1_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 70</value>
+    <value>109, 70</value>
   </data>
   <data name="A1_btn.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -349,7 +349,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 230</value>
+    <value>347, 230</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -400,7 +400,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>366, 28</value>
+    <value>371, 28</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -450,11 +450,20 @@
   <data name="&gt;&gt;TurnText.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="Restart_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="Restart_btn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="Restart_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 357</value>
+    <value>12, 344</value>
+  </data>
+  <data name="Restart_btn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
   </data>
   <data name="Restart_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 38</value>
+    <value>110, 50</value>
   </data>
   <data name="Restart_btn.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -474,11 +483,20 @@
   <data name="&gt;&gt;Restart_btn.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Continue_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="Continue_btn.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="Continue_btn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>246, 357</value>
+    <value>245, 344</value>
+  </data>
+  <data name="Continue_btn.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
   </data>
   <data name="Continue_btn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 38</value>
+    <value>110, 50</value>
   </data>
   <data name="Continue_btn.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -502,7 +520,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>366, 407</value>
+    <value>371, 407</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>AJJP_TicTacToe</value>

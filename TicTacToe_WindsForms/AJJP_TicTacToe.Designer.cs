@@ -182,6 +182,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "AJJP_TicTacToe";
+            this.Load += new System.EventHandler(this.AJJP_TicTacToe_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

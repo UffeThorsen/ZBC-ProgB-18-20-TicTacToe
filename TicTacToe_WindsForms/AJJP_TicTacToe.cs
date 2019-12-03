@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TicTacToe
+namespace TicTacToe_WindsForms
 {
     public partial class AJJP_TicTacToe : Form
     {
         public AJJP_TicTacToe()
         {
             InitializeComponent();
+        }
+
+        private void AJJP_TicTacToe_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
