@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIVAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AIVAI.Designer.cs">
+      <DependentUpon>AIVAI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Startscreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AIVAI.resx">
+      <DependentUpon>AIVAI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Startscreen.resx">
       <DependentUpon>Startscreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -87,6 +97,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TicTacToe\TicTacToe.csproj">
+      <Project>{75def6f8-9709-4f5a-95bf-a35fdb8e8f9c}</Project>
+      <Name>TicTacToe</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,16 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TicTacToe;
 
 
 namespace TicTacToeWithGUI
 {
     public partial class PVP : Form
     {
+        static void Initializegame()
+        {
+            IPlayer p1 = new ConsoleHumanPlayer();
+            IPlayer p2 = new ConsoleHumanPlayer();
+            Game g = new Game(p1, p2);
+
+        }
         public PVP()
         {
             InitializeComponent();
-            Console.WriteLine("skeep");
+            
         }
 
         public void Button1_Click(object sender, EventArgs e)
@@ -31,7 +39,7 @@ namespace TicTacToeWithGUI
 
         public void Button9_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

@@ -24,5 +24,18 @@ namespace TicTacToeWithGUI
             pvp.ShowDialog(); 
             this.Close();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AIVAI aivai = new AIVAI();
+            aivai.ShowDialog();
+            this.Close();
+        }
     }
 }
