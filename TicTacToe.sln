@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeUnitTest", "TicTacToeUnitTest\TicTacToeUnitTest.csproj", "{546ACD98-6780-47AE-A7D2-C508D68F9185}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacBæver Hasp.NET.co.uk", "TicTacBæver Hasp.NET.co.uk\TicTacBæver Hasp.NET.co.uk.csproj", "{0C1752BE-ED97-4A50-9845-6625F6DACF71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacBæver Hasp.NET.co.uk", "TicTacBæver Hasp.NET.co.uk\TicTacBæver Hasp.NET.co.uk.csproj", "{0C1752BE-ED97-4A50-9845-6625F6DACF71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

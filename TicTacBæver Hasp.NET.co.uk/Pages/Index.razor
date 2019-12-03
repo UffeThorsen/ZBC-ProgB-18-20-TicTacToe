@@ -1,61 +1,61 @@
 ﻿@page "/"
-@inject IJSRuntime JSRuntime
-
 
 <div class="detvedjegikke">
     <div class="detvedjeggodt">
         <div class="row">
-            <img src="@SymbolToImage(game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />
-            <img src="@SymbolToImage(game[1, 0])" class="collo" @onclick="(() => ClickOnButton(1, 0))" />
-            <img src="@SymbolToImage(game[2, 0])" class="collo" @onclick="(() => ClickOnButton(2, 0))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0])" class="collo" @onclick="(() => ClickOnButton(1, 0))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0])" class="collo" @onclick="(() => ClickOnButton(2, 0))" />
         </div>
         <div class="row">
-            <img src="@SymbolToImage(game[0, 1])" class="collo" @onclick="(() => ClickOnButton(0, 1))" />
-            <img src="@SymbolToImage(game[1, 1])" class="collo" @onclick="(() => ClickOnButton(1, 1))" />
-            <img src="@SymbolToImage(game[2, 1])" class="collo" @onclick="(() => ClickOnButton(2, 1))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1])" class="collo" @onclick="(() => ClickOnButton(0, 1))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1])" class="collo" @onclick="(() => ClickOnButton(1, 1))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1])" class="collo" @onclick="(() => ClickOnButton(2, 1))" />
         </div>
         <div class="row">
-            <img src="@SymbolToImage(game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
-            <img src="@SymbolToImage(game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
-            <img src="@SymbolToImage(game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
         </div>
+        <button class="row" @onclick="(() => StartNewGame())"> New Game </button>
     </div>
-
 </div>
 
-@code {
-    static IPlayer a = new UffeAIPlayer();
-    static IPlayer b = new UffeAIPlayer();
-    static Game game = new Game(a, b);
-    bool timerStarted = false;
 
-    string SymbolToImage(Symbol s)
+@code
+{
+    void StartNewGame()
     {
-        if (s == Symbol.X) return "/beaver.png";
-        if (s == Symbol.O) return "/baevreasp.png";
-        return "/aa.png";
+        if(BeaverUI.pageUpdate == null)
+        {
+            BeaverUI.pageUpdate = new Action(UpdateScreen);
+        }
+        BeaverUI.StartNewGame();
+    }
+    void ClickOnButton(int i,int j)
+    {
+        BeaverUI.MakeMove(i,j);
+        this.StateHasChanged();
     }
 
-    void ClickOnButton(int i, int j)
+    void UpdateScreen()
     {
-        if (!timerStarted)
-        {
-            timerStarted = true;
-            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(Timer));
-            thread.Start();
-        }
+        InvokeAsync(this.StateHasChanged);
     }
 
-    void Timer()
+    bool CompareBools(bool b1, bool b2)
     {
-        while(!game.IsGameDone)
-        {
-            System.Threading.Thread.Sleep(500);
-            game.NextMove();
-        }
+        return b1 != b2;
+    }
+
+    bool AreBoolsEqual(bool b1, bool b2)
+    {
+        return !CompareBools(b1,b2);
+    }
+
+    bool FalseEqualToTrue()
+    {
+        return false;
     }
 
 }
-
-
-
