@@ -30,6 +30,10 @@ namespace TicTacToe
             {
                 return places[i, j];
             }
+           /* set
+            {
+                places[i, j] = value;
+            }*/
         }
 
         /// <summary>

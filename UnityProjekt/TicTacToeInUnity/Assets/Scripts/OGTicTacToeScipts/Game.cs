@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System;
-using UnityEngine;
 
 namespace TicTacToe
 {
-    public class Game : MonoBehaviour
+    public class Game
     {
         private static readonly Symbol[] playerIndexToSymbol = { Symbol.X, Symbol.O };
 
@@ -20,6 +19,10 @@ namespace TicTacToe
             get {
                 return gameBoard[i, j];
             }
+            /*set
+            {
+                gameBoard[i, j] = value;
+            }*/
         }
         /// <summary>
         /// Returns the symbol at position p.
