@@ -22,6 +22,15 @@ a, .btn-link {
     position: relative;
 }
 
+.unselectable {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

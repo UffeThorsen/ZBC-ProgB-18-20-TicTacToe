@@ -18,37 +18,37 @@
         @if (BeaverUI.game != null)
         {
             <div class="row">
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0])" class="collo" @onclick="(() => ClickOnButton(1, 0))" />
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0])" class="collo" @onclick="(() => ClickOnButton(2, 0))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo unselectable" @onclick="(() => ClickOnButton(0, 0))" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0])" class="collo unselectable" @onclick="(() => ClickOnButton(1, 0))" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0])" class="collo unselectable" @onclick="(() => ClickOnButton(2, 0))" draggable="false" unselectable="on" ondragstart="return false"/>
             </div>
             <div class="row">
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1])" class="collo" @onclick="(() => ClickOnButton(0, 1))" />
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1])" class="collo" @onclick="(() => ClickOnButton(1, 1))" />
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1])" class="collo" @onclick="(() => ClickOnButton(2, 1))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1])" class="collo unselectable" @onclick="(() => ClickOnButton(0, 1))" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1])" class="collo unselectable" @onclick="(() => ClickOnButton(1, 1))" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1])" class="collo unselectable" @onclick="(() => ClickOnButton(2, 1))" draggable="false" unselectable="on" ondragstart="return false"/>
             </div>
             <div class="row">
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo unselectable" @onclick="(() => ClickOnButton(0, 2))" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo unselectable" @onclick="(() => ClickOnButton(1, 2))" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo unselectable" @onclick="(() => ClickOnButton(2, 2))" draggable="false" unselectable="on" ondragstart="return false"/>
             </div>
         }
         else
         {
             <div class="row">
-                <img src="/aa.png" class="collo"/>
-                <img src="/aa.png" class="collo"/>
-                <img src="/aa.png" class="collo"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
             </div>
             <div class="row">
-                <img src="/aa.png" class="collo"/>
-                <img src="/aa.png" class="collo"/>
-                <img src="/aa.png" class="collo"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
             </div>
             <div class="row">
-                <img src="/aa.png" class="collo"/>
-                <img src="/aa.png" class="collo"/>
-                <img src="/aa.png" class="collo"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
+                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
             </div>
         }
     </div>
