@@ -51,8 +51,8 @@ public class ButtonControlTest : MonoBehaviour
     {
         /*player1 = new UffeAIPlayer();
         player2 = new UffeAIPlayer();*/
-        player1 = new UiIplayer(this);
-        player2 = new UiIplayer(this);
+        player1 = new TestUIPlayer(this);
+        player2 = new TestUIPlayer(this);
         currentGame = new Game(player1,player2);
         DoNextMove();
     }
@@ -62,7 +62,6 @@ public class ButtonControlTest : MonoBehaviour
     {
         userHasPressed = false;
         new WaitWhile(() => !userHasPressed);
-        //StartCoroutine(AutoNextMove());
         return lastPlacePressed;
     }
 
@@ -73,6 +72,7 @@ public class ButtonControlTest : MonoBehaviour
         {
             lastPlacePressed = p;
             userHasPressed = true;
+            StartCoroutine(AutoNextMove());
         }
     }
 
