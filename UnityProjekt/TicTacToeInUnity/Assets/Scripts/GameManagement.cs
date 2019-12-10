@@ -16,9 +16,19 @@ public class GameManagement : MonoBehaviour
     bool someoneHasWon = false;
     public Text currentPlayerText;
     public GameObject playingBoard;
+    public Dropdown playerOneDropdown;
+    public Dropdown playerTwoDropdown;
+    public GameObject playingScreen;
+    public GameObject choosingScreen;
+    public List<Dropdown.OptionData> IPlayerList;
 
     void Start()
     {
+        playerOneDropdown.ClearOptions();
+        playerTwoDropdown.ClearOptions();
+        playerOneDropdown.AddOptions(IPlayerList);
+        playerTwoDropdown.AddOptions(IPlayerList);
+
         int k = 0;
         for (int i = 0; i < 3; i++)
         {
@@ -78,19 +88,41 @@ public class GameManagement : MonoBehaviour
 
     public void StartGame()
     {
-        playerOne = new UiIplayer(this);
-        playerTwo = new UiIplayer(this);
-        currentGame = new Game(playerOne, playerTwo);
-        ResetGameState();
+        currentGame = MakeNewGame();
+        choosingScreen.SetActive(false);
+        playingScreen.SetActive(true);
         NextMove();
     }
 
-    public void ResetGameState()
+    public void RestartGame()
     {
         userHasPressed = false;
         someoneHasWon = false;
-        lastPlacePressed = new Placement();
+        currentGame = MakeNewGame();
+        NextMove();
     }
+    
+    Game MakeNewGame()
+    {
+        if (playerOneDropdown.value == 0)
+        {
+            playerOne = new UiIplayer(this);
+        }
+        else
+        {
+            playerOne = new UffeAIPlayer();
+        }
+        if (playerTwoDropdown.value == 0)
+        {
+            playerTwo = new UiIplayer(this);
+        }
+        else
+        {
+            playerTwo = new UffeAIPlayer();
+        }
+        return new Game(playerOne, playerTwo);
+    }
+    
 
 
     public Placement LastValidButtonPress()
@@ -111,13 +143,21 @@ public class GameManagement : MonoBehaviour
         }
     }
 
-    void NextMove()
+    void NextMove(bool isAi = false)
     {
-        if (userHasPressed)
+        if (userHasPressed || isAi)
         {
             if (!currentGame.IsGameDone)
             {
                 currentGame.NextMove();
+                if (currentGame.CurrentPlayer == Symbol.X && playerOneDropdown.value == 1)
+                {
+                    NextMove(isAi = true);
+                }
+                else if (currentGame.CurrentPlayer == Symbol.O && playerTwoDropdown.value == 1)
+                {
+                    NextMove(isAi = true);
+                }
             }
         }
     }
