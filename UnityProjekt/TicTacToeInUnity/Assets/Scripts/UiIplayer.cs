@@ -4,16 +4,16 @@
 public class UiIplayer : IPlayer
 {
 
-    ButtonControlTest but;
+    GameManagement button;
 
-    public UiIplayer(ButtonControlTest b)
+    public UiIplayer(GameManagement b)
     {
-        but = b;
+        button = b;
     }
 
     public Placement NextMove(Game gameState)
     {
-        return but.LastValidButtonPress();   
+        return button.LastValidButtonPress();   
     }
 
 }
