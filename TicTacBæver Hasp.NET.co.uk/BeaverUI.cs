@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -46,8 +46,6 @@ namespace TicTacBæver_Hasp.NET.co.uk
         {
             if (!timerStarted)
             {
-                string testA = a;
-                string testB = b;
                 game = new Game(PlayerA[a], PlayerB[b]);
                 timerStarted = true;
                 System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(Timer));
