@@ -107,5 +107,8 @@
   <ItemGroup>
     <None Include="Resources\Screenshot_1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ultimate-tic-tac-toe12-01.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
