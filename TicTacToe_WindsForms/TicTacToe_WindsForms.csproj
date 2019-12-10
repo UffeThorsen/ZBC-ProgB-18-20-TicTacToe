@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AJJP_TicTacToe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AJJP_TicTacToe.Designer.cs">
-      <DependentUpon>AJJP_TicTacToe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AJJP_TicTacToe.resx">
-      <DependentUpon>AJJP_TicTacToe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
