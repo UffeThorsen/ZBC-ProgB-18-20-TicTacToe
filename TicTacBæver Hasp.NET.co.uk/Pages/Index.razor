@@ -2,8 +2,8 @@
 
 <div class="detvedjegikke">
     <div class="detvedjeggodt">
-        <select @bind="BeaverUI.a">
-            @foreach (string key in BeaverUI.AIs.keys.ToArray())
+        <select bind="@BeaverUI.a">
+            @foreach (string key in BeaverUI.AIs.Keys.ToArray())
             {
                 <option style="position: absolute;left:25%; top:-10%" value="@key">@key</option>
             }

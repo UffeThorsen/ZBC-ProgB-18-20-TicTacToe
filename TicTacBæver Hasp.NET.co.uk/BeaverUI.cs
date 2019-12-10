@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Net.Http;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
@@ -21,25 +23,7 @@ namespace TicTacBæver_Hasp.NET.co.uk
         public static Game game;
         public static Placement nextPlayerMove;
         public static Action pageUpdate = null;
-        public static IPlayer[] AIs =
-        {
-            new BeaverPlayer(),
-            new AntonAI(),
-            new BirksVeryBadAI(),
-            new DanielsEpicAI(),
-            new JacobIAI(),
-            new JacobAAI(),
-            //new JannieAIPlayer(),
-            //new KarlGustavAI(),
-            new KasperAI(),
-            new MFBadAI(),
-            new PoppeAi(),
-            new RasmusAI(),
-            new StigAI(),
-            new ThomasAIPlayer(),
-            new UffeAIPlayer(),
-            new UffeSmarterAIPlayer()
-        };
+        public static Dictionary<string, IPlayer> AIs = makePlayerDictionary();
 
         static bool timerStarted = false;
         static bool hasClicked = false;
@@ -95,6 +79,29 @@ namespace TicTacBæver_Hasp.NET.co.uk
                 pageUpdate.Invoke();
             }
             timerStarted = false;
+        }
+
+        public static Dictionary<string, IPlayer> makePlayerDictionary()
+        {
+            Dictionary<string, IPlayer> aIs = new Dictionary<string, IPlayer>();
+            aIs.Add("Human", new BeaverPlayer());
+            aIs.Add("AntonAI", new AntonAI());
+            aIs.Add("BirksVeryBadAI", new BirksVeryBadAI());
+            aIs.Add("DanielsEpicAI", new DanielsEpicAI());
+            aIs.Add("JacobIAI", new JacobIAI());
+            aIs.Add("JacobAAI", new JacobAAI());
+            aIs.Add("JannieAIPlayer", new JannieAIPlayer());
+            aIs.Add("KarlGustavAI", new KarlGustavAI());
+            aIs.Add("KasperAI", new KasperAI());
+            aIs.Add("MFBadAI", new MFBadAI());
+            aIs.Add("PoppeAi", new PoppeAi());
+            aIs.Add("RasmusAI", new RasmusAI());
+            aIs.Add("StigAI", new StigAI());
+            aIs.Add("ThomasAIPlayer", new ThomasAIPlayer());
+            aIs.Add("UffeAIPlayer", new UffeAIPlayer());
+            aIs.Add("UffeSmarterAIPlayer", new UffeSmarterAIPlayer());
+
+            return aIs;
         }
     }
 }
