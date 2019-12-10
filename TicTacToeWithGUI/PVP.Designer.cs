@@ -44,6 +44,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.win = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // _22
@@ -53,6 +54,7 @@
             this._22.Size = new System.Drawing.Size(60, 60);
             this._22.TabIndex = 1;
             this._22.UseVisualStyleBackColor = true;
+            this._22.Click += new System.EventHandler(this._22_Click);
             // 
             // _00
             // 
@@ -71,14 +73,16 @@
             this._01.Size = new System.Drawing.Size(60, 60);
             this._01.TabIndex = 10;
             this._01.UseVisualStyleBackColor = true;
+            this._01.Click += new System.EventHandler(this._01_Click);
             // 
             // _02
             // 
-            this._02.Location = new System.Drawing.Point(638, 180);
+            this._02.Location = new System.Drawing.Point(639, 179);
             this._02.Name = "_02";
             this._02.Size = new System.Drawing.Size(60, 60);
             this._02.TabIndex = 11;
             this._02.UseVisualStyleBackColor = true;
+            this._02.Click += new System.EventHandler(this._02_Click);
             // 
             // _12
             // 
@@ -87,6 +91,7 @@
             this._12.Size = new System.Drawing.Size(60, 60);
             this._12.TabIndex = 12;
             this._12.UseVisualStyleBackColor = true;
+            this._12.Click += new System.EventHandler(this._12_Click);
             // 
             // _11
             // 
@@ -104,6 +109,7 @@
             this._10.Size = new System.Drawing.Size(60, 60);
             this._10.TabIndex = 14;
             this._10.UseVisualStyleBackColor = true;
+            this._10.Click += new System.EventHandler(this._10_Click);
             // 
             // _20
             // 
@@ -112,6 +118,7 @@
             this._20.Size = new System.Drawing.Size(60, 60);
             this._20.TabIndex = 15;
             this._20.UseVisualStyleBackColor = true;
+            this._20.Click += new System.EventHandler(this._20_Click);
             // 
             // _21
             // 
@@ -120,6 +127,7 @@
             this._21.Size = new System.Drawing.Size(60, 60);
             this._21.TabIndex = 16;
             this._21.UseVisualStyleBackColor = true;
+            this._21.Click += new System.EventHandler(this._21_Click);
             // 
             // label1
             // 
@@ -137,9 +145,8 @@
             this.playerturn.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.playerturn.Location = new System.Drawing.Point(460, 95);
             this.playerturn.Name = "playerturn";
-            this.playerturn.Size = new System.Drawing.Size(40, 17);
+            this.playerturn.Size = new System.Drawing.Size(0, 17);
             this.playerturn.TabIndex = 19;
-            this.playerturn.Text = "____";
             // 
             // panel1
             // 
@@ -173,11 +180,20 @@
             this.panel5.Size = new System.Drawing.Size(194, 5);
             this.panel5.TabIndex = 22;
             // 
+            // win
+            // 
+            this.win.AutoSize = true;
+            this.win.Location = new System.Drawing.Point(572, 95);
+            this.win.Name = "win";
+            this.win.Size = new System.Drawing.Size(0, 17);
+            this.win.TabIndex = 26;
+            // 
             // PVP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 591);
+            this.Controls.Add(this.win);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -218,5 +234,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label win;
     }
 }

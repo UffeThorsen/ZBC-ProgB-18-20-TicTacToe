@@ -91,5 +91,10 @@ namespace TicTacToeWithGUI
             sc.ShowDialog();
             this.Close();
         }
+
+        private void Pt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -170,6 +170,7 @@
             this.pt.Size = new System.Drawing.Size(12, 17);
             this.pt.TabIndex = 34;
             this.pt.Text = " ";
+            this.pt.Click += new System.EventHandler(this.Pt_Click);
             // 
             // panel1
             // 
