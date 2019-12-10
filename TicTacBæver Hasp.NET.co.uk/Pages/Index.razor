@@ -2,6 +2,12 @@
 
 <div class="detvedjegikke">
     <div class="detvedjeggodt">
+        <select>
+            @foreach (TicTacToe.IPlayer player in BeaverUI.AIs)
+            {
+                <option style="position: absolute;left:25%; top:-10%" value="@player">@typeof(player)</option>
+            }
+        </select>
         <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
         <div class="row">
             <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />

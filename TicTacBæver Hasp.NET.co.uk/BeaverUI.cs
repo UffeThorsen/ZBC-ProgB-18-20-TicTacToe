@@ -15,13 +15,18 @@ namespace TicTacBæver_Hasp.NET.co.uk
 {
     public class BeaverUI
     {
-        static IPlayer a = new BeaverPlayer();
-        static IPlayer b = new UffeSmarterAIPlayer();
         public static Game game = new Game(a, b);
-        static bool timerStarted = false;
-        static bool hasClicked = false;
         public static Placement nextPlayerMove;
         public static Action pageUpdate = null;
+        public static IPlayer[] AIs =
+        {
+            new BeaverPlayer(), new RasmusAI()
+        };
+
+        static IPlayer a = new BeaverPlayer();
+        static IPlayer b = new UffeSmarterAIPlayer();
+        static bool timerStarted = false;
+        static bool hasClicked = false;
 
         public static string SymbolToImage(Symbol s)
         {
