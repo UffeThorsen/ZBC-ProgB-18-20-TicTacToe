@@ -2,10 +2,10 @@
 
 <div class="detvedjegikke">
     <div class="detvedjeggodt">
-        <select>
-            @foreach (TicTacToe.IPlayer player in BeaverUI.AIs)
+        <select @bind="BeaverUI.a">
+            @foreach (string key in BeaverUI.AIs.keys.ToArray())
             {
-                <option style="position: absolute;left:25%; top:-10%" value="@player">@typeof(player)</option>
+                <option style="position: absolute;left:25%; top:-10%" value="@key">@key</option>
             }
         </select>
         <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>

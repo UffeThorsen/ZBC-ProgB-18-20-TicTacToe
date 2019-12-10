@@ -13,9 +13,12 @@ using TicTacToe;
 
 namespace TicTacBæver_Hasp.NET.co.uk
 {
-    public class BeaverUI
+    public static class BeaverUI
     {
-        public static Game game = new Game(a, b);
+
+        public static IPlayer a;
+        public static IPlayer b;
+        public static Game game;
         public static Placement nextPlayerMove;
         public static Action pageUpdate = null;
         public static IPlayer[] AIs =
@@ -38,8 +41,6 @@ namespace TicTacBæver_Hasp.NET.co.uk
             new UffeSmarterAIPlayer()
         };
 
-        static IPlayer a = new BeaverPlayer();
-        static IPlayer b = new UffeSmarterAIPlayer();
         static bool timerStarted = false;
         static bool hasClicked = false;
 
