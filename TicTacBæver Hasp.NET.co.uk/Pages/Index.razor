@@ -2,18 +2,17 @@
 
 <div class="detvedjegikke">
     <div class="detvedjeggodt">
-        <select bind="@BeaverUI.a">
+        <select bind="@BeaverUI.a" style="position: absolute;left:25%; top:-10%">
             @foreach (string key in BeaverUI.AIs.Keys.ToArray())
             {
-                <option style="position: absolute;left:25%; top:-10%" value="@key">@key</option>
+                <option value="@key">@key</option>
 
             }
         </select>
-        <select bind="@BeaverUI.b">
-            @foreach (string key in BeaverUI.AIs.keys.ToArray())
+        <select bind="@BeaverUI.b" style="position: absolute;left:45%; top:-10%">
+            @foreach (string key in BeaverUI.AIs.Keys.ToArray())
             {
-                <option style="position: absolute;left:25%; top:-10%" value="@key">@key</option>
-
+                <option value="@key">@key</option>
             }
         </select>
         <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
@@ -33,6 +32,24 @@
                 <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
                 <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
                 <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <img src="/aa.png" class="collo"/>
+                <img src="/aa.png" class="collo"/>
+                <img src="/aa.png" class="collo"/>
+            </div>
+            <div class="row">
+                <img src="/aa.png" class="collo" />
+                <img src="/aa.png" class="collo"  />
+                <img src="/aa.png" class="collo"  />
+            </div>
+            <div class="row">
+                <img src="/aa.png" class="collo"  />
+                <img src="/aa.png" class="collo"  />
+                <img src="/aa.png" class="collo" />
             </div>
         }
     </div>
