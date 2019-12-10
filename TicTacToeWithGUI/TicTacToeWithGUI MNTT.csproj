@@ -52,6 +52,12 @@
     <Compile Include="AIVAI.Designer.cs">
       <DependentUpon>AIVAI.cs</DependentUpon>
     </Compile>
+    <Compile Include="PVAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PVAI.Designer.cs">
+      <DependentUpon>PVAI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Startscreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AIVAI.resx">
       <DependentUpon>AIVAI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PVAI.resx">
+      <DependentUpon>PVAI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Startscreen.resx">
       <DependentUpon>Startscreen.cs</DependentUpon>

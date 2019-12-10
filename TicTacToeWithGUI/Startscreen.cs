@@ -27,7 +27,10 @@ namespace TicTacToeWithGUI
 
         private void Button2_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            PVAI pvai = new PVAI();
+            pvai.ShowDialog();
+            this.Close();
         }
 
         private void Button3_Click(object sender, EventArgs e)
