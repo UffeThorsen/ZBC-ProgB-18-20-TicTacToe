@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class KarlGustavAI : IPlayer
+    public class KarlGustavAI : IPlayer
     {
         public Placement NextMove(Game gameState)
         {

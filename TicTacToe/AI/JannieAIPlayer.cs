@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class JannieAIPlayer : IPlayer
+    public class JannieAIPlayer : IPlayer
     {
 
         //Find random number and placements 

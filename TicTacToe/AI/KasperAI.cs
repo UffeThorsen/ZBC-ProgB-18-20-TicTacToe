@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class KasperAI : IPlayer
+    public class KasperAI : IPlayer
     {
         public virtual string Description
         {

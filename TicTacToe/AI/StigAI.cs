@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
-    class StigAI : IPlayer
+    public class StigAI : IPlayer
     {
         private Random r = new Random();
         private Placement[] allwaysTryMoves = {

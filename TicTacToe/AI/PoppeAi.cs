@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicTacToe
 {
-    class PoppeAi : IPlayer
+    public class PoppeAi : IPlayer
     {
         private Random r = new Random();
 

@@ -20,7 +20,22 @@ namespace TicTacBæver_Hasp.NET.co.uk
         public static Action pageUpdate = null;
         public static IPlayer[] AIs =
         {
-            new BeaverPlayer(), new RasmusAI()
+            new BeaverPlayer(),
+            new AntonAI(),
+            new BirksVeryBadAI(),
+            new DanielsEpicAI(),
+            new JacobIAI(),
+            new JacobAAI(),
+            //new JannieAIPlayer(),
+            //new KarlGustavAI(),
+            new KasperAI(),
+            new MFBadAI(),
+            new PoppeAi(),
+            new RasmusAI(),
+            new StigAI(),
+            new ThomasAIPlayer(),
+            new UffeAIPlayer(),
+            new UffeSmarterAIPlayer()
         };
 
         static IPlayer a = new BeaverPlayer();
