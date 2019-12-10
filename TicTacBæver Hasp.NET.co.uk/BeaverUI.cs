@@ -89,6 +89,7 @@ namespace TicTacBæver_Hasp.NET.co.uk
             aIs.Add("AntonAI", new AntonAI());
             aIs.Add("BirksVeryBadAI", new BirksVeryBadAI());
             aIs.Add("DanielsEpicAI", new DanielsEpicAI());
+            aIs.Add("DanielsEpicerAI", new DanielsEpicerAI());
             aIs.Add("JacobIAI", new JacobIAI());
             aIs.Add("JacobAAI", new JacobAAI());
             //aIs.Add("JannieAIPlayer", new JannieAIPlayer());
