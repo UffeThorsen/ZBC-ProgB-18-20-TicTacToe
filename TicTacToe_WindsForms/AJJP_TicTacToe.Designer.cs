@@ -1,4 +1,4 @@
-﻿namespace TicTacToe
+﻿namespace TicTacToe_WindsForms
 {
     partial class AJJP_TicTacToe
     {
@@ -47,6 +47,9 @@
             this.TurnText = new System.Windows.Forms.Label();
             this.Restart_btn = new System.Windows.Forms.Button();
             this.Continue_btn = new System.Windows.Forms.Button();
+            this.playerVsPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aIVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -139,6 +142,10 @@
             // 
             // newGameToolStripMenuItem
             // 
+            this.newGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playerVsPlayerToolStripMenuItem,
+            this.playerVsAIToolStripMenuItem,
+            this.aIVsAIToolStripMenuItem});
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             resources.ApplyResources(this.newGameToolStripMenuItem, "newGameToolStripMenuItem");
             // 
@@ -171,6 +178,21 @@
             resources.ApplyResources(this.Continue_btn, "Continue_btn");
             this.Continue_btn.Name = "Continue_btn";
             this.Continue_btn.UseVisualStyleBackColor = true;
+            // 
+            // playerVsPlayerToolStripMenuItem
+            // 
+            this.playerVsPlayerToolStripMenuItem.Name = "playerVsPlayerToolStripMenuItem";
+            resources.ApplyResources(this.playerVsPlayerToolStripMenuItem, "playerVsPlayerToolStripMenuItem");
+            // 
+            // playerVsAIToolStripMenuItem
+            // 
+            this.playerVsAIToolStripMenuItem.Name = "playerVsAIToolStripMenuItem";
+            resources.ApplyResources(this.playerVsAIToolStripMenuItem, "playerVsAIToolStripMenuItem");
+            // 
+            // aIVsAIToolStripMenuItem
+            // 
+            this.aIVsAIToolStripMenuItem.Name = "aIVsAIToolStripMenuItem";
+            resources.ApplyResources(this.aIVsAIToolStripMenuItem, "aIVsAIToolStripMenuItem");
             // 
             // AJJP_TicTacToe
             // 
@@ -211,5 +233,8 @@
         private System.Windows.Forms.Label TurnText;
         private System.Windows.Forms.Button Restart_btn;
         private System.Windows.Forms.Button Continue_btn;
+        private System.Windows.Forms.ToolStripMenuItem playerVsPlayerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playerVsAIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aIVsAIToolStripMenuItem;
     }
 }
