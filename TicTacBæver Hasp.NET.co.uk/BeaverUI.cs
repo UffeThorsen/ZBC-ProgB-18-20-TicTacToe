@@ -58,7 +58,7 @@ namespace TicTacBæver_Hasp.NET.co.uk
             while (!game.IsGameDone)
             {
                 // TO DO : ADD COMMENTS
-                if (game.CurrentPlayer == Symbol.X && a.GetType() == typeof(BeaverPlayer) || (game.CurrentPlayer == Symbol.O && b.GetType() == typeof(BeaverPlayer)))
+                if (game.CurrentPlayer == Symbol.X && PlayerA[a].GetType() == typeof(BeaverPlayer) || (game.CurrentPlayer == Symbol.O && PlayerB[b].GetType() == typeof(BeaverPlayer)))
                 {
                     hasClicked = false;
                     while (!hasClicked)
