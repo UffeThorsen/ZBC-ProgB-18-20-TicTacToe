@@ -42,14 +42,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerVsPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playerVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aIVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TurnText = new System.Windows.Forms.Label();
             this.Restart_btn = new System.Windows.Forms.Button();
             this.Continue_btn = new System.Windows.Forms.Button();
-            this.playerVsPlayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playerVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aIVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -149,6 +149,22 @@
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             resources.ApplyResources(this.newGameToolStripMenuItem, "newGameToolStripMenuItem");
             // 
+            // playerVsPlayerToolStripMenuItem
+            // 
+            this.playerVsPlayerToolStripMenuItem.Name = "playerVsPlayerToolStripMenuItem";
+            resources.ApplyResources(this.playerVsPlayerToolStripMenuItem, "playerVsPlayerToolStripMenuItem");
+            // 
+            // playerVsAIToolStripMenuItem
+            // 
+            this.playerVsAIToolStripMenuItem.Name = "playerVsAIToolStripMenuItem";
+            resources.ApplyResources(this.playerVsAIToolStripMenuItem, "playerVsAIToolStripMenuItem");
+            // 
+            // aIVsAIToolStripMenuItem
+            // 
+            this.aIVsAIToolStripMenuItem.Name = "aIVsAIToolStripMenuItem";
+            resources.ApplyResources(this.aIVsAIToolStripMenuItem, "aIVsAIToolStripMenuItem");
+            this.aIVsAIToolStripMenuItem.Click += new System.EventHandler(this.AIVsAIToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -178,21 +194,6 @@
             resources.ApplyResources(this.Continue_btn, "Continue_btn");
             this.Continue_btn.Name = "Continue_btn";
             this.Continue_btn.UseVisualStyleBackColor = true;
-            // 
-            // playerVsPlayerToolStripMenuItem
-            // 
-            this.playerVsPlayerToolStripMenuItem.Name = "playerVsPlayerToolStripMenuItem";
-            resources.ApplyResources(this.playerVsPlayerToolStripMenuItem, "playerVsPlayerToolStripMenuItem");
-            // 
-            // playerVsAIToolStripMenuItem
-            // 
-            this.playerVsAIToolStripMenuItem.Name = "playerVsAIToolStripMenuItem";
-            resources.ApplyResources(this.playerVsAIToolStripMenuItem, "playerVsAIToolStripMenuItem");
-            // 
-            // aIVsAIToolStripMenuItem
-            // 
-            this.aIVsAIToolStripMenuItem.Name = "aIVsAIToolStripMenuItem";
-            resources.ApplyResources(this.aIVsAIToolStripMenuItem, "aIVsAIToolStripMenuItem");
             // 
             // AJJP_TicTacToe
             // 

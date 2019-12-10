@@ -373,43 +373,43 @@
     <value>17, 17</value>
   </metadata>
   <data name="playerVsPlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="playerVsPlayerToolStripMenuItem.Text" xml:space="preserve">
     <value>Player vs. Player</value>
   </data>
   <data name="playerVsAIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="playerVsAIToolStripMenuItem.Text" xml:space="preserve">
     <value>Player vs. AI</value>
   </data>
   <data name="aIVsAIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="aIVsAIToolStripMenuItem.Text" xml:space="preserve">
     <value>AI vs. AI</value>
   </data>
   <data name="newGameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="newGameToolStripMenuItem.Text" xml:space="preserve">
     <value>New Game</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 26</value>
+    <value>224, 26</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 24</value>
+    <value>46, 24</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
   <data name="aBoutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 24</value>
+    <value>64, 24</value>
   </data>
   <data name="aBoutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
@@ -555,18 +555,6 @@
   <data name="&gt;&gt;newGameToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aBoutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aBoutToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;aBoutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;playerVsPlayerToolStripMenuItem.Name" xml:space="preserve">
     <value>playerVsPlayerToolStripMenuItem</value>
   </data>
@@ -583,6 +571,18 @@
     <value>aIVsAIToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;aIVsAIToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aBoutToolStripMenuItem.Name" xml:space="preserve">
+    <value>aBoutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aBoutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TicTacToe;
 
 namespace TicTacToe_WindsForms
 {
@@ -46,5 +47,18 @@ namespace TicTacToe_WindsForms
         {
 
         }
+
+        private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
+            Game g = new Game(Ai, Ai);
+            RunGame(g);
+        }
+
+        private void RunGame(Game g)
+        {
+            ConsoleUI.RunGame(g);
+        }
+
     }
 }
