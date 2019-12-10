@@ -10,7 +10,7 @@ namespace TicTacToe
         List<IPlayer> players;
         int currentPlayerIndex = 0;
         int? winningPlayer = null;
-        public Board gameBoard = new Board();
+        Board gameBoard = new Board();
 
         /// <summary>
         /// Returns the symbol at position (i, j).

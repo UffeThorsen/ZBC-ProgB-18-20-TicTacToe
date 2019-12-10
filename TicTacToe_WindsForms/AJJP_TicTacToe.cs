@@ -50,15 +50,38 @@ namespace TicTacToe_WindsForms
 
         private void RunGame(Game g)
         {
-            //Starts the game
-            TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
-            g.NextMove();
-            //Get the placement of the move
+            while(!g.IsGameDone)
+            {
+                //Starts the game
+                TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
+                g.NextMove(); //changes the turn
 
-            //Show the move on buttons text element
+                //Updates the form with the right symbols
+                UpdateForm(g);
+            }
+            if (g.WhoWon() == null) //If the game ends in a tie
+            {
+                TurnText.Text = "Tie";
+            }
+            else
+            {
+                //Tells who won the game (in a weird buggy way)
+                TurnText.Text = g.WhoWon().ToString();
+            }
+        }
 
-            TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
-
+        private void UpdateForm(Game g)
+        {
+            int index = 0;
+            for (int i = 0; i < 3; i++) //Checks through the vertical placement spaces
+            {
+                for (int j = 0; j < 3; j++) //Checks through the horizontal placement spaces
+                {
+                    //Changes the buttons text element to the right symbol
+                    buttonsPlacements.Keys.ToArray()[index].Text = g[i,j].ToString();
+                    index++;
+                }
+            }
         }
 
         private void aBoutToolStripMenuItem_Click(object sender, EventArgs e)
