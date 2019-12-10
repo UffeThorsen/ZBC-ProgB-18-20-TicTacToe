@@ -2,13 +2,13 @@
 
 <div class="detvedjegikke">
     <div class="detvedjeggodt">
-        <select @bind="BeaverUI.a" style="position: absolute;left:25%; top:-10%">
+        <select @bind="BeaverUI.a" style="position: absolute;right:105%">
             @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
             {
                 <option value="@key">@key</option>
             }
         </select>
-        <select @bind="BeaverUI.b" style="position: absolute;left:45%; top:-10%">
+        <select @bind="BeaverUI.b" style="position: absolute;left:105%">
             @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
             {
                 <option value="@key">@key</option>
