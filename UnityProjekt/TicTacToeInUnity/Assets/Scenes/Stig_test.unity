@@ -1392,5 +1392,50 @@ PrefabInstance:
       propertyPath: m_FontData.m_MaxSize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2453721922580142995, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721922963219701, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721923083514425, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721923131787428, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721923177443508, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721923342832606, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721923377763492, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721923859925828, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2453721924225477922, guid: 394be6e466378274b90ff64318808e23,
+        type: 3}
+      propertyPath: m_TagString
+      value: 01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 394be6e466378274b90ff64318808e23, type: 3}

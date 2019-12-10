@@ -14,7 +14,8 @@ public class ButtonControlTest : MonoBehaviour
     public Text[,] playingFieldText = new Text[3,3];
     public Transform[,] playingFieldButtons = new Transform[3,3];
     public GameObject playingBoard;
-    public int[] lastPos = new int[2];
+    public Placement lastPlacePressed;
+    public bool userHasPressed = false;
     bool someoneHasWon = false;
 
     void Start()
@@ -48,53 +49,51 @@ public class ButtonControlTest : MonoBehaviour
 
     public void StartGame()
     {
-        player1 = new UffeAIPlayer();
-        player2 = new UffeAIPlayer();
-       /* player1 = new UiIplayer(this);
-        player2 = new UiIplayer(this);*/
+        /*player1 = new UffeAIPlayer();
+        player2 = new UffeAIPlayer();*/
+        player1 = new UiIplayer(this);
+        player2 = new UiIplayer(this);
         currentGame = new Game(player1,player2);
+        DoNextMove();
     }
 
     
     public Placement LastValidButtonPress()
     {
-        return new Placement(lastPos[0],lastPos[1]);
+        userHasPressed = false;
+        new WaitWhile(() => !userHasPressed);
+        return lastPlacePressed;
     }
 
     public void BoardPressed(Button b)
     {
-        if (b.GetComponent<Text>().text == Symbol.N.ToString())
+        Placement p = new Placement(int.Parse(b.tag[0].ToString()), int.Parse(b.tag[1].ToString()));
+        if (currentGame.IsLegalMove(p))
         {
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    if (b.transform == playingFieldButtons[i,j])
-                    {
-                        lastPos[0] = i;
-                        lastPos[1] = j;
-                    }
-                }
-            }
+            lastPlacePressed = p;
+            userHasPressed = true;
         }
     }
 
     public void DoNextMove()
     {
-        if (!currentGame.IsGameDone)
+        if (userHasPressed)
         {
-            currentGame.NextMove();
-        }
-        else
-        {
-            someoneHasWon = true;
-            if (currentGame.WhoWon() == null)
+            if (!currentGame.IsGameDone)
             {
-                currentPlayerText.text = "The game was a tie";
+                currentGame.NextMove();
             }
             else
             {
-                currentPlayerText.text = "Winning player: " + currentGame.WhoWon();
+                someoneHasWon = true;
+                if (currentGame.WhoWon() == null)
+                {
+                    currentPlayerText.text = "The game was a tie";
+                }
+                else
+                {
+                    currentPlayerText.text = "Winning player: " + currentGame.WhoWon();
+                }
             }
         }
     }
