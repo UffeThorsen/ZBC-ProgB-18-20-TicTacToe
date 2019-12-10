@@ -17,6 +17,8 @@ public class ButtonControlTest : MonoBehaviour
     public Placement lastPlacePressed;
     public bool userHasPressed = false;
     bool someoneHasWon = false;
+    public Dropdown playerOneDropdown;
+    public Dropdown playerTwoDropdown;
 
     void Start()
     {
