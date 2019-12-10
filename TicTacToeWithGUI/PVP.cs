@@ -16,10 +16,7 @@ namespace TicTacToeWithGUI
     {
         static void Initializegame()
         {
-            IPlayer p1 = new ConsoleHumanPlayer();
-            IPlayer p2 = new ConsoleHumanPlayer();
-            Game g = new Game(p1, p2);
-
+           
         }
         public PVP()
         {
@@ -40,6 +37,16 @@ namespace TicTacToeWithGUI
         public void Button9_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void PVP_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void _11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

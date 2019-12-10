@@ -69,5 +69,15 @@ namespace TicTacToeWithGUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ultimate_tic_tac_toe12_01 {
+            get {
+                object obj = ResourceManager.GetObject("ultimate-tic-tac-toe12-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
