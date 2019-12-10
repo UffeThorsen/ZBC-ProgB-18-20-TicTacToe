@@ -372,14 +372,32 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="playerVsPlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="playerVsPlayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>Player vs. Player</value>
+  </data>
+  <data name="playerVsAIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="playerVsAIToolStripMenuItem.Text" xml:space="preserve">
+    <value>Player vs. AI</value>
+  </data>
+  <data name="aIVsAIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 26</value>
+  </data>
+  <data name="aIVsAIToolStripMenuItem.Text" xml:space="preserve">
+    <value>AI vs. AI</value>
+  </data>
   <data name="newGameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="newGameToolStripMenuItem.Text" xml:space="preserve">
     <value>New Game</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
@@ -547,6 +565,24 @@
     <value>aBoutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;aBoutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playerVsPlayerToolStripMenuItem.Name" xml:space="preserve">
+    <value>playerVsPlayerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;playerVsPlayerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playerVsAIToolStripMenuItem.Name" xml:space="preserve">
+    <value>playerVsAIToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;playerVsAIToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aIVsAIToolStripMenuItem.Name" xml:space="preserve">
+    <value>aIVsAIToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aIVsAIToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
