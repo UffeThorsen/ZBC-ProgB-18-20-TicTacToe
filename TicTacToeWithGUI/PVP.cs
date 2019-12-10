@@ -14,6 +14,10 @@ namespace TicTacToeWithGUI
 {
     public partial class PVP : Form
     {
+        public static Placement input;
+        Game g;
+        
+
         static void Initializegame()
         {
            
@@ -41,12 +45,18 @@ namespace TicTacToeWithGUI
 
         private void PVP_Load(object sender, EventArgs e)
         {
-           
+            IPlayer p1 = new GUIHumanPlayer();
+            IPlayer p2 = new GUIHumanPlayer();
+            g = new Game(p1,p2);
         }
 
         private void _11_Click(object sender, EventArgs e)
         {
-
+            input = new Placement(1,1);
+            if (g.IsLegalMove(input))
+            {
+                g.NextMove();
+            }
         }
     }
 }
