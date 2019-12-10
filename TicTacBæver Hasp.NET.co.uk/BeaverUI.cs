@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -93,8 +93,8 @@ namespace TicTacBæver_Hasp.NET.co.uk
             aIs.Add("DanielsEpicAI", new DanielsEpicAI());
             aIs.Add("JacobIAI", new JacobIAI());
             aIs.Add("JacobAAI", new JacobAAI());
-            aIs.Add("JannieAIPlayer", new JannieAIPlayer());
-            aIs.Add("KarlGustavAI", new KarlGustavAI());
+            //aIs.Add("JannieAIPlayer", new JannieAIPlayer());
+            //aIs.Add("KarlGustavAI", new KarlGustavAI());
             aIs.Add("KasperAI", new KasperAI());
             aIs.Add("MFBadAI", new MFBadAI());
             aIs.Add("PoppeAi", new PoppeAi());
