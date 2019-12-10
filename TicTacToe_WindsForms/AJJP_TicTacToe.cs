@@ -50,7 +50,15 @@ namespace TicTacToe_WindsForms
 
         private void RunGame(Game g)
         {
-            
+            //Starts the game
+            TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
+            g.NextMove();
+            //Get the placement of the move
+
+            //Show the move on buttons text element
+
+            TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
+
         }
 
         private void aBoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,11 +74,6 @@ namespace TicTacToe_WindsForms
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)

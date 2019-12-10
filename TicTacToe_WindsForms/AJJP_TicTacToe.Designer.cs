@@ -182,7 +182,6 @@
             // 
             resources.ApplyResources(this.TurnText, "TurnText");
             this.TurnText.Name = "TurnText";
-            this.TurnText.Click += new System.EventHandler(this.label1_Click);
             // 
             // Restart_btn
             // 
