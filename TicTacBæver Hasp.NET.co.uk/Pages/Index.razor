@@ -9,21 +9,24 @@
             }
         </select>
         <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
-        <div class="row">
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0])" class="collo" @onclick="(() => ClickOnButton(1, 0))" />
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0])" class="collo" @onclick="(() => ClickOnButton(2, 0))" />
-        </div>
-        <div class="row">
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1])" class="collo" @onclick="(() => ClickOnButton(0, 1))" />
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1])" class="collo" @onclick="(() => ClickOnButton(1, 1))" />
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1])" class="collo" @onclick="(() => ClickOnButton(2, 1))" />
-        </div>
-        <div class="row">
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
-            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
-        </div>
+        @if (BeaverUI.game != null)
+        {
+            <div class="row">
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo" @onclick="(() => ClickOnButton(0, 0))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0])" class="collo" @onclick="(() => ClickOnButton(1, 0))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0])" class="collo" @onclick="(() => ClickOnButton(2, 0))" />
+            </div>
+            <div class="row">
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1])" class="collo" @onclick="(() => ClickOnButton(0, 1))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1])" class="collo" @onclick="(() => ClickOnButton(1, 1))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1])" class="collo" @onclick="(() => ClickOnButton(2, 1))" />
+            </div>
+            <div class="row">
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo" @onclick="(() => ClickOnButton(0, 2))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo" @onclick="(() => ClickOnButton(1, 2))" />
+                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo" @onclick="(() => ClickOnButton(2, 2))" />
+            </div>
+        }
     </div>
 </div>
 
