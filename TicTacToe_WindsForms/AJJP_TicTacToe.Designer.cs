@@ -158,6 +158,7 @@
             // 
             this.playerVsAIToolStripMenuItem.Name = "playerVsAIToolStripMenuItem";
             resources.ApplyResources(this.playerVsAIToolStripMenuItem, "playerVsAIToolStripMenuItem");
+            this.playerVsAIToolStripMenuItem.Click += new System.EventHandler(this.playerVsAIToolStripMenuItem_Click);
             // 
             // aIVsAIToolStripMenuItem
             // 
