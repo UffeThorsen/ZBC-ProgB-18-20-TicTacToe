@@ -62,6 +62,7 @@ public class ButtonControlTest : MonoBehaviour
     {
         userHasPressed = false;
         new WaitWhile(() => !userHasPressed);
+        //StartCoroutine(AutoNextMove());
         return lastPlacePressed;
     }
 
@@ -96,6 +97,13 @@ public class ButtonControlTest : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator AutoNextMove()
+    {
+        new WaitForSeconds(0.5f);
+        DoNextMove();
+        yield return new WaitForSeconds(0.5f);
     }
 
     /*
