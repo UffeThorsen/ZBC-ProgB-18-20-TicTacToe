@@ -84,11 +84,6 @@ namespace TicTacToe_WindsForms
             }
         }
 
-        private void aBoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void A1_btn_Click(object sender, EventArgs e)
         {
 
@@ -108,6 +103,11 @@ namespace TicTacToe_WindsForms
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

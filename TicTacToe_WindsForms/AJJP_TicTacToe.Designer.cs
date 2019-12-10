@@ -46,7 +46,7 @@
             this.playerVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aIVsAIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aBoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TurnText = new System.Windows.Forms.Label();
             this.Restart_btn = new System.Windows.Forms.Button();
             this.Continue_btn = new System.Windows.Forms.Button();
@@ -128,7 +128,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.aBoutToolStripMenuItem});
+            this.AboutToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -172,11 +172,11 @@
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // aBoutToolStripMenuItem
+            // AboutToolStripMenuItem
             // 
-            this.aBoutToolStripMenuItem.Name = "aBoutToolStripMenuItem";
-            resources.ApplyResources(this.aBoutToolStripMenuItem, "aBoutToolStripMenuItem");
-            this.aBoutToolStripMenuItem.Click += new System.EventHandler(this.aBoutToolStripMenuItem_Click);
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            resources.ApplyResources(this.AboutToolStripMenuItem, "AboutToolStripMenuItem");
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // TurnText
             // 
@@ -221,7 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aBoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.Button C3_btn;
         private System.Windows.Forms.Button C2_btn;
         private System.Windows.Forms.Button C1_btn;
