@@ -21,30 +21,5 @@ namespace TicTacToe_WindsForms
         {
 
         }
-
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void A1_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void B1_btn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
