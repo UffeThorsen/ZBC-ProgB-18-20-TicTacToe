@@ -18,12 +18,13 @@ namespace TicTacBæver_Hasp.NET.co.uk
     public static class BeaverUI
     {
 
-        public static IPlayer a;
-        public static IPlayer b;
+        public static string a = "Human";
+        public static string b = "Human";
         public static Game game;
         public static Placement nextPlayerMove;
         public static Action pageUpdate = null;
-        public static Dictionary<string, IPlayer> AIs = makePlayerDictionary();
+        public static Dictionary<string, IPlayer> PlayerA = makePlayerDictionary();
+        public static Dictionary<string, IPlayer> PlayerB = makePlayerDictionary();
 
         static bool timerStarted = false;
         static bool hasClicked = false;
@@ -45,7 +46,9 @@ namespace TicTacBæver_Hasp.NET.co.uk
         {
             if (!timerStarted)
             {
-                game = new Game(a, b);
+                string testA = a;
+                string testB = b;
+                game = new Game(PlayerA[a], PlayerB[b]);
                 timerStarted = true;
                 System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(Timer));
                 thread.Start();
