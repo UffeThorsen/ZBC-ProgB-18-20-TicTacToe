@@ -1,19 +1,17 @@
 ﻿using TicTacToe;
 
-
-public class UiIplayer : IPlayer
+public class TestUIPlayer : IPlayer
 {
-
     ButtonControlTest but;
 
-    public UiIplayer(ButtonControlTest b)
+    public TestUIPlayer(ButtonControlTest b)
     {
         but = b;
     }
 
     public Placement NextMove(Game gameState)
     {
-        return but.LastValidButtonPress();   
+        return but.LastValidButtonPress();
     }
-
 }
+
