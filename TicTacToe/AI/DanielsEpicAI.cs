@@ -40,7 +40,7 @@ namespace TicTacToe
         }
     }
 
-    class DanielsEpicerAI : DanielsEpicAI
+    public class DanielsEpicerAI : DanielsEpicAI
     {
         public Placement NextMove(Game gameState)
         {
