@@ -49,8 +49,8 @@ public class ButtonControlTest : MonoBehaviour
 
     public void StartGame()
     {
-        /*player1 = new UffeAIPlayer();
-        player2 = new UffeAIPlayer();*/
+        /*playerOne = new UffeAIPlayer();
+        playerTwo = new UffeAIPlayer();*/
         player1 = new TestUIPlayer(this);
         player2 = new TestUIPlayer(this);
         currentGame = new Game(player1,player2);
