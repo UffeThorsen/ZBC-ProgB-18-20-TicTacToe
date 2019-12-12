@@ -3,17 +3,15 @@
 
 public class UiIplayer : IPlayer
 {
+    GameManagement manager;
 
-    GameManagement button;
-
-    public UiIplayer(GameManagement b)
+    public UiIplayer(GameManagement m)
     {
-        button = b;
+        manager = m;
     }
 
     public Placement NextMove(Game gameState)
     {
-        return button.LastValidButtonPress();   
+        return manager.LastValidButtonPress();   
     }
-
 }
