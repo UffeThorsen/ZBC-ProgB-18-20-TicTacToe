@@ -177,8 +177,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3263137d5baabba468e0f9f1f0c0e152, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 3263137d5baabba468e0f9f1f0c0e152, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 485654541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664b7e3c3b34d4c45a77bc56bcab21df, type: 3}
+  m_Script: {fileID: 11500000, guid: ac6eed705ba3f6243b2dd2797e11aa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayerText: {fileID: 3421133365745276656}
@@ -313,7 +313,7 @@ MonoBehaviour:
   IPlayerList:
   - m_Text: Player
     m_Image: {fileID: 0}
-  - m_Text: Ai
+  - m_Text: AI
     m_Image: {fileID: 0}
 --- !u!4 &485654543
 Transform:
@@ -386,8 +386,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3263137d5baabba468e0f9f1f0c0e152, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 3263137d5baabba468e0f9f1f0c0e152, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1754,7 +1754,7 @@ GameObject:
   - component: {fileID: 2866295214740130539}
   - component: {fileID: 2866295214740130538}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: PlayerOneDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2296,7 +2296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2866295215673357599}
   m_Layer: 5
-  m_Name: PLayer Two
+  m_Name: Player Two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2388,7 +2388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2866295215702509480}
   m_Layer: 5
-  m_Name: PLayer One
+  m_Name: Player One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3574,7 +3574,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5414,7 +5414,7 @@ GameObject:
   - component: {fileID: 8892776036158728606}
   - component: {fileID: 8945153480155660476}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: PlayerTwoDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

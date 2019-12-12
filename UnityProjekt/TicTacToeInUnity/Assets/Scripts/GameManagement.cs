@@ -14,6 +14,7 @@ public class GameManagement : MonoBehaviour
     Placement lastPlacePressed;
     bool userHasPressed = false;
     bool someoneHasWon = false;
+    bool xIsAI = false;
     public Text currentPlayerText;
     public GameObject playingBoard;
     public Dropdown playerOneDropdown;
@@ -91,7 +92,7 @@ public class GameManagement : MonoBehaviour
         currentGame = MakeNewGame();
         choosingScreen.SetActive(false);
         playingScreen.SetActive(true);
-        NextMove();
+        NextMove(xIsAI);
     }
 
     public void RestartGame()
@@ -99,7 +100,7 @@ public class GameManagement : MonoBehaviour
         userHasPressed = false;
         someoneHasWon = false;
         currentGame = MakeNewGame();
-        NextMove();
+        NextMove(xIsAI);
     }
     
     Game MakeNewGame()
@@ -111,6 +112,7 @@ public class GameManagement : MonoBehaviour
         else
         {
             playerOne = new UffeAIPlayer();
+            xIsAI = true;
         }
         if (playerTwoDropdown.value == 0)
         {
@@ -152,11 +154,11 @@ public class GameManagement : MonoBehaviour
                 currentGame.NextMove();
                 if (currentGame.CurrentPlayer == Symbol.X && playerOneDropdown.value == 1)
                 {
-                    NextMove(isAi = true);
+                    NextMove(true);
                 }
                 else if (currentGame.CurrentPlayer == Symbol.O && playerTwoDropdown.value == 1)
                 {
-                    NextMove(isAi = true);
+                    NextMove(true);
                 }
             }
         }
