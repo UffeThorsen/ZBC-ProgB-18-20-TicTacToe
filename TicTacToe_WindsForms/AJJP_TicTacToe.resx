@@ -373,46 +373,58 @@
     <value>17, 17</value>
   </metadata>
   <data name="playerVsPlayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="playerVsPlayerToolStripMenuItem.Text" xml:space="preserve">
     <value>Player vs. Player</value>
   </data>
   <data name="playerVsAIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="playerVsAIToolStripMenuItem.Text" xml:space="preserve">
     <value>Player vs. AI</value>
   </data>
   <data name="aIVsAIToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="aIVsAIToolStripMenuItem.Text" xml:space="preserve">
     <value>AI vs. AI</value>
   </data>
   <data name="newGameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="newGameToolStripMenuItem.Text" xml:space="preserve">
     <value>New Game</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 26</value>
+    <value>216, 26</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 24</value>
+    <value>44, 24</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>File</value>
   </data>
   <data name="AboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>62, 24</value>
   </data>
   <data name="AboutToolStripMenuItem.Text" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="Player1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 24</value>
+  </data>
+  <data name="Player1.Text" xml:space="preserve">
+    <value>Player 1</value>
+  </data>
+  <data name="player2ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 24</value>
+  </data>
+  <data name="player2ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Player 2</value>
   </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -583,6 +595,18 @@
     <value>AboutToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;AboutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Player1.Name" xml:space="preserve">
+    <value>Player1</value>
+  </data>
+  <data name="&gt;&gt;Player1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;player2ToolStripMenuItem.Name" xml:space="preserve">
+    <value>player2ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;player2ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

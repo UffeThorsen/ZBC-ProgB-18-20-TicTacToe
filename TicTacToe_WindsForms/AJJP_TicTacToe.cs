@@ -19,6 +19,8 @@ namespace TicTacToe_WindsForms
 
         private bool gameStarted = false;
 
+        private int gameMode = 0;
+
         public AJJP_TicTacToe()
         {
             InitializeComponent();
@@ -108,6 +110,7 @@ namespace TicTacToe_WindsForms
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            gameMode = 3;
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
             UffeAIPlayer AIDumb = new UffeAIPlayer();
@@ -128,5 +131,21 @@ namespace TicTacToe_WindsForms
             MessageBox.Show("This game have been made by Anton, Jacob A, Jannie and Patrick 3.P. \nDelivered 20/12-2019.", "Info about game");
         }
 
+        private void Restart_btn_Click(object sender, EventArgs e)
+        {
+            if(gameMode == 3)
+            {
+                AIVsAIToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void stateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (gameMode == 3)
+            {
+                state.
+            }
+
+        }
     }
 }
