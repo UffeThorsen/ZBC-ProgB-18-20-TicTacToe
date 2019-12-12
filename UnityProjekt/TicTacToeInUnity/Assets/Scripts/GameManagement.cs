@@ -10,7 +10,6 @@ public class GameManagement : MonoBehaviour
     IPlayer playerOne;
     IPlayer playerTwo;
     Text[,] playingFieldText = new Text[3, 3];
-    Transform[,] playingFieldButtons = new Transform[3, 3];
     Placement lastPlacePressed;
     bool userHasPressed = false;
     bool someoneHasWon = false;
@@ -36,7 +35,6 @@ public class GameManagement : MonoBehaviour
             for (int j = 0; j < 3; j++)
             {
                 playingFieldText[i, j] = playingBoard.transform.GetChild(k).GetChild(0).GetComponent<Text>();
-                playingFieldButtons[i, j] = playingBoard.transform.GetChild(k);
                 k++;
             }
         }
