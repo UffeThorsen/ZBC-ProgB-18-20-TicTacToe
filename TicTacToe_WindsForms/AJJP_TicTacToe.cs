@@ -141,10 +141,6 @@ namespace TicTacToe_WindsForms
 
         private void stateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (gameMode == 3)
-            {
-                state.
-            }
 
         }
     }

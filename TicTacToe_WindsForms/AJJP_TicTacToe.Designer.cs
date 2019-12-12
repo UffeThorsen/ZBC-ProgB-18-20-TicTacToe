@@ -50,8 +50,6 @@
             this.TurnText = new System.Windows.Forms.Label();
             this.Restart_btn = new System.Windows.Forms.Button();
             this.Continue_btn = new System.Windows.Forms.Button();
-            this.Player1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.player2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -130,9 +128,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.AboutToolStripMenuItem,
-            this.Player1,
-            this.player2ToolStripMenuItem});
+            this.AboutToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -201,17 +197,6 @@
             this.Continue_btn.UseVisualStyleBackColor = true;
             this.Continue_btn.Click += new System.EventHandler(this.Continue_btn_Click);
             // 
-            // Player1
-            // 
-            this.Player1.Name = "Player1";
-            resources.ApplyResources(this.Player1, "Player1");
-            this.Player1.Click += new System.EventHandler(this.stateToolStripMenuItem_Click);
-            // 
-            // player2ToolStripMenuItem
-            // 
-            this.player2ToolStripMenuItem.Name = "player2ToolStripMenuItem";
-            resources.ApplyResources(this.player2ToolStripMenuItem, "player2ToolStripMenuItem");
-            // 
             // AJJP_TicTacToe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -254,7 +239,5 @@
         private System.Windows.Forms.ToolStripMenuItem playerVsPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerVsAIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aIVsAIToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Player1;
-        private System.Windows.Forms.ToolStripMenuItem player2ToolStripMenuItem;
     }
 }
