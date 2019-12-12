@@ -15,7 +15,7 @@ namespace TicTacToeWithGUI
 
         public Placement NextMove(Game gamestate)
         {
-            return PVP.input;
+            return PlayerInputHolder.input;
         }
     }
 }

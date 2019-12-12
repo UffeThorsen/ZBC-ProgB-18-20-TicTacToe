@@ -14,7 +14,6 @@ namespace TicTacToeWithGUI
 {
     public partial class PVP : Form
     {
-        public static Placement input;
         Game g;
         
 
@@ -62,8 +61,8 @@ namespace TicTacToeWithGUI
 
         public void Button9_Click(object sender, EventArgs e)
         {
-            input = new Placement(0, 0);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(0, 0);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -78,7 +77,8 @@ namespace TicTacToeWithGUI
             if (g.IsGameDone)
             {
                 g.NextMove();
-                win.Text = g.CurrentPlayer + " won the game";                
+                win.Text = g.CurrentPlayer + " won the game";
+                whitecover.Visible = true;
             }
 
 
@@ -98,8 +98,8 @@ namespace TicTacToeWithGUI
 
         private void _11_Click(object sender, EventArgs e)
         {
-            input = new Placement(1,1);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(1,1);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -110,8 +110,8 @@ namespace TicTacToeWithGUI
 
         private void _01_Click(object sender, EventArgs e)
         {
-            input = new Placement(0, 1);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(0, 1);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -122,8 +122,8 @@ namespace TicTacToeWithGUI
 
         private void _02_Click(object sender, EventArgs e)
         {
-            input = new Placement(0, 2);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(0, 2);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -134,8 +134,8 @@ namespace TicTacToeWithGUI
 
         private void _10_Click(object sender, EventArgs e)
         {
-            input = new Placement(1, 0);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(1, 0);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -146,8 +146,8 @@ namespace TicTacToeWithGUI
 
         private void _12_Click(object sender, EventArgs e)
         {
-            input = new Placement(1, 2);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(1, 2);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -158,8 +158,8 @@ namespace TicTacToeWithGUI
 
         private void _20_Click(object sender, EventArgs e)
         {
-            input = new Placement(2, 0);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(2, 0);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -170,8 +170,8 @@ namespace TicTacToeWithGUI
 
         private void _21_Click(object sender, EventArgs e)
         {
-            input = new Placement(2, 1);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(2, 1);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
@@ -182,14 +182,19 @@ namespace TicTacToeWithGUI
 
         private void _22_Click(object sender, EventArgs e)
         {
-            input = new Placement(2, 2);
-            if (g.IsLegalMove(input))
+            PlayerInputHolder.input = new Placement(2, 2);
+            if (g.IsLegalMove(PlayerInputHolder.input))
             {
                 g.NextMove();
                 UpdateButtons();
                 PlayerTurn();
                 CheckWin();
             }
+        }
+
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+          
         }
     }
 }

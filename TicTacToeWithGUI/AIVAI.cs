@@ -42,12 +42,13 @@ namespace TicTacToeWithGUI
         {
             if (g.IsGameDone)
             {
-                win.Text = g.WhoWon() + " won the game";
+                win.Text = g.CurrentPlayer + " won the game";
+                whitecover.Visible = true;
                 mainmenu.Visible = true;
-            }
-            
-
+                
+            }            
         }
+
         private void PlayerTurn()
         {
             pt.Text = g.CurrentPlayer.ToString();

@@ -45,6 +45,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.win = new System.Windows.Forms.Label();
+            this.whitecover = new System.Windows.Forms.Panel();
+            this.whitecover.SuspendLayout();
             this.SuspendLayout();
             // 
             // _22
@@ -183,17 +185,29 @@
             // win
             // 
             this.win.AutoSize = true;
-            this.win.Location = new System.Drawing.Point(572, 95);
+            this.win.Location = new System.Drawing.Point(89, 88);
             this.win.Name = "win";
-            this.win.Size = new System.Drawing.Size(0, 17);
+            this.win.Size = new System.Drawing.Size(54, 17);
             this.win.TabIndex = 26;
+            this.win.Text = "Wintext";
+            this.win.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // whitecover
+            // 
+            this.whitecover.Controls.Add(this.win);
+            this.whitecover.Location = new System.Drawing.Point(480, 160);
+            this.whitecover.Name = "whitecover";
+            this.whitecover.Size = new System.Drawing.Size(239, 226);
+            this.whitecover.TabIndex = 27;
+            this.whitecover.Visible = false;
+            this.whitecover.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
             // PVP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 591);
-            this.Controls.Add(this.win);
+            this.Controls.Add(this.whitecover);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -210,8 +224,11 @@
             this.Controls.Add(this._00);
             this.Controls.Add(this._22);
             this.Name = "PVP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.PVP_Load);
+            this.whitecover.ResumeLayout(false);
+            this.whitecover.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +252,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label win;
+        private System.Windows.Forms.Panel whitecover;
     }
 }

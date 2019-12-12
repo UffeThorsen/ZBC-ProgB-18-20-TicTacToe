@@ -46,6 +46,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.whitecover = new System.Windows.Forms.Panel();
+            this.whitecover.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -144,11 +146,11 @@
             // win
             // 
             this.win.AutoSize = true;
-            this.win.Location = new System.Drawing.Point(584, 132);
+            this.win.Location = new System.Drawing.Point(42, 103);
             this.win.Name = "win";
-            this.win.Size = new System.Drawing.Size(12, 17);
+            this.win.Size = new System.Drawing.Size(50, 17);
             this.win.TabIndex = 32;
-            this.win.Text = " ";
+            this.win.Text = "wintext";
             this.win.Click += new System.EventHandler(this.Label2_Click);
             // 
             // mainmenu
@@ -204,18 +206,27 @@
             this.panel4.Size = new System.Drawing.Size(191, 5);
             this.panel4.TabIndex = 38;
             // 
+            // whitecover
+            // 
+            this.whitecover.Controls.Add(this.win);
+            this.whitecover.Location = new System.Drawing.Point(505, 168);
+            this.whitecover.Name = "whitecover";
+            this.whitecover.Size = new System.Drawing.Size(371, 225);
+            this.whitecover.TabIndex = 39;
+            this.whitecover.Visible = false;
+            // 
             // AIVAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 596);
+            this.Controls.Add(this.whitecover);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pt);
             this.Controls.Add(this.mainmenu);
-            this.Controls.Add(this.win);
             this.Controls.Add(this.label1);
             this.Controls.Add(this._21);
             this.Controls.Add(this._20);
@@ -228,8 +239,11 @@
             this.Controls.Add(this._22);
             this.Controls.Add(this.button1);
             this.Name = "AIVAI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AIVAI_Load);
+            this.whitecover.ResumeLayout(false);
+            this.whitecover.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,5 +269,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel whitecover;
     }
 }

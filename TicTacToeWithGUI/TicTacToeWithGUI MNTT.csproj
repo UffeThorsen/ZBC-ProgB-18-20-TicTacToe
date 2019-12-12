@@ -53,6 +53,7 @@
       <DependentUpon>AIVAI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUIHumanPlayer.cs" />
+    <Compile Include="PlayerInputHolder.cs" />
     <Compile Include="PVAI.cs">
       <SubType>Form</SubType>
     </Compile>
