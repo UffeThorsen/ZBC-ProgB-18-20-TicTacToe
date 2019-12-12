@@ -13,7 +13,11 @@ namespace TicTacToe_WindsForms
 {
     public partial class AJJP_TicTacToe : Form
     {
+        public Game game { get; set; }
+
         Dictionary<Button, Placement> buttonsPlacements = new Dictionary<Button, Placement>();
+
+        private bool gameStarted = false;
 
         public AJJP_TicTacToe()
         {
@@ -22,6 +26,7 @@ namespace TicTacToe_WindsForms
 
         private void AJJP_TicTacToe_Load(object sender, EventArgs e)
         {
+            //Loads the different button placements into the dictionary
             Placement pA1 = new Placement(0, 0);
             Placement pA2 = new Placement(0, 1);
             Placement pA3 = new Placement(0, 2);
@@ -50,16 +55,15 @@ namespace TicTacToe_WindsForms
 
         private void RunGame(Game g)
         {
-            while(!g.IsGameDone)
+            if (!g.IsGameDone)
             {
-                //Starts the game
                 TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
-                g.NextMove(); //changes the turn
+                g.NextMove(); //Changes the turn
 
                 //Updates the form with the right symbols
                 UpdateForm(g);
             }
-            if (g.WhoWon() == null) //If the game ends in a tie
+            else if (g.WhoWon() == null) //If the game ends in a tie
             {
                 TurnText.Text = "Tie";
             }
@@ -84,6 +88,14 @@ namespace TicTacToe_WindsForms
             }
         }
 
+        private void Continue_btn_Click(object sender, EventArgs e)
+        {
+            if (gameStarted)
+            {
+                RunGame(game);
+            }
+        }
+
         private void A1_btn_Click(object sender, EventArgs e)
         {
 
@@ -96,10 +108,14 @@ namespace TicTacToe_WindsForms
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
             UffeAIPlayer AIDumb = new UffeAIPlayer();
-            Game g = new Game(AIDumb, Ai);
-            RunGame(g);
+            //Creates the game with the AI
+            Game g = new Game(AIDumb, Ai); 
+            game = g; //Sets the game 
+            gameStarted = true; //Sets the game to be started (for continue button)
+            RunGame(game); // runs the game once
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,5 +127,6 @@ namespace TicTacToe_WindsForms
         {
 
         }
+
     }
 }

@@ -194,6 +194,7 @@
             resources.ApplyResources(this.Continue_btn, "Continue_btn");
             this.Continue_btn.Name = "Continue_btn";
             this.Continue_btn.UseVisualStyleBackColor = true;
+            this.Continue_btn.Click += new System.EventHandler(this.Continue_btn_Click);
             // 
             // AJJP_TicTacToe
             // 
