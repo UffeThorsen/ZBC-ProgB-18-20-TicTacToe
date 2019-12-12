@@ -121,7 +121,6 @@
             resources.ApplyResources(this.A1_btn, "A1_btn");
             this.A1_btn.Name = "A1_btn";
             this.A1_btn.UseVisualStyleBackColor = true;
-            this.A1_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // menuStrip1
             // 
@@ -153,6 +152,7 @@
             // 
             this.playerVsPlayerToolStripMenuItem.Name = "playerVsPlayerToolStripMenuItem";
             resources.ApplyResources(this.playerVsPlayerToolStripMenuItem, "playerVsPlayerToolStripMenuItem");
+            this.playerVsPlayerToolStripMenuItem.Click += new System.EventHandler(this.playerVsPlayerToolStripMenuItem_Click);
             // 
             // playerVsAIToolStripMenuItem
             // 

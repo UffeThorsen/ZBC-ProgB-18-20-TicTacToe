@@ -50,11 +50,6 @@ namespace TicTacToe_WindsForms
             buttonsPlacements[C3_btn] = pC3;
         }
 
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
         private void RunGame(Game g)
         {
             if (!g.IsGameDone)
@@ -98,18 +93,25 @@ namespace TicTacToe_WindsForms
             }
         }
 
-        private void A1_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gameMode = 1;
+        }
+
+        private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gameMode = 2;
+
+        }
+
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //
             gameMode = 3;
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
@@ -121,11 +123,6 @@ namespace TicTacToe_WindsForms
             RunGame(game); // runs the game once
         }
 
-        private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This game have been made by Anton, Jacob A, Jannie and Patrick 3.P. \nDelivered 20/12-2019.", "Info about game");
@@ -133,9 +130,20 @@ namespace TicTacToe_WindsForms
 
         private void Restart_btn_Click(object sender, EventArgs e)
         {
-            if(gameMode == 3)
+            switch (gameMode)
             {
-                AIVsAIToolStripMenuItem_Click(sender, e);
+                case 1:
+                    playerVsPlayerToolStripMenuItem_Click(sender, e);
+                    break;
+                case 2:
+                    playerVsAIToolStripMenuItem_Click(sender, e);
+                    break;
+                case 3:
+                    AIVsAIToolStripMenuItem_Click(sender, e);
+                    break;
+                default:
+                    TurnText.Text = "Choose a game (under files)";
+                    break;
             }
         }
 
@@ -143,5 +151,7 @@ namespace TicTacToe_WindsForms
         {
 
         }
+
+        
     }
 }
