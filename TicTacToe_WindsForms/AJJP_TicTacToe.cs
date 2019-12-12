@@ -14,11 +14,11 @@ namespace TicTacToe_WindsForms
     public partial class AJJP_TicTacToe : Form
     {
         public Game game { get; set; }
+        public static Placement nextP;
 
         Dictionary<Button, Placement> buttonsPlacements = new Dictionary<Button, Placement>();
 
         private bool gameStarted = false;
-
         private int gameMode = 0;
 
         public AJJP_TicTacToe()
@@ -28,7 +28,6 @@ namespace TicTacToe_WindsForms
 
         private void AJJP_TicTacToe_Load(object sender, EventArgs e)
         {
-            TurnText.Text = "Choose a game! (file)";
             //Loads the different button placements into the dictionary
             Placement pA1 = new Placement(0, 0);
             Placement pA2 = new Placement(0, 1);
@@ -50,25 +49,25 @@ namespace TicTacToe_WindsForms
             buttonsPlacements[C2_btn] = pC2;
             buttonsPlacements[C3_btn] = pC3;
         }
-        
-        private void RunGame(Game g)
+
+        private void NextStep()
         {
-            if (!g.IsGameDone)
+            if (!game.IsGameDone)
             {
-                TurnText.Text = "Turn: " + g.CurrentPlayer; //Shows the starting player
-                g.NextMove(); //Changes the turn
+                TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
+                game.NextMove(); //Changes the turn
 
                 //Updates the form with the right symbols
-                UpdateForm(g);
+                UpdateForm(game);
             }
-            else if (g.WhoWon() == null) //If the game ends in a tie
+            else if (game.WhoWon() == null) //If the game ends in a tie
             {
                 TurnText.Text = "Tie";
             }
             else
             {
                 //Tells who won the game (in a weird buggy way)
-                TurnText.Text = g.WhoWon().ToString();
+                TurnText.Text = game.WhoWon().ToString();
             }
         }
 
@@ -90,7 +89,7 @@ namespace TicTacToe_WindsForms
         {
             if (gameStarted)
             {
-                RunGame(game);
+                NextStep();
             }
         }
 
@@ -101,20 +100,24 @@ namespace TicTacToe_WindsForms
 
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Make sure that we can rerun the game
             gameMode = 1;
+
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Make sure that we can rerun the game
             gameMode = 2;
-
+            GUIPlayer player = new GUIPlayer();
+            UffeSmarterAIPlayer AI = new UffeSmarterAIPlayer();
+            Game g = new Game(player, AI);
+            game = g;
+            gameStarted = true;
+            UpdateForm(game);
         }
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Make sure that we can rerun the game
+            //
             gameMode = 3;
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
@@ -123,7 +126,7 @@ namespace TicTacToe_WindsForms
             Game g = new Game(AIDumb, Ai); 
             game = g; //Sets the game 
             gameStarted = true; //Sets the game to be started (for continue button)
-            RunGame(game); // runs the game once
+            NextStep(); // runs the game once
         }
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,6 +151,21 @@ namespace TicTacToe_WindsForms
                     TurnText.Text = "Choose a game (under files)";
                     break;
             }
-        }        
+        }
+
+        private void stateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void A1_btn_Click(object sender, EventArgs e)
+        {
+            Placement p = buttonsPlacements[(Button)sender];
+            if (game.IsLegalMove(p))
+            {
+                nextP = p;
+                Continue_btn_Click(sender, e);
+            }
+        }
     }
 }
