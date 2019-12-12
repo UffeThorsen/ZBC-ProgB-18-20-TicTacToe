@@ -4,18 +4,24 @@
 <div>
     <div class="detvedjegikke">
         <div class="detvedjeggodt">
-            <select @bind="BeaverUI.a" style="position: absolute;right:105%">
-                @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
-                {
-                    <option value="@key">@key</option>
-                }
-            </select>
-            <select @bind="BeaverUI.b" style="position: absolute;left:105%">
-                @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
-                {
-                    <option value="@key">@key</option>
-                }
-            </select>
+            <div style="position: absolute;right:105%">
+                <select @bind="BeaverUI.a">
+                    @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
+                    {
+                        <option value="@key">@key</option>
+                    }
+                </select>
+                <img class="mx-auto" src="@BeaverUI.SymbolToImage(Symbol.X,coolMode);" style="position: absolute; top: 120%; left: 13%;"/>
+            </div>
+            <div style="position: absolute;left:105%">
+                <select @bind="BeaverUI.b">
+                    @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
+                    {
+                        <option value="@key">@key</option>
+                    }
+                </select>
+                <img class="mx-auto" src="@BeaverUI.SymbolToImage(Symbol.O,coolMode)" style="position: absolute; top: 120%; right: 13%;"/>
+            </div>
             <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
             @if (BeaverUI.game != null)
             {
