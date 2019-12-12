@@ -125,7 +125,7 @@ namespace TicTacToe_WindsForms
 
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("This game have been made by Anton, Jacob A, Jannie and Patrick 3.P. \nDelivered 20/12-2019.", "Info about game");
         }
 
     }
