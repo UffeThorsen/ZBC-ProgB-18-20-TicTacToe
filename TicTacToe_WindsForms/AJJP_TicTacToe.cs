@@ -58,7 +58,7 @@ namespace TicTacToe_WindsForms
                 game.NextMove(); //Changes the turn
 
                 //Updates the form with the right symbols
-                UpdateForm(game);
+                UpdateForm();
             }
             else if (game.WhoWon() == null) //If the game ends in a tie
             {
@@ -71,7 +71,7 @@ namespace TicTacToe_WindsForms
             }
         }
 
-        private void UpdateForm(Game g)
+        private void UpdateForm()
         {
             int index = 0;
             for (int i = 0; i < 3; i++) //Checks through the vertical placement spaces
@@ -79,7 +79,7 @@ namespace TicTacToe_WindsForms
                 for (int j = 0; j < 3; j++) //Checks through the horizontal placement spaces
                 {
                     //Changes the buttons text element to the right symbol
-                    buttonsPlacements.Keys.ToArray()[index].Text = g[i,j].ToString();
+                    buttonsPlacements.Keys.ToArray()[index].Text = game[i,j].ToString();
                     index++;
                 }
             }
@@ -101,7 +101,12 @@ namespace TicTacToe_WindsForms
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 1;
-
+            GUIPlayer player1 = new GUIPlayer();
+            GUIPlayer player2 = new GUIPlayer();
+            Game g = new Game(player1, player2);
+            game = g;
+            gameStarted = true;
+            UpdateForm();
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,12 +117,11 @@ namespace TicTacToe_WindsForms
             Game g = new Game(player, AI);
             game = g;
             gameStarted = true;
-            UpdateForm(game);
+            UpdateForm();
         }
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
             gameMode = 3;
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
