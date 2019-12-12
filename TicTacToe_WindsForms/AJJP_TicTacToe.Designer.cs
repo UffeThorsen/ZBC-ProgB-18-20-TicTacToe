@@ -73,54 +73,63 @@
             resources.ApplyResources(this.C3_btn, "C3_btn");
             this.C3_btn.Name = "C3_btn";
             this.C3_btn.UseVisualStyleBackColor = true;
+            this.C3_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // C2_btn
             // 
             resources.ApplyResources(this.C2_btn, "C2_btn");
             this.C2_btn.Name = "C2_btn";
             this.C2_btn.UseVisualStyleBackColor = true;
+            this.C2_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // C1_btn
             // 
             resources.ApplyResources(this.C1_btn, "C1_btn");
             this.C1_btn.Name = "C1_btn";
             this.C1_btn.UseVisualStyleBackColor = true;
+            this.C1_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // B3_btn
             // 
             resources.ApplyResources(this.B3_btn, "B3_btn");
             this.B3_btn.Name = "B3_btn";
             this.B3_btn.UseVisualStyleBackColor = true;
+            this.B3_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // B2_btn
             // 
             resources.ApplyResources(this.B2_btn, "B2_btn");
             this.B2_btn.Name = "B2_btn";
             this.B2_btn.UseVisualStyleBackColor = true;
+            this.B2_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // B1_btn
             // 
             resources.ApplyResources(this.B1_btn, "B1_btn");
             this.B1_btn.Name = "B1_btn";
             this.B1_btn.UseVisualStyleBackColor = true;
+            this.B1_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // A3_btn
             // 
             resources.ApplyResources(this.A3_btn, "A3_btn");
             this.A3_btn.Name = "A3_btn";
             this.A3_btn.UseVisualStyleBackColor = true;
+            this.A3_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // A2_btn
             // 
             resources.ApplyResources(this.A2_btn, "A2_btn");
             this.A2_btn.Name = "A2_btn";
             this.A2_btn.UseVisualStyleBackColor = true;
+            this.A2_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // A1_btn
             // 
             resources.ApplyResources(this.A1_btn, "A1_btn");
             this.A1_btn.Name = "A1_btn";
             this.A1_btn.UseVisualStyleBackColor = true;
+            this.A1_btn.Click += new System.EventHandler(this.A1_btn_Click);
             // 
             // menuStrip1
             // 

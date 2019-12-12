@@ -52,6 +52,7 @@
     <Compile Include="AJJP_TicTacToe.Designer.cs">
       <DependentUpon>AJJP_TicTacToe.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AJJP_TicTacToe.resx">
