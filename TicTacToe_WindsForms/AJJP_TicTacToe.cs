@@ -28,6 +28,7 @@ namespace TicTacToe_WindsForms
 
         private void AJJP_TicTacToe_Load(object sender, EventArgs e)
         {
+            TurnText.Text = "Choose a game! (file)";
             //Loads the different button placements into the dictionary
             Placement pA1 = new Placement(0, 0);
             Placement pA2 = new Placement(0, 1);
@@ -49,7 +50,7 @@ namespace TicTacToe_WindsForms
             buttonsPlacements[C2_btn] = pC2;
             buttonsPlacements[C3_btn] = pC3;
         }
-
+        
         private void RunGame(Game g)
         {
             if (!g.IsGameDone)
@@ -100,18 +101,20 @@ namespace TicTacToe_WindsForms
 
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Make sure that we can rerun the game
             gameMode = 1;
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Make sure that we can rerun the game
             gameMode = 2;
 
         }
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //
+            //Make sure that we can rerun the game
             gameMode = 3;
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
@@ -145,13 +148,6 @@ namespace TicTacToe_WindsForms
                     TurnText.Text = "Choose a game (under files)";
                     break;
             }
-        }
-
-        private void stateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
+        }        
     }
 }
