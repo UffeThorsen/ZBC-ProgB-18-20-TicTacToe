@@ -1,73 +1,111 @@
+@inject IJSRuntime JSRuntime
 @page "/"
-
-<div class="detvedjegikke">
-    <div class="detvedjeggodt">
-        <select @bind="BeaverUI.a" style="position: absolute;right:105%">
-            @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
+@using Microsoft.AspNetCore.Components.Web
+<div>
+    <div class="detvedjegikke">
+        <div class="detvedjeggodt">
+            <select @bind="BeaverUI.a" style="position: absolute;right:105%">
+                @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
+                {
+                    <option value="@key">@key</option>
+                }
+            </select>
+            <select @bind="BeaverUI.b" style="position: absolute;left:105%">
+                @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
+                {
+                    <option value="@key">@key</option>
+                }
+            </select>
+            <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
+            @if (BeaverUI.game != null)
             {
-                <option value="@key">@key</option>
+                <div class="row">
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(0, 0))" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 0))" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(2, 0))" draggable="false" unselectable="on" ondragstart="return false" />
+                </div>
+                <div class="row">
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(0, 1))" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 1))" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(2, 1))" draggable="false" unselectable="on" ondragstart="return false" />
+                </div>
+                <div class="row">
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(0, 2))" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 2))" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(2, 2))" draggable="false" unselectable="on" ondragstart="return false" />
+                </div>
+                <div class="row">
+                    <div class="mx-auto">
+                        @BeaverUI.status
+                    </div>
+                </div>
             }
-        </select>
-        <select @bind="BeaverUI.b" style="position: absolute;left:105%">
-            @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
+            else
             {
-                <option value="@key">@key</option>
+                <div class="row">
+                    <img src="@Default" value="a" @onclick="(()=>Konami('A'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@Default" value="up"@onclick="(()=>Konami('U'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                </div>
+                <div class="row">
+                    <img src="@Default" value="left" @onclick="(()=>Konami('L'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@Default" value="right" @onclick="(()=>Konami('R'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                </div>
+                <div class="row">
+                    <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@Default" value="down" @onclick="(()=>Konami('D'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                    <img src="@Default" value="b" @onclick="(()=>Konami('B'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+                </div>
+                <div class="row">
+                    <div class="mx-auto">
+                        Welcome!
+                    </div>
+                </div>
             }
-        </select>
-        <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
-        @if (BeaverUI.game != null)
-        {
-            <div class="row">
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0])" class="collo unselectable" @onclick="(() => ClickOnButton(0, 0))" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0])" class="collo unselectable" @onclick="(() => ClickOnButton(1, 0))" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0])" class="collo unselectable" @onclick="(() => ClickOnButton(2, 0))" draggable="false" unselectable="on" ondragstart="return false"/>
-            </div>
-            <div class="row">
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1])" class="collo unselectable" @onclick="(() => ClickOnButton(0, 1))" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1])" class="collo unselectable" @onclick="(() => ClickOnButton(1, 1))" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1])" class="collo unselectable" @onclick="(() => ClickOnButton(2, 1))" draggable="false" unselectable="on" ondragstart="return false"/>
-            </div>
-            <div class="row">
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2])" class="collo unselectable" @onclick="(() => ClickOnButton(0, 2))" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2])" class="collo unselectable" @onclick="(() => ClickOnButton(1, 2))" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2])" class="collo unselectable" @onclick="(() => ClickOnButton(2, 2))" draggable="false" unselectable="on" ondragstart="return false"/>
-            </div>
-        }
-        else
-        {
-            <div class="row">
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-            </div>
-            <div class="row">
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-            </div>
-            <div class="row">
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-                <img src="/aa.png" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false"/>
-            </div>
-        }
+        </div>
     </div>
 </div>
 
 
+
 @code
 {
+    string konami;
+
+    bool coolMode = false;
+
+    string Default
+    {
+        get
+        {
+            if (coolMode)
+                return "/aa.png";
+            return "/Blank.png";
+        }
+    }
+
+    void Konami(char c)
+    {
+        konami += c;
+        if (konami == "UUDDLRLRBA")
+        {
+            coolMode = true;
+            StateHasChanged();
+        }
+    }
+
     void StartNewGame()
     {
-        if(BeaverUI.pageUpdate == null)
+        if (BeaverUI.pageUpdate == null)
         {
             BeaverUI.pageUpdate = new Action(UpdateScreen);
         }
         BeaverUI.StartNewGame();
     }
-    void ClickOnButton(int i,int j)
+    void ClickOnButton(int i, int j)
     {
-        BeaverUI.MakeMove(i,j);
+        BeaverUI.MakeMove(i, j);
         this.StateHasChanged();
     }
 
@@ -78,13 +116,13 @@
 
     bool CompareBools(bool b1, bool b2)
     {
-        
+
         return b1 != b2;
     }
 
     bool AreBoolsEqual(bool b1, bool b2)
     {
-        return !CompareBools(b1,b2);
+        return !CompareBools(b1, b2);
     }
 
     bool FalseEqualTo()

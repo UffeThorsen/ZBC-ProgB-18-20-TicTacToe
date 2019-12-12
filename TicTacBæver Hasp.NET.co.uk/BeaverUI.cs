@@ -18,22 +18,39 @@ namespace TicTacBæver_Hasp.NET.co.uk
     public static class BeaverUI
     {
 
+        public static string status = "Welcome!";
         public static string a = "Human";
         public static string b = "Human";
         public static Game game;
         public static Placement nextPlayerMove;
         public static Action pageUpdate = null;
-        public static Dictionary<string, IPlayer> PlayerA = makePlayerDictionary();
-        public static Dictionary<string, IPlayer> PlayerB = makePlayerDictionary();
+        public static Dictionary<string, IPlayer> PlayerA = MakePlayerDictionary();
+        public static Dictionary<string, IPlayer> PlayerB = MakePlayerDictionary();
 
         static bool timerStarted = false;
         static bool hasClicked = false;
 
+        
+
+        public static string SymbolToImage(Symbol s, bool coolMode)
+        {
+            if (coolMode)
+            {
+                if (s == Symbol.X) return "/beaver.png";
+                if (s == Symbol.O) return "/baevreasp.png";
+                return "/aa.png";
+            }
+            else
+            {
+                if (s == Symbol.X) return "/X.png";
+                if (s == Symbol.O) return "/O.png";
+                return "/Blank.png";
+            }
+        }
+
         public static string SymbolToImage(Symbol s)
         {
-            if (s == Symbol.X) return "/beaver.png";
-            if (s == Symbol.O) return "/baevreasp.png";
-            return "/aa.png";
+            return SymbolToImage(s,false);
         }
 
         public static void MakeMove(int i, int j)
@@ -57,6 +74,8 @@ namespace TicTacBæver_Hasp.NET.co.uk
         {
             while (!game.IsGameDone)
             {
+                status = game.CurrentPlayer + " make your move!";
+                pageUpdate.Invoke();
                 // TO DO : ADD COMMENTS
                 if (game.CurrentPlayer == Symbol.X && PlayerA[a].GetType() == typeof(BeaverPlayer) || (game.CurrentPlayer == Symbol.O && PlayerB[b].GetType() == typeof(BeaverPlayer)))
                 {
@@ -77,12 +96,13 @@ namespace TicTacBæver_Hasp.NET.co.uk
                     System.Threading.Thread.Sleep(100);
                     game.NextMove();
                 }
-                pageUpdate.Invoke();
             }
+            status = status.Remove(1) + " has won!";
+            pageUpdate.Invoke();
             timerStarted = false;
         }
 
-        public static Dictionary<string, IPlayer> makePlayerDictionary()
+        public static Dictionary<string, IPlayer> MakePlayerDictionary()
         {
             Dictionary<string, IPlayer> aIs = new Dictionary<string, IPlayer>();
             aIs.Add("Human", new BeaverPlayer());
