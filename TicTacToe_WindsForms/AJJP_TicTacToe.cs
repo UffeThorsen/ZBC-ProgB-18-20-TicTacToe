@@ -106,7 +106,8 @@ namespace TicTacToe_WindsForms
             Game g = new Game(player1, player2);
             game = g;
             gameStarted = true;
-            UpdateForm();
+            TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
+            NextStep();
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,7 +118,8 @@ namespace TicTacToe_WindsForms
             Game g = new Game(player, AI);
             game = g;
             gameStarted = true;
-            UpdateForm();
+            TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
+            NextStep();
         }
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +132,7 @@ namespace TicTacToe_WindsForms
             Game g = new Game(AIDumb, Ai); 
             game = g; //Sets the game 
             gameStarted = true; //Sets the game to be started (for continue button)
+            TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
             NextStep(); // runs the game once
         }
 
@@ -164,11 +167,14 @@ namespace TicTacToe_WindsForms
 
         private void A1_btn_Click(object sender, EventArgs e)
         {
-            Placement p = buttonsPlacements[(Button)sender];
-            if (game.IsLegalMove(p))
+            if (gameStarted)
             {
-                nextP = p;
-                Continue_btn_Click(sender, e);
+                Placement p = buttonsPlacements[(Button)sender];
+                if (game.IsLegalMove(p))
+                {
+                    nextP = p;
+                    Continue_btn_Click(sender, e);
+                }
             }
         }
     }
