@@ -1,76 +1,73 @@
 @inject IJSRuntime JSRuntime
 @page "/"
 @using Microsoft.AspNetCore.Components.Web
+
 <div>
-    <div class="detvedjegikke">
-        <div class="detvedjeggodt">
-            <div style="position: absolute;right:105%">
-                <select @bind="BeaverUI.a">
-                    @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
-                    {
-                        <option value="@key">@key</option>
-                    }
-                </select>
-                <img class="mx-auto" src="@BeaverUI.SymbolToImage(Symbol.X,coolMode)" style="position: absolute; top: 120%; left: 13%;"/>
-            </div>
-            <div style="position: absolute;left:105%">
-                <select @bind="BeaverUI.b">
-                    @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
-                    {
-                        <option value="@key">@key</option>
-                    }
-                </select>
-                <img class="mx-auto" src="@BeaverUI.SymbolToImage(Symbol.O,coolMode)" style="position: absolute; top: 120%; right: 13%;"/>
-            </div>
-            <button class="btn btn-primary" style="position: absolute;left:35%; top:-10%" @onclick="(() => StartNewGame())"> New Game </button>
-            @if (BeaverUI.game != null)
+    <div style="position: absolute; right:60.5%; top:15%">
+        <select @bind="BeaverUI.a">
+            @foreach (string key in BeaverUI.PlayerA.Keys.ToArray())
             {
-                <div class="row">
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(0, 0))" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 0))" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(2, 0))" draggable="false" unselectable="on" ondragstart="return false" />
-                </div>
-                <div class="row">
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(0, 1))" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 1))" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(2, 1))" draggable="false" unselectable="on" ondragstart="return false" />
-                </div>
-                <div class="row">
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(0, 2))" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 2))" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(2, 2))" draggable="false" unselectable="on" ondragstart="return false" />
-                </div>
-                <div class="row">
-                    <div class="mx-auto">
-                        @BeaverUI.status
-                    </div>
-                </div>
+                <option value="@key">@key</option>
             }
-            else
-            {
-                <div class="row">
-                    <img src="@Default" value="a" @onclick="(()=>Konami('A'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@Default" value="up"@onclick="(()=>Konami('U'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                </div>
-                <div class="row">
-                    <img src="@Default" value="left" @onclick="(()=>Konami('L'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@Default" value="right" @onclick="(()=>Konami('R'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                </div>
-                <div class="row">
-                    <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@Default" value="down" @onclick="(()=>Konami('D'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                    <img src="@Default" value="b" @onclick="(()=>Konami('B'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
-                </div>
-                <div class="row">
-                    <div class="mx-auto">
-                        Welcome!
-                    </div>
-                </div>
-            }
-        </div>
+        </select>
+        <img class="mx-auto" src="@BeaverUI.SymbolToImage(Symbol.X,coolMode)" style="position: absolute; top: 120%; left: 13%;"/>
     </div>
+    <div style="position: absolute; left:60.5%; top:15%">
+        <select @bind="BeaverUI.b">
+            @foreach (string key in BeaverUI.PlayerB.Keys.ToArray())
+            {
+                <option value="@key">@key</option>
+            }
+        </select>
+        <img class="mx-auto" src="@BeaverUI.SymbolToImage(Symbol.O,coolMode)" style="position: absolute; top: 120%; right: 13%;"/>
+    </div>
+    <button class="btn btn-primary" style="left:35%; top:-10%; margin-left:47.2%; margin-bottom:0.5%" @onclick="(() => StartNewGame())"> New Game </button>
+    @if (BeaverUI.game != null)
+    {
+        <div class="row">
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 0], @coolMode)" class="collo unselectable ml-auto" @onclick="(() => ClickOnButton(0, 0))" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 0], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 0))" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 0], @coolMode)" class="collo unselectable mr-auto" @onclick="(() => ClickOnButton(2, 0))" draggable="false" unselectable="on" ondragstart="return false" />
+        </div>
+        <div class="row">
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 1], @coolMode)" class="collo unselectable ml-auto" @onclick="(() => ClickOnButton(0, 1))" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 1], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 1))" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 1], @coolMode)" class="collo unselectable mr-auto" @onclick="(() => ClickOnButton(2, 1))" draggable="false" unselectable="on" ondragstart="return false" />
+        </div>
+        <div class="row">
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[0, 2], @coolMode)" class="collo unselectable ml-auto" @onclick="(() => ClickOnButton(0, 2))" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[1, 2], @coolMode)" class="collo unselectable" @onclick="(() => ClickOnButton(1, 2))" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@BeaverUI.SymbolToImage(BeaverUI.game[2, 2], @coolMode)" class="collo unselectable mr-auto" @onclick="(() => ClickOnButton(2, 2))" draggable="false" unselectable="on" ondragstart="return false" />
+        </div>
+        <div class="row">
+            <div class="mx-auto">
+                @BeaverUI.status
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <img src="@Default" value="a" @onclick="(()=>Konami('A'))" class="collo unselectable ml-auto" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@Default" value="up"@onclick="(()=>Konami('U'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable mr-auto" draggable="false" unselectable="on" ondragstart="return false" />
+        </div>
+        <div class="row">
+            <img src="@Default" value="left" @onclick="(()=>Konami('L'))" class="collo unselectable ml-auto" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@Default" value="right" @onclick="(()=>Konami('R'))" class="collo unselectable mr-auto" draggable="false" unselectable="on" ondragstart="return false" />
+        </div>
+        <div class="row">
+            <img src="@Default" @onclick="(()=>Konami(' '))" class="collo unselectable ml-auto" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@Default" value="down" @onclick="(()=>Konami('D'))" class="collo unselectable" draggable="false" unselectable="on" ondragstart="return false" />
+            <img src="@Default" value="b" @onclick="(()=>Konami('B'))" class="collo unselectable mr-auto" draggable="false" unselectable="on" ondragstart="return false" />
+        </div>
+        <div class="row">
+            <div class="mx-auto">
+                Welcome!
+            </div>
+        </div>
+    }
 </div>
 
 
