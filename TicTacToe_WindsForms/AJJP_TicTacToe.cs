@@ -108,6 +108,7 @@ namespace TicTacToe_WindsForms
         {
             gameMode = 1;
             Mode.Text = "Player vs. Player";
+            Continue_btn.Visible = false;
             GUIPlayer player1 = new GUIPlayer();
             GUIPlayer player2 = new GUIPlayer();
             Game g = new Game(player1, player2);
@@ -121,6 +122,7 @@ namespace TicTacToe_WindsForms
         {
             gameMode = 2;
             Mode.Text = "Player vs. AI";
+            Continue_btn.Visible = true;
             GUIPlayer player = new GUIPlayer();
             UffeSmarterAIPlayer AI = new UffeSmarterAIPlayer();
             Game g = new Game(player, AI);
@@ -134,6 +136,7 @@ namespace TicTacToe_WindsForms
         {
             gameMode = 3;
             Mode.Text = "AI vs. AI";
+            Continue_btn.Visible = true;
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
             UffeAIPlayer AIDumb = new UffeAIPlayer();
