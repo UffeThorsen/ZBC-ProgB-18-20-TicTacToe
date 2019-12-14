@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AJJP_TicTacToe));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Board = new System.Windows.Forms.TableLayoutPanel();
             this.C3_btn = new System.Windows.Forms.Button();
             this.C2_btn = new System.Windows.Forms.Button();
             this.C1_btn = new System.Windows.Forms.Button();
@@ -51,23 +51,26 @@
             this.Restart_btn = new System.Windows.Forms.Button();
             this.Continue_btn = new System.Windows.Forms.Button();
             this.Mode = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.Mode3 = new System.Windows.Forms.Button();
+            this.Mode2 = new System.Windows.Forms.Button();
+            this.Mode1 = new System.Windows.Forms.Button();
+            this.Board.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // Board
             // 
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.C3_btn, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.C2_btn, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.C1_btn, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.B3_btn, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.B2_btn, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.B1_btn, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.A3_btn, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.A2_btn, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.A1_btn, 0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            resources.ApplyResources(this.Board, "Board");
+            this.Board.Controls.Add(this.C3_btn, 2, 2);
+            this.Board.Controls.Add(this.C2_btn, 1, 2);
+            this.Board.Controls.Add(this.C1_btn, 0, 2);
+            this.Board.Controls.Add(this.B3_btn, 2, 1);
+            this.Board.Controls.Add(this.B2_btn, 1, 1);
+            this.Board.Controls.Add(this.B1_btn, 0, 1);
+            this.Board.Controls.Add(this.A3_btn, 2, 0);
+            this.Board.Controls.Add(this.A2_btn, 1, 0);
+            this.Board.Controls.Add(this.A1_btn, 0, 0);
+            this.Board.Name = "Board";
             // 
             // C3_btn
             // 
@@ -213,18 +216,42 @@
             this.Mode.Name = "Mode";
             resources.ApplyResources(this.Mode, "Mode");
             // 
+            // Mode3
+            // 
+            resources.ApplyResources(this.Mode3, "Mode3");
+            this.Mode3.Name = "Mode3";
+            this.Mode3.UseVisualStyleBackColor = true;
+            this.Mode3.Click += new System.EventHandler(this.Mode3_Click);
+            // 
+            // Mode2
+            // 
+            resources.ApplyResources(this.Mode2, "Mode2");
+            this.Mode2.Name = "Mode2";
+            this.Mode2.UseVisualStyleBackColor = true;
+            this.Mode2.Click += new System.EventHandler(this.Mode2_Click);
+            // 
+            // Mode1
+            // 
+            resources.ApplyResources(this.Mode1, "Mode1");
+            this.Mode1.Name = "Mode1";
+            this.Mode1.UseVisualStyleBackColor = true;
+            this.Mode1.Click += new System.EventHandler(this.Mode1_Click);
+            // 
             // AJJP_TicTacToe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.Mode1);
+            this.Controls.Add(this.Mode2);
+            this.Controls.Add(this.Mode3);
             this.Controls.Add(this.Continue_btn);
             this.Controls.Add(this.Restart_btn);
             this.Controls.Add(this.TurnText);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.Board);
             this.Controls.Add(this.menuStrip1);
             this.Name = "AJJP_TicTacToe";
             this.Load += new System.EventHandler(this.AJJP_TicTacToe_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.Board.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -234,7 +261,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel Board;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
@@ -256,5 +283,8 @@
         private System.Windows.Forms.ToolStripMenuItem playerVsAIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aIVsAIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Mode;
+        private System.Windows.Forms.Button Mode3;
+        private System.Windows.Forms.Button Mode2;
+        private System.Windows.Forms.Button Mode1;
     }
 }

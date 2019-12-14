@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="Board.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+  <data name="Board.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="C3_btn.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -145,7 +145,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;C3_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;C3_btn.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -169,7 +169,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;C2_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;C2_btn.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -193,7 +193,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;C1_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;C1_btn.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -217,7 +217,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;B3_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;B3_btn.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -241,7 +241,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;B2_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;B2_btn.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -265,7 +265,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;B1_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;B1_btn.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -289,7 +289,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;A3_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;A3_btn.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -313,7 +313,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;A2_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;A2_btn.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -337,36 +337,39 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;A1_btn.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+    <value>Board</value>
   </data>
   <data name="&gt;&gt;A1_btn.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="Board.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 108</value>
   </data>
-  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+  <data name="Board.RowCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="Board.Size" type="System.Drawing.Size, System.Drawing">
     <value>347, 230</value>
   </data>
-  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="Board.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
+  <data name="Board.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;Board.Name" xml:space="preserve">
+    <value>Board</value>
+  </data>
+  <data name="&gt;&gt;Board.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Board.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;Board.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+  <data name="Board.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="C3_btn" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="C2_btn" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="C1_btn" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="B3_btn" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="B2_btn" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="B1_btn" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="A3_btn" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="A2_btn" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="A1_btn" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -394,7 +397,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 24</value>
@@ -448,13 +451,13 @@
     <value>133, 51</value>
   </data>
   <data name="TurnText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 39</value>
+    <value>197, 39</value>
   </data>
   <data name="TurnText.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="TurnText.Text" xml:space="preserve">
-    <value>Turn: </value>
+    <value>Tic Tac Toe</value>
   </data>
   <data name="&gt;&gt;TurnText.Name" xml:space="preserve">
     <value>TurnText</value>
@@ -466,7 +469,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;TurnText.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="Restart_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -489,6 +492,9 @@
   <data name="Restart_btn.Text" xml:space="preserve">
     <value>Restart</value>
   </data>
+  <data name="Restart_btn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;Restart_btn.Name" xml:space="preserve">
     <value>Restart_btn</value>
   </data>
@@ -499,7 +505,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Restart_btn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="Continue_btn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -517,10 +523,13 @@
     <value>110, 50</value>
   </data>
   <data name="Continue_btn.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="Continue_btn.Text" xml:space="preserve">
     <value>Continue</value>
+  </data>
+  <data name="Continue_btn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;Continue_btn.Name" xml:space="preserve">
     <value>Continue_btn</value>
@@ -532,13 +541,94 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Continue_btn.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="Mode.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 24</value>
   </data>
   <data name="Mode.Text" xml:space="preserve">
     <value>Mode</value>
+  </data>
+  <data name="Mode3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Mode3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 272</value>
+  </data>
+  <data name="Mode3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 64</value>
+  </data>
+  <data name="Mode3.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Mode3.Text" xml:space="preserve">
+    <value>AI vs. AI</value>
+  </data>
+  <data name="&gt;&gt;Mode3.Name" xml:space="preserve">
+    <value>Mode3</value>
+  </data>
+  <data name="&gt;&gt;Mode3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Mode3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Mode3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Mode2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Mode2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 198</value>
+  </data>
+  <data name="Mode2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 59</value>
+  </data>
+  <data name="Mode2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Mode2.Text" xml:space="preserve">
+    <value>Player vs. AI</value>
+  </data>
+  <data name="&gt;&gt;Mode2.Name" xml:space="preserve">
+    <value>Mode2</value>
+  </data>
+  <data name="&gt;&gt;Mode2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Mode2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Mode2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Mode1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Mode1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 126</value>
+  </data>
+  <data name="Mode1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 55</value>
+  </data>
+  <data name="Mode1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Mode1.Text" xml:space="preserve">
+    <value>Player vs. Player</value>
+  </data>
+  <data name="&gt;&gt;Mode1.Name" xml:space="preserve">
+    <value>Mode1</value>
+  </data>
+  <data name="&gt;&gt;Mode1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Mode1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Mode1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

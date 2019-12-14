@@ -104,10 +104,21 @@ namespace TicTacToe_WindsForms
             }
         }
 
+        private void GameModeChosen()
+        {
+            Restart_btn.Visible = true;
+            Continue_btn.Visible = true;
+            Board.Visible = true;
+            Mode1.Visible = false;
+            Mode2.Visible = false;
+            Mode3.Visible = false;
+        }
+
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 1;
             Mode.Text = "Player vs. Player";
+            GameModeChosen();
             Continue_btn.Visible = false;
             GUIPlayer player1 = new GUIPlayer();
             GUIPlayer player2 = new GUIPlayer();
@@ -122,7 +133,7 @@ namespace TicTacToe_WindsForms
         {
             gameMode = 2;
             Mode.Text = "Player vs. AI";
-            Continue_btn.Visible = true;
+            GameModeChosen();
             GUIPlayer player = new GUIPlayer();
             UffeSmarterAIPlayer AI = new UffeSmarterAIPlayer();
             Game g = new Game(player, AI);
@@ -136,7 +147,7 @@ namespace TicTacToe_WindsForms
         {
             gameMode = 3;
             Mode.Text = "AI vs. AI";
-            Continue_btn.Visible = true;
+            GameModeChosen();
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
             UffeAIPlayer AIDumb = new UffeAIPlayer();
@@ -178,6 +189,21 @@ namespace TicTacToe_WindsForms
                     Continue_btn_Click(sender, e);
                 }
             }
+        }
+
+        private void Mode1_Click(object sender, EventArgs e)
+        {
+            playerVsPlayerToolStripMenuItem_Click(sender, e);
+        }
+
+        private void Mode2_Click(object sender, EventArgs e)
+        {
+            playerVsAIToolStripMenuItem_Click(sender, e);
+        }
+
+        private void Mode3_Click(object sender, EventArgs e)
+        {
+            AIVsAIToolStripMenuItem_Click(sender, e);
         }
     }
 }
