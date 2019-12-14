@@ -50,6 +50,7 @@
             this.TurnText = new System.Windows.Forms.Label();
             this.Restart_btn = new System.Windows.Forms.Button();
             this.Continue_btn = new System.Windows.Forms.Button();
+            this.Mode = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -136,7 +137,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.AboutToolStripMenuItem});
+            this.AboutToolStripMenuItem,
+            this.Mode});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             // 
@@ -206,6 +208,11 @@
             this.Continue_btn.UseVisualStyleBackColor = true;
             this.Continue_btn.Click += new System.EventHandler(this.Continue_btn_Click);
             // 
+            // Mode
+            // 
+            this.Mode.Name = "Mode";
+            resources.ApplyResources(this.Mode, "Mode");
+            // 
             // AJJP_TicTacToe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -248,5 +255,6 @@
         private System.Windows.Forms.ToolStripMenuItem playerVsPlayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerVsAIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aIVsAIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Mode;
     }
 }

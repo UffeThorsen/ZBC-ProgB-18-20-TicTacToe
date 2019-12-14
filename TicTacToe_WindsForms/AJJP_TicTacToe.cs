@@ -107,6 +107,7 @@ namespace TicTacToe_WindsForms
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 1;
+            Mode.Text = "Player vs. Player";
             GUIPlayer player1 = new GUIPlayer();
             GUIPlayer player2 = new GUIPlayer();
             Game g = new Game(player1, player2);
@@ -119,6 +120,7 @@ namespace TicTacToe_WindsForms
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 2;
+            Mode.Text = "Player vs. AI";
             GUIPlayer player = new GUIPlayer();
             UffeSmarterAIPlayer AI = new UffeSmarterAIPlayer();
             Game g = new Game(player, AI);
@@ -131,6 +133,7 @@ namespace TicTacToe_WindsForms
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 3;
+            Mode.Text = "AI vs. AI";
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
             UffeAIPlayer AIDumb = new UffeAIPlayer();
