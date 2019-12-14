@@ -448,7 +448,7 @@
     <value>Microsoft Sans Serif, 20pt</value>
   </data>
   <data name="TurnText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 51</value>
+    <value>106, 50</value>
   </data>
   <data name="TurnText.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 39</value>
@@ -458,6 +458,9 @@
   </data>
   <data name="TurnText.Text" xml:space="preserve">
     <value>Tic Tac Toe</value>
+  </data>
+  <data name="TurnText.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="&gt;&gt;TurnText.Name" xml:space="preserve">
     <value>TurnText</value>
