@@ -50,6 +50,17 @@ namespace TicTacToe_WindsForms
             buttonsPlacements[C3_btn] = pC3;
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This game have been made by Anton, Jacob A, Jannie and Patrick 3.P. \nDelivered 20/12-2019.", "Info about game");
+        }
+
+        //Here begins the code for the game
         private void NextStep()
         {
             if (!game.IsGameDone)
@@ -93,11 +104,6 @@ namespace TicTacToe_WindsForms
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 1;
@@ -136,11 +142,6 @@ namespace TicTacToe_WindsForms
             NextStep(); // runs the game once
         }
 
-        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This game have been made by Anton, Jacob A, Jannie and Patrick 3.P. \nDelivered 20/12-2019.", "Info about game");
-        }
-
         private void Restart_btn_Click(object sender, EventArgs e)
         {
             switch (gameMode)
@@ -158,11 +159,6 @@ namespace TicTacToe_WindsForms
                     TurnText.Text = "Choose a game (under files)";
                     break;
             }
-        }
-
-        private void stateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void A1_btn_Click(object sender, EventArgs e)
