@@ -63,22 +63,23 @@ namespace TicTacToe_WindsForms
         //Here begins the code for the game
         private void NextStep()
         {
-            if (!game.IsGameDone)
+            if (!game.IsGameDone) //Runs only if the game is still going
             {
-                TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
                 game.NextMove(); //Changes the turn
+                TurnText.Text = "Turn: " + game.CurrentPlayer.ToString(); //Shows the next player
 
-                //Updates the form with the right symbols
-                UpdateForm();
+                UpdateForm(); //Updates the form with the right symbols
             }
-            else if (game.WhoWon() == null) //If the game ends in a tie
+
+            if (game.WhoWon() == null && game.IsGameDone) //If the game ends in a tie and is done
             {
                 TurnText.Text = "Tie";
+                gameStarted = false;
             }
-            else
+            else if (game.WhoWon() != null) //If the game has a winner
             {
-                //Tells who won the game (in a weird buggy way)
-                TurnText.Text = game.WhoWon().ToString();
+                TurnText.Text = game.WhoWon().ToString(); //Tells who won the game
+                gameStarted = false;
             }
         }
 
@@ -100,7 +101,14 @@ namespace TicTacToe_WindsForms
         {
             if (gameStarted)
             {
-                NextStep();
+                if (gameMode == 2 && game.CurrentPlayer != Symbol.X)
+                {
+                    NextStep();
+                }
+                else if (gameMode == 3)
+                {
+                    NextStep();
+                }
             }
         }
 
@@ -116,47 +124,60 @@ namespace TicTacToe_WindsForms
 
         private void playerVsPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gameMode = 1;
+            gameMode = 1; //Sets the gamemode
             Mode.Text = "Player vs. Player";
+
             GameModeChosen();
             Continue_btn.Visible = false;
+            //Sets up the players
             GUIPlayer player1 = new GUIPlayer();
             GUIPlayer player2 = new GUIPlayer();
-            Game g = new Game(player1, player2);
-            game = g;
-            gameStarted = true;
+
+            Game g = new Game(player1, player2); //Sets up and starts the game
+            game = g; //Sets the game 
+            gameStarted = true; //Sets the game to be started
             TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
-            NextStep();
+
+            //NextStep();
+            UpdateForm(); //Updates the form
         }
 
         private void playerVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 2;
             Mode.Text = "Player vs. AI";
+
             GameModeChosen();
+
             GUIPlayer player = new GUIPlayer();
             UffeSmarterAIPlayer AI = new UffeSmarterAIPlayer();
             Game g = new Game(player, AI);
             game = g;
             gameStarted = true;
             TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
-            NextStep();
+
+            //NextStep();
+            UpdateForm();
         }
 
         private void AIVsAIToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gameMode = 3;
             Mode.Text = "AI vs. AI";
+
             GameModeChosen();
+
             //Creates the AI that will be playing
             UffeSmarterAIPlayer Ai = new UffeSmarterAIPlayer();
             UffeAIPlayer AIDumb = new UffeAIPlayer();
-            //Creates the game with the AI
-            Game g = new Game(AIDumb, Ai); 
-            game = g; //Sets the game 
-            gameStarted = true; //Sets the game to be started (for continue button)
+
+            Game g = new Game(AIDumb, Ai); //Creates the game with the AI
+            game = g; 
+            gameStarted = true;
             TurnText.Text = "Turn: " + game.CurrentPlayer; //Shows the starting player
-            NextStep(); // runs the game once
+
+            //NextStep();
+            UpdateForm();
         }
 
         private void Restart_btn_Click(object sender, EventArgs e)
@@ -173,7 +194,7 @@ namespace TicTacToe_WindsForms
                     AIVsAIToolStripMenuItem_Click(sender, e);
                     break;
                 default:
-                    TurnText.Text = "Choose a game (under files)";
+                    TurnText.Text = "Choose a game (under file)";
                     break;
             }
         }
@@ -186,7 +207,7 @@ namespace TicTacToe_WindsForms
                 if (game.IsLegalMove(p))
                 {
                     nextP = p;
-                    Continue_btn_Click(sender, e);
+                    NextStep();
                 }
             }
         }
