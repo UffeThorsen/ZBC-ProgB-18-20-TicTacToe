@@ -78,7 +78,16 @@ namespace TicTacToe_WindsForms
             }
             else if (game.WhoWon() != null) //If the game has a winner
             {
-                TurnText.Text = game.WhoWon().ToString(); //Tells who won the game
+                if(game.CurrentPlayer == Symbol.X)
+                {
+                    TurnText.Text = "O Has won!";
+                }
+                else
+                {
+                    TurnText.Text = "X Has won!";
+                }
+                
+                //TurnText.Text = game.WhoWon().ToString(); //Tells who won the game
                 gameStarted = false;
             }
         }
