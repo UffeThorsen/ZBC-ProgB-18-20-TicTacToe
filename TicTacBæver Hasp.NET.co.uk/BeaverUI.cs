@@ -26,6 +26,7 @@ namespace TicTacBæver_Hasp.NET.co.uk
         public static Action pageUpdate = null;
         public static Dictionary<string, IPlayer> PlayerA = MakePlayerDictionary();
         public static Dictionary<string, IPlayer> PlayerB = MakePlayerDictionary();
+        public static bool coolMode;
 
         static bool timerStarted = false;
         static bool hasClicked = false;
@@ -97,7 +98,32 @@ namespace TicTacBæver_Hasp.NET.co.uk
                     game.NextMove();
                 }
             }
-            status = status.Remove(1) + " has won!";
+            if (game.WhoWon() == PlayerA[a])
+            {
+                if (coolMode)
+                {
+                    status = "Beaver has won!";
+                }
+                else
+                {
+                    status = "X has won!";
+                }
+            }
+            else if (game.WhoWon() == PlayerB[b])
+            {
+                if (coolMode)
+                {
+                    status = "Aspen has won!";
+                }
+                else
+                {
+                    status = "Y has won!";
+                }
+            }
+            else
+            {
+                status = "Tie!";
+            }
             pageUpdate.Invoke();
             timerStarted = false;
         }
