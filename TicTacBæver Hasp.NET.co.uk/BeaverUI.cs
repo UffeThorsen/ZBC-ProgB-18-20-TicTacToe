@@ -17,7 +17,6 @@ namespace TicTacBæver_Hasp.NET.co.uk
 {
     public static class BeaverUI
     {
-
         public static string status = "Welcome!";
         public static string a = "Human";
         public static string b = "Human";
