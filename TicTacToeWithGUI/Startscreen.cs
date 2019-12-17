@@ -40,5 +40,10 @@ namespace TicTacToeWithGUI
             aivai.ShowDialog();
             this.Close();
         }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

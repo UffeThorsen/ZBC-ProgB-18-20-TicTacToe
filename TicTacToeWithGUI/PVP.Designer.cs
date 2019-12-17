@@ -46,6 +46,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.win = new System.Windows.Forms.Label();
             this.whitecover = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.whitecover.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -202,11 +203,23 @@
             this.whitecover.Visible = false;
             this.whitecover.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(818, 472);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 42);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Main Menu";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // PVP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 591);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.whitecover);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
@@ -253,5 +266,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label win;
         private System.Windows.Forms.Panel whitecover;
+        private System.Windows.Forms.Button button1;
     }
 }

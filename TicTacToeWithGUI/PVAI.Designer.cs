@@ -46,6 +46,7 @@
             this.pt = new System.Windows.Forms.Label();
             this.win = new System.Windows.Forms.Label();
             this.whitecover = new System.Windows.Forms.Panel();
+            this.mm = new System.Windows.Forms.Button();
             this.whitecover.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,14 +200,12 @@
             // pt
             // 
             this.pt.AutoSize = true;
-            //sthis.pt.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.pt.Location = new System.Drawing.Point(483, 128);
             this.pt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.pt.Name = "pt";
             this.pt.Size = new System.Drawing.Size(16, 17);
             this.pt.TabIndex = 15;
             this.pt.Text = "_";
-            //this.pt.Click += new System.EventHandler(this.Pt_Click);
             // 
             // win
             // 
@@ -226,11 +225,23 @@
             this.whitecover.TabIndex = 17;
             this.whitecover.Visible = false;
             // 
+            // mm
+            // 
+            this.mm.Location = new System.Drawing.Point(944, 541);
+            this.mm.Name = "mm";
+            this.mm.Size = new System.Drawing.Size(118, 32);
+            this.mm.TabIndex = 18;
+            this.mm.Text = "Main Menu";
+            this.mm.UseVisualStyleBackColor = true;
+            this.mm.Visible = false;
+            this.mm.Click += new System.EventHandler(this.Mm_Click);
+            // 
             // PVAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 708);
+            this.Controls.Add(this.mm);
             this.Controls.Add(this.whitecover);
             this.Controls.Add(this.pt);
             this.Controls.Add(this.label2);
@@ -280,5 +291,6 @@
         private System.Windows.Forms.Label pt;
         private System.Windows.Forms.Label win;
         private System.Windows.Forms.Panel whitecover;
+        private System.Windows.Forms.Button mm;
     }
 }

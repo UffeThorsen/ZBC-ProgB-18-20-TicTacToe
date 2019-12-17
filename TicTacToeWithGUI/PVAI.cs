@@ -40,6 +40,7 @@ namespace TicTacToeWithGUI
             {
                 win.Text = g.CurrentPlayer + " won the game";
                 whitecover.Visible = true;
+                mm.Visible = true;
 
             }
         }      
@@ -189,6 +190,14 @@ namespace TicTacToeWithGUI
         private void Pt_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Mm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Startscreen sc = new Startscreen();
+            sc.ShowDialog();
+            this.Close();
         }
     }
 }
