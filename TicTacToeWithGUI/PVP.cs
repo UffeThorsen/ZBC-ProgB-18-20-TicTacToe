@@ -75,9 +75,16 @@ namespace TicTacToeWithGUI
         private void CheckWin()
         {
             if (g.IsGameDone)
-            {
-                g.NextMove();
-                win.Text = g.CurrentPlayer + " won the game";
+            {          
+                if (g.WhoWon() == null)
+                {
+                    win.Text = "The game was a tie";
+                }
+                else
+                {
+                    win.Text = g.WhoWon().ToString();
+                }
+               
                 whitecover.Visible = true;
                 button1.Visible = true;
             }

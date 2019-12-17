@@ -41,9 +41,19 @@ namespace TicTacToeWithGUI
         private void CheckWin()
         {
             if (g.IsGameDone)
-            {
-                win.Text = g.CurrentPlayer + " won the game";
-                whitecover.Visible = true;
+            {                              
+                    if (g.WhoWon() == null)
+                    {
+                        win.Text = "The game was a tie";
+                    }
+                    else
+                    {
+                        win.Text = g.WhoWon().ToString();
+                    }                
+
+                    whitecover.Visible = true;
+                    button1.Visible = true;
+                    whitecover.Visible = true;
                 mainmenu.Visible = true;
                 
             }            
