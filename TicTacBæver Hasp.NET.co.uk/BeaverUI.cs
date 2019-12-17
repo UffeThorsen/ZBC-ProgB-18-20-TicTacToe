@@ -77,7 +77,6 @@ namespace TicTacBæver_Hasp.NET.co.uk
             {
                 status = game.CurrentPlayer + " make your move!";
                 pageUpdate.Invoke();
-                // TO DO : ADD COMMENTS
                 if (game.CurrentPlayer == Symbol.X && PlayerA[a].GetType() == typeof(BeaverPlayer) || (game.CurrentPlayer == Symbol.O && PlayerB[b].GetType() == typeof(BeaverPlayer)))
                 {
                     hasClicked = false;
@@ -98,31 +97,13 @@ namespace TicTacBæver_Hasp.NET.co.uk
                     game.NextMove();
                 }
             }
-            if (game.WhoWon() == PlayerA[a])
+            if(game.WhoWon() == null)
             {
-                if (coolMode)
-                {
-                    status = "Beaver has won!";
-                }
-                else
-                {
-                    status = "X has won!";
-                }
-            }
-            else if (game.WhoWon() == PlayerB[b])
-            {
-                if (coolMode)
-                {
-                    status = "Aspen has won!";
-                }
-                else
-                {
-                    status = "Y has won!";
-                }
+                status = "Tie!";
             }
             else
             {
-                status = "Tie!";
+                status = status.Substring(0,1) + " has won!";
             }
             pageUpdate.Invoke();
             timerStarted = false;
