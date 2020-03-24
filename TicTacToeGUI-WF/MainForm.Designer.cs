@@ -168,6 +168,7 @@
             this.Controls.Add(this.button01);
             this.Controls.Add(this.button00);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
